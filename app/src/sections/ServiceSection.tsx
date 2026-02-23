@@ -7,6 +7,7 @@ import Showcase1 from '../../assets/Showcase1.png'
 import Showcase2 from '../../assets/Showcase2.png'
 import React, { useEffect } from "react";
 import Autoplay from "embla-carousel-autoplay"
+import type { EmblaCarouselType } from 'embla-carousel'
 
 
 type ShowcaseSectionProps = {
@@ -47,7 +48,7 @@ const ServieList = [
 
 
 
-    const [api, setApi] = React.useState(null)
+    const [api, setApi] = React.useState<EmblaCarouselType | null>(null)
     const [currentSlide, setCurrentSlide] = React.useState(0)
     const activeService = ServieList[currentSlide]
 
@@ -72,7 +73,7 @@ const ServieList = [
           delay: 4000,
         }),
       ]}
-                    setApi={setApi} 
+                    setApi={(api) => setApi(api ?? null)}
                     className="flex justify-center w-full">
             <div className="flex flex-col gap-12 w-full max-w-7xl">
             <div className="flex flex-col md:flex-row justify-between items-center w-full mb-4">
