@@ -1,11 +1,19 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import Showcase1 from '../assets/Showcase1.png'
 import { Button } from '@/components/ui/button'
 import { Dot } from 'lucide-react'
+import React from 'react'
+import { StaticImport } from 'next/dist/shared/lib/get-img-props'
 
+type PortfolioCardProps = {
+    title: string,
+    subtitle: string,
+    date: string,
+    image: StaticImport,
+    about: string,
+}
 
-
-export default function PortfolioCard(props){
+export default function PortfolioCard(props:PortfolioCardProps){
 
     return(
         <section className="flex flex-col justify-center items-start p-4 max-w-[600px]  rounded-3xl bg-zinc-100  dark:bg-zinc-800 my-10">
