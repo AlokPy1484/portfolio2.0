@@ -10,10 +10,11 @@ type BlogCardProps = {
     heading: string,
     date: string,
     views: number,
-    image: React.ReactNode
+    image: React.ReactNode,
+    link: string,
 }
 
-export default function BlogCard({heading, date, views, image}:BlogCardProps){
+export default function BlogCard({heading, date, views, image, link}:BlogCardProps){
 
     return(
         <section className="flex  justify-between items-start w-full p-2 bg-zinc-50 dark:bg-zinc-800 rounded-md border border-zinc-200/80 dark:border-zinc-700">
@@ -28,7 +29,7 @@ export default function BlogCard({heading, date, views, image}:BlogCardProps){
                         <Dot/>
                         <a>{views} views</a>
                     </span>
-                    <Button variant={"ghost"} className="flex justify-end w-full font-bold text-xs md:text-md">Read More</Button>
+                    <Button variant={"ghost"} className="flex justify-end w-full font-bold text-xs md:text-md"><a href={link} target="*">Read More</a></Button>
 
                 </div>
             </div>

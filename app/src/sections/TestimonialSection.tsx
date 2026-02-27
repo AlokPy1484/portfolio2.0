@@ -5,34 +5,22 @@ import { Marquee } from "../../../components/ui/marquee"
 const testimonials = [
   {
     quote:
-      "Plex transformed our brand visuals completely. Engagement increased almost instantly after launch, and the motion work feels premium and intentional.",
-    name: "Aarav Mehta",
-    title: "Founder, Grow Rev",
+      "Alok helped our business generate more leads by building Plex’s landing page with a strong focus on design, performance, and user experience.",
+    name: "Mukund Gadekar",
+    title: "Design Head, Plex Visuals",
   },
   {
     quote:
-      "The attention to detail and motion design quality was exceptional. Our product now feels polished, modern, and far more trustworthy.",
-    name: "Daniel Parker",
-    title: "CEO, Parker Cards",
+      "The quality of Alok’s work is exceptional. He helped us integrate APIs and built a scalable, manageable React frontend for our online travel platform.",
+    name: "Utkarsh Nishad",
+    title: "Founder, Trvalr.com",
   },
   {
     quote:
-      "Working with Plex was seamless. The visuals perfectly matched our energy and helped us connect better with our fitness community.",
-    name: "Valeria Gomez",
-    title: "Founder, Valeria Fitness",
-  },
-  {
-    quote:
-      "Plex understood our vision instantly. The final designs elevated our platform and made complex ideas feel simple and elegant.",
-    name: "Rohit Sharma",
-    title: "Product Lead, The Grids",
-  },
-  {
-    quote:
-      "From concept to execution, everything felt strategic and refined. The motion design added real value to our brand experience.",
-    name: "Emily Chen",
-    title: "Marketing Director, Grow Rev",
-  },
+      "Alok’s development skills helped us build our website quickly and efficiently, delivering high-quality results within a short timeframe.",
+    name: "Ansh Sharma",
+    title: "Founder, Dax Logistics",
+  }
 ];
 
 

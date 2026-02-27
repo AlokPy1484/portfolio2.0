@@ -27,6 +27,10 @@ export default function NavBar(){
         minute: "2-digit"
     }).format(new Date())
 
+    const openResume = () => {
+        window.open('/Resume.pdf', '_blank')
+    }
+
     return(
         <section className="fixed top-0 flex justify-center items-center w-screen z-50 bg-white dark:bg-zinc-900 border border-b-zinc-100 dark:border-b-zinc-800 shadow-lg shadow-zinc-200 dark:shadow-zinc-800 ">
             <div className="flex justify-between items-center w-7xl p-4">
@@ -35,10 +39,18 @@ export default function NavBar(){
                     AP
                 </span>
                 <div className="hidden md:flex justify-center items-center gap-6 dark:text-white">
+                
+                <Tooltip>
+                <TooltipTrigger asChild>
                 <a className="hover:cursor-pointer">Playground</a>
-                <a className="hover:cursor-pointer">Articles</a>
-                <a className="hover:cursor-pointer">Dashboard</a>
-                <a className="hover:cursor-pointer">About Me</a>
+                </TooltipTrigger>
+                <TooltipContent>
+                    <span>coming soon</span>
+                </TooltipContent>
+                </Tooltip>
+                <a href="https://alokpydeepdive01.hashnode.dev" target="*" className="hover:cursor-pointer">Articles</a>
+                <a href="https://github.com/AlokPy1484" target="*" className="hover:cursor-pointer">Dashboard</a>
+                <a onClick={openResume} className="hover:cursor-pointer">Resume</a>
                 </div>
             </div>
             <div className="flex justify-center items-center gap-6">
@@ -47,7 +59,15 @@ export default function NavBar(){
                     <span className="font-bold">Pune,India</span>
                     <span>{currTime}</span>
                 </div>
+                 <Tooltip>
+                <TooltipTrigger asChild>
                 <Button className="hidden md:flex  hover:cursor-pointer">Book a Slot</Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                    <span>coming soon</span>
+                </TooltipContent>
+                </Tooltip>
+                
                 <Button className="hidden md:flex  hover:cursor-pointer">Contact Me</Button>
                 </div>
                 <Tooltip>

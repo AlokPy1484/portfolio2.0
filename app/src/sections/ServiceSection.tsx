@@ -3,8 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { ChevronUp, Laptop, MoveUpRight } from "lucide-react";
 import Image from "next/image";
-import Showcase1 from '../../assets/Showcase1.png'
-import Showcase2 from '../../assets/Showcase2.png'
+import Service1 from '../../assets/Service1.png'
+import Service2 from '../../assets/Service2.png'
+import Service3 from '../../assets/Service3.png'
 import React, { useEffect } from "react";
 import Autoplay from "embla-carousel-autoplay"
 import type { EmblaCarouselType } from 'embla-carousel'
@@ -23,25 +24,25 @@ const ServieList = [
         id: "landing",
         heading: "Landing Page development",
         subtext: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt porro ullam nisi, itaque velit at perferendis vitae neque. Eum, officia.",
-        image: {Showcase1}
+        image: {Service1}
     },
     {   
         id: "fullStack",
-        heading: "Full Stack Web Application",
-        subtext: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt porro ullam nisi, itaque velit at perferendis vitae neque. Eum, officia.",
-        image: {Showcase1}
+        heading: "Full-Stack Web Development with Modern Frameworks",
+        subtext: "I build modern, professional full-stack web applications with secure authentication, robust databases, scalable architecture, and clean, user-focused interfaces.",
+        image: {Service1}
     },
     {
         id: "prototype",
-        heading: "Proof of work, MVP, feature prototyping",
-        subtext: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt porro ullam nisi, itaque velit at perferendis vitae neque. Eum, officia.",
-        image: {Showcase1}
+        heading: "Proof-of-Concept to MVP Web Application Development",
+        subtext: "I create MVP prototypes that validate ideas, showcase core functionality, and help founders communicate vision effectively to investors and partners.",
+        image: {Service1}
     },
     {
         id: "refactor",
-        heading: "Website performance and security refactoring",
-        subtext: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt porro ullam nisi, itaque velit at perferendis vitae neque. Eum, officia.",
-        image: {Showcase1}
+        heading: "Landing Page development",
+        subtext: "I make landing page for your business to make your bussiness look professional and improve visibility of your busisness.",
+        image: {Service1}
     }
 ]
 
@@ -101,13 +102,13 @@ const ServieList = [
             <div>
   <CarouselContent className="" >
     <CarouselItem className="basis-1/1 md:basis-1/2">
-        <Image src={Showcase1} alt='img1'  className="md:w-[40vw] rounded-2xl"/>
+        <Image src={Service1} alt='img1'  className="md:w-[40vw] rounded-2xl"/>
     </CarouselItem>
     <CarouselItem className="basis-1/1 md:basis-1/2">
-        <Image src={Showcase2} alt='img1' className="md:w-[40vw] rounded-2xl"/>
+        <Image src={Service2} alt='img1' className="md:w-[40vw] rounded-2xl"/>
     </CarouselItem>
     <CarouselItem className="basis-1/1 md:basis-1/2">
-        <Image src={Showcase1} alt='img1' className="md:w-[40vw] rounded-2xl"/>
+        <Image src={Service3} alt='img1' className="md:w-[40vw] rounded-2xl"/>
     </CarouselItem>
 
   </CarouselContent>

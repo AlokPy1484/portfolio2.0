@@ -1,6 +1,6 @@
 'use client';
 
-import { Twitter, Instagram, Facebook, Dribbble } from 'lucide-react';
+import { Twitter, Instagram, Facebook, Dribbble, Linkedin, Github } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -16,21 +16,21 @@ export default function Footer() {
             <span className="flex h-9 w-9 items-center justify-center rounded-full ">
               ✦
             </span>
-            “If I have seen further, it is by standing on the shoulders of giants.” — Isaac Newton
+            “The first step is to establish that something is possible then probability will occur.” — Elon Musk
           </div>
 
           {/* Social icons */}
           <div className="flex items-center gap-6 text-black/70 dark:text-white">
-            <a href="#" className="transition hover:text-black">
+            <a href="https://x.com/AlokPandey37305" target="*" className="transition hover:text-black">
               <Twitter size={20} />
             </a>
-            <a href="#" className="transition hover:text-black">
-              <Instagram size={20} />
+            <a href="https://github.com/AlokPy1484" target="*" className="transition hover:text-black">
+              <Github size={20} />
             </a>
-            <a href="#" className="transition hover:text-black">
-              <Facebook size={20} />
+            <a href="https://www.linkedin.com/in/alok-p-5648341b3/" target="*" className="transition hover:text-black">
+              <Linkedin size={20} />
             </a>
-            <a href="#" className="transition hover:text-black">
+            <a href="https://dribbble.com/" target="*" className="transition hover:text-black">
               <Dribbble size={20} />
             </a>
           </div>
