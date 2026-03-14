@@ -1,0 +1,685 @@
+[00:00:03.016] Server  LOG     ✓ Ready in 2.6s
+[00:00:11.314] Server  LOG     ○ Compiling / ...
+[00:00:14.586] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
+[00:00:15.295] Server  ERROR   Each child in a list should have a unique "key" prop.
+
+Check the top-level render call using <div>. See https://react.dev/link/warning-keys for more information.
+[00:00:15.296] Server  ERROR   Each child in a list should have a unique "key" prop.
+
+Check the top-level render call using <div>. See https://react.dev/link/warning-keys for more information.
+[00:00:16.875] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:16.876] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
+
+Check the render method of `div`.  It was passed a child from ListingCard.
+[00:00:16.876] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="/Desktop/W...">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+-                         className="light"
+-                         style={{color-scheme:"light"}}
+                        >
+                  ...
+
+[00:00:58.624] Browser LOG     light
+[00:00:59.290] Browser LOG     dark
+[00:00:59.700] Browser LOG     light
+[00:01:00.437] Browser LOG     dark
+[00:01:41.893] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:4:1
+Module not found: Can't resolve '../../assets/Showcase3.png'
+  2 | import Showcase1 from '../../assets/Showcase1.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+> 4 | import Showcase3 from '../../assets/Showcase3.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import Showcase4 from '../../assets/Showcase4.png'
+  6 |
+  7 | export default function PortfolioWork(){
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:41.897] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:4:1
+Module not found: Can't resolve '../../assets/Showcase3.png'
+  2 | import Showcase1 from '../../assets/Showcase1.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+> 4 | import Showcase3 from '../../assets/Showcase3.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import Showcase4 from '../../assets/Showcase4.png'
+  6 |
+  7 | export default function PortfolioWork(){
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:41.915] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:4:1
+Module not found: Can't resolve '../../assets/Showcase3.png'
+  2 | import Showcase1 from '../../assets/Showcase1.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+> 4 | import Showcase3 from '../../assets/Showcase3.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import Showcase4 from '../../assets/Showcase4.png'
+  6 |
+  7 | export default function PortfolioWork(){
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:41.918] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:4:1
+Module not found: Can't resolve '../../assets/Showcase3.png'
+  2 | import Showcase1 from '../../assets/Showcase1.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+> 4 | import Showcase3 from '../../assets/Showcase3.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import Showcase4 from '../../assets/Showcase4.png'
+  6 |
+  7 | export default function PortfolioWork(){
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:41.927] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:4:1
+Module not found: Can't resolve '../../assets/Showcase3.png'
+  2 | import Showcase1 from '../../assets/Showcase1.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+> 4 | import Showcase3 from '../../assets/Showcase3.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import Showcase4 from '../../assets/Showcase4.png'
+  6 |
+  7 | export default function PortfolioWork(){
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:41.929] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:4:1
+Module not found: Can't resolve '../../assets/Showcase3.png'
+  2 | import Showcase1 from '../../assets/Showcase1.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+> 4 | import Showcase3 from '../../assets/Showcase3.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import Showcase4 from '../../assets/Showcase4.png'
+  6 |
+  7 | export default function PortfolioWork(){
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:41.933] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:4:1
+Module not found: Can't resolve '../../assets/Showcase3.png'
+  2 | import Showcase1 from '../../assets/Showcase1.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+> 4 | import Showcase3 from '../../assets/Showcase3.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import Showcase4 from '../../assets/Showcase4.png'
+  6 |
+  7 | export default function PortfolioWork(){
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:41.937] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:4:1
+Module not found: Can't resolve '../../assets/Showcase3.png'
+  2 | import Showcase1 from '../../assets/Showcase1.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+> 4 | import Showcase3 from '../../assets/Showcase3.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import Showcase4 from '../../assets/Showcase4.png'
+  6 |
+  7 | export default function PortfolioWork(){
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:41.940] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:4:1
+Module not found: Can't resolve '../../assets/Showcase3.png'
+  2 | import Showcase1 from '../../assets/Showcase1.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+> 4 | import Showcase3 from '../../assets/Showcase3.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import Showcase4 from '../../assets/Showcase4.png'
+  6 |
+  7 | export default function PortfolioWork(){
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:41.941] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:4:1
+Module not found: Can't resolve '../../assets/Showcase3.png'
+  2 | import Showcase1 from '../../assets/Showcase1.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+> 4 | import Showcase3 from '../../assets/Showcase3.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import Showcase4 from '../../assets/Showcase4.png'
+  6 |
+  7 | export default function PortfolioWork(){
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:41.945] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:4:1
+Module not found: Can't resolve '../../assets/Showcase3.png'
+  2 | import Showcase1 from '../../assets/Showcase1.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+> 4 | import Showcase3 from '../../assets/Showcase3.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import Showcase4 from '../../assets/Showcase4.png'
+  6 |
+  7 | export default function PortfolioWork(){
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:41.948] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:4:1
+Module not found: Can't resolve '../../assets/Showcase3.png'
+  2 | import Showcase1 from '../../assets/Showcase1.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+> 4 | import Showcase3 from '../../assets/Showcase3.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import Showcase4 from '../../assets/Showcase4.png'
+  6 |
+  7 | export default function PortfolioWork(){
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:41.950] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:4:1
+Module not found: Can't resolve '../../assets/Showcase3.png'
+  2 | import Showcase1 from '../../assets/Showcase1.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+> 4 | import Showcase3 from '../../assets/Showcase3.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import Showcase4 from '../../assets/Showcase4.png'
+  6 |
+  7 | export default function PortfolioWork(){
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:41.953] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:4:1
+Module not found: Can't resolve '../../assets/Showcase3.png'
+  2 | import Showcase1 from '../../assets/Showcase1.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+> 4 | import Showcase3 from '../../assets/Showcase3.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import Showcase4 from '../../assets/Showcase4.png'
+  6 |
+  7 | export default function PortfolioWork(){
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:42.123] Browser ERROR   ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:4:1
+Module not found: Can't resolve '../../assets/Showcase3.png'
+  2 | import Showcase1 from '../../assets/Showcase1.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+> 4 | import Showcase3 from '../../assets/Showcase3.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import Showcase4 from '../../assets/Showcase4.png'
+  6 |
+  7 | export default function PortfolioWork(){
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:01:56.352] Server  LOG     ✓ Compiled in 328ms
+[00:01:56.855] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
+[00:02:19.481] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:5:1
+Module not found: Can't resolve '../../assets/Showcase4.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+  4 | import Showcase3 from '../../assets/Showcase3.png'
+> 5 | import Showcase4 from '../../assets/Showcase4.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | export default function PortfolioWork(){
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:19.484] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:5:1
+Module not found: Can't resolve '../../assets/Showcase4.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+  4 | import Showcase3 from '../../assets/Showcase3.png'
+> 5 | import Showcase4 from '../../assets/Showcase4.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | export default function PortfolioWork(){
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:19.501] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:5:1
+Module not found: Can't resolve '../../assets/Showcase4.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+  4 | import Showcase3 from '../../assets/Showcase3.png'
+> 5 | import Showcase4 from '../../assets/Showcase4.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | export default function PortfolioWork(){
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:19.507] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:5:1
+Module not found: Can't resolve '../../assets/Showcase4.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+  4 | import Showcase3 from '../../assets/Showcase3.png'
+> 5 | import Showcase4 from '../../assets/Showcase4.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | export default function PortfolioWork(){
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:19.511] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:5:1
+Module not found: Can't resolve '../../assets/Showcase4.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+  4 | import Showcase3 from '../../assets/Showcase3.png'
+> 5 | import Showcase4 from '../../assets/Showcase4.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | export default function PortfolioWork(){
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:19.512] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:5:1
+Module not found: Can't resolve '../../assets/Showcase4.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+  4 | import Showcase3 from '../../assets/Showcase3.png'
+> 5 | import Showcase4 from '../../assets/Showcase4.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | export default function PortfolioWork(){
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:19.516] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:5:1
+Module not found: Can't resolve '../../assets/Showcase4.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+  4 | import Showcase3 from '../../assets/Showcase3.png'
+> 5 | import Showcase4 from '../../assets/Showcase4.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | export default function PortfolioWork(){
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:19.517] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:5:1
+Module not found: Can't resolve '../../assets/Showcase4.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+  4 | import Showcase3 from '../../assets/Showcase3.png'
+> 5 | import Showcase4 from '../../assets/Showcase4.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | export default function PortfolioWork(){
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:19.524] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:5:1
+Module not found: Can't resolve '../../assets/Showcase4.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+  4 | import Showcase3 from '../../assets/Showcase3.png'
+> 5 | import Showcase4 from '../../assets/Showcase4.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | export default function PortfolioWork(){
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:19.526] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:5:1
+Module not found: Can't resolve '../../assets/Showcase4.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+  4 | import Showcase3 from '../../assets/Showcase3.png'
+> 5 | import Showcase4 from '../../assets/Showcase4.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | export default function PortfolioWork(){
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:19.529] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:5:1
+Module not found: Can't resolve '../../assets/Showcase4.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+  4 | import Showcase3 from '../../assets/Showcase3.png'
+> 5 | import Showcase4 from '../../assets/Showcase4.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | export default function PortfolioWork(){
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:19.650] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:5:1
+Module not found: Can't resolve '../../assets/Showcase4.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+  4 | import Showcase3 from '../../assets/Showcase3.png'
+> 5 | import Showcase4 from '../../assets/Showcase4.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | export default function PortfolioWork(){
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:19.673] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:5:1
+Module not found: Can't resolve '../../assets/Showcase4.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+  4 | import Showcase3 from '../../assets/Showcase3.png'
+> 5 | import Showcase4 from '../../assets/Showcase4.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | export default function PortfolioWork(){
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:19.676] Server  ERROR   ⨯ ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:5:1
+Module not found: Can't resolve '../../assets/Showcase4.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+  4 | import Showcase3 from '../../assets/Showcase3.png'
+> 5 | import Showcase4 from '../../assets/Showcase4.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | export default function PortfolioWork(){
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:19.848] Browser ERROR   ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:5:1
+Module not found: Can't resolve '../../assets/Showcase4.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+  4 | import Showcase3 from '../../assets/Showcase3.png'
+> 5 | import Showcase4 from '../../assets/Showcase4.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | export default function PortfolioWork(){
+  8 |
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:02:27.228] Browser ERROR   ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:5:1
+Module not found: Can't resolve '../../assets/Showcase4.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+  4 | import Showcase3 from '../../assets/Showcase3.png'
+> 5 | import Showcase4 from '../../assets/Showcase4.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | export default function PortfolioWork(){
+  8 |
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:02:27.228] Browser ERROR   ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx:5:1
+Module not found: Can't resolve '../../assets/Showcase4.png'
+  3 | import Showcase2 from '../../assets/Showcase2.png'
+  4 | import Showcase3 from '../../assets/Showcase3.png'
+> 5 | import Showcase4 from '../../assets/Showcase4.png'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | export default function PortfolioWork(){
+  8 |
+
+Import trace:
+  Server Component:
+    ./Desktop/Website_dev/portfolio2.0/app/src/sections/PortfolioWork.tsx
+    ./Desktop/Website_dev/portfolio2.0/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:02:36.898] Server  LOG     ✓ Compiled in 154ms
+[00:02:37.271] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
+[00:07:06.041] Server  LOG     ✓ Compiled in 883ms
+[00:07:06.833] Server  ERROR   Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
+[00:07:11.330] Browser LOG     light
+[00:07:13.863] Browser LOG     dark

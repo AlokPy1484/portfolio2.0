@@ -24,16 +24,16 @@ export default function PortfolioWork(){
                     about="A visually engaging landing page designed for a freelance project, showcasing a motion design company’s portfolio with smooth animations, clear storytelling, and a modern layout to highlight creative work, brand identity, and professional capabilities for potential clients."
                     image={Showcase2}/>
                     <PortfolioCard
-                    title="Portfolio" 
-                    subtitle="Personal Landing page"
+                    title="LogisticsPro" 
+                    subtitle="Logistics company site"
                     date="March 2025" 
-                    about="A professional portfolio website template designed to showcase proof of work, highlighting projects, case studies, skills, and achievements with a clean layout, modern design, and structured content to build credibility and clearly demonstrate expertise to clients, recruiters, and collaborators."
+                    about="A professional landing page template for a logistics company designed to clearly present transportation and supply chain services, highlighting delivery capabilities, service areas, fleet strength, and client success stories. The layout focuses on a clean, modern design with structured sections."
                     image={Showcase3}/>
                     <PortfolioCard
-                    title="Blognest" 
-                    subtitle="Social Networking Platform"
+                    title="Foddo" 
+                    subtitle="Restaurant landing page"
                     date="July 2025" 
-                    about="A modern social networking platform that enables users to create, share, and interact with blog posts, built using React and Django, with a PostgreSQL database ensuring secure data management, scalability, and reliable performance."
+                    about="A professional restaurant landing page designed to showcase the menu, signature dishes, dining experience, ambience, chef highlights, location, and reservation options. The layout features a clean, modern design with visually appealing sections for food galleries, customer reviews, special offers, and contact details to attract customers and create a strong online presence."
                      image={Showcase4}/>
                 </div>
             </div>
