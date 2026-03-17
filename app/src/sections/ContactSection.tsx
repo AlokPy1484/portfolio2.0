@@ -9,6 +9,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
+import { Map } from "@/app/components/Map";
 
 
 
@@ -26,11 +27,10 @@ export default function ContactSection(){
                     </div>
                     <div className="relative mt-10">
                     {/* <Image src={showcase} alt="conatact image" className=" md:max-w-[750px] rounded-2xl "/> */}
-                    <Carousel>
-                        <CarouselContent className="flex justify-center">
-                            <CarouselItem><Image src={contact} alt="conatact image" className=" md:max-w-[750px] rounded-2xl "/></CarouselItem>
-                        </CarouselContent>
-                    </Carousel>
+                    <div>
+                        {/* <Image src={contact} alt="conatact image" className=" md:max-w-[750px] rounded-2xl "/> */}
+                        <Map/>
+                    </div>
                     <div className="hidden dark:block absolute inset-0 md:w-[750px] rounded-2xl bg-black/30"></div>
                     </div>
                 </div>
