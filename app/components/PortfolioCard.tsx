@@ -21,9 +21,9 @@ export default function PortfolioCard(props:PortfolioCardProps){
             <h1 className='text-2xl mt-4'>{props.title}</h1>
             <div className='flex flex-col justify-center items-start gap-1 w-full'>
                 <span className='flex gap-1'>
-                <a className=''>{props.subtitle} </a>
+                <span className=''>{props.subtitle} </span>
                 <Dot/>
-                <a className='text-sm'>{props.date}</a>
+                <span className='text-sm'>{props.date}</span>
                 </span>
             </div>
             <span className='text-sm mt-4'>

@@ -27,8 +27,8 @@ function SkillCard({logo, heading, subtext}:SkillCardProps){
         <div className="flex justify-center items-center gap-4 py-8 ">
             {logo}
             <div className="flex flex-col justify-center items-start md:w-[500px]">
-                <a className="text-xl md:text-2xl">{heading}</a>
-                <a className="text-xs md:text-sm">{subtext}</a>
+                <span className="text-xl md:text-2xl">{heading}</span>
+                <span className="text-xs md:text-sm">{subtext}</span>
             </div>
         </div>
 
@@ -40,9 +40,9 @@ function SkillCardLinked({logo, heading, subtext}:SkillCardProps){
         <div className="flex justify-center items-center gap-4 py-8 ">
             {logo}
             <div className="flex flex-col justify-center items-start w-[300px] md:w-[500px]">
-                <a className="flex justify-between items-center text-xl md:text-2xl w-full">{heading}
-                    <MoveUpRight size={30} className="p-2 rounded-full bg-zinc-200 dark:bg-zinc-800"/></a>
-                <a className="text-xs md:text-sm">{subtext}</a>
+                <span className="flex justify-between items-center text-xl md:text-2xl w-full">{heading}
+                    <MoveUpRight size={30} className="p-2 rounded-full bg-zinc-200 dark:bg-zinc-800"/></span>
+                <span className="text-xs md:text-sm">{subtext}</span>
             </div>
         </div>
 

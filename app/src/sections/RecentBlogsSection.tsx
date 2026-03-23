@@ -10,7 +10,7 @@ const Blogs = [{
                 date: "July 6 2025",
                 views: 432,
                 image: <Image src={blog1} alt="blog" className="md:max-h-[120px]"/>,
-                link: "https://portfolio-five-silk-61.vercel.app/pages/blog"
+                link: "https://portfolio-five-silk-61.vercel.app/github-for-beginners-everything-you-need-to-know-to-start-using-version-control"
                 },
                 {
                 heading: "Understanding Frontend Development and its application: A Deep Dive",

@@ -27,10 +27,6 @@ export default function NavBar(){
         minute: "2-digit"
     }).format(new Date())
 
-    const openResume = () => {
-        window.open('/Resume.pdf', '_blank')
-    }
-
     return(
         <section className="fixed top-0 flex justify-center items-center w-screen z-50 bg-white dark:bg-zinc-900 border border-b-zinc-100 dark:border-b-zinc-800 shadow-lg shadow-zinc-200 dark:shadow-zinc-800 ">
             <div className="flex justify-between items-center w-7xl p-4">
@@ -42,7 +38,7 @@ export default function NavBar(){
                 
                 <Tooltip>
                 <TooltipTrigger asChild>
-                <a className="hover:cursor-pointer">Playground</a>
+                <a href="/playground" className="hover:cursor-pointer">Playground</a>
                 </TooltipTrigger>
                 <TooltipContent>
                     <span>coming soon</span>
@@ -50,7 +46,7 @@ export default function NavBar(){
                 </Tooltip>
                 <a href="https://alokpydeepdive01.hashnode.dev" target="*" className="hover:cursor-pointer">Articles</a>
                 <a href="https://github.com/AlokPy1484" target="*" className="hover:cursor-pointer">Dashboard</a>
-                <a onClick={openResume} className="hover:cursor-pointer">Resume</a>
+                <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer" className="hover:cursor-pointer">Resume</a>
                 </div>
             </div>
             <div className="flex justify-center items-center gap-6">

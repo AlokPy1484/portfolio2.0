@@ -43,7 +43,7 @@ export default function Footer() {
               (item) => (
                 <li key={item}>
                   <a
-                    href="#"
+                    href={`#${item.toLowerCase()}`}
                     className="transition hover:text-black"
                   >
                     {item}

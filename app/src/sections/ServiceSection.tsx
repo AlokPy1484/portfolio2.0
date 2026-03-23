@@ -90,12 +90,12 @@ const ServieList = [
             <div key={activeService.id} className="flex flex-col md:flex-row justify-between items-center w-full animate-in fade-in-10 duration-1000">
                 <div className="flex justify-center items-center gap-6">
                 <Laptop  size={40} className="flex p-2 rounded-full bg-zinc-200 dark:bg-zinc-800"/>
-                <a className="text-2xl md:text-3xl">{activeService.heading}</a>
+                <span className="text-2xl md:text-3xl">{activeService.heading}</span>
                 </div>
                 <div className="flex gap-18 max-w-2xl">
-                    <a className="max-w-[500px] text-zinc-400 ">
+                    <span className="max-w-[500px] text-zinc-400 ">
                         {activeService.subtext}
-                    </a>
+                    </span>
                     <MoveUpRight size={30} className="hidden md:block  p-2 rounded-full bg-zinc-200 dark:bg-zinc-800"/>
                 </div>
             </div>

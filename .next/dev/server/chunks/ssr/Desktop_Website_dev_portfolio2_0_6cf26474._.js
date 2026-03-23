@@ -327,9 +327,6 @@ function NavBar() {
         hour: "2-digit",
         minute: "2-digit"
     }).format(new Date());
-    const openResume = ()=>{
-        window.open('/Resume.pdf', '_blank');
-    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "fixed top-0 flex justify-center items-center w-screen z-50 bg-white dark:bg-zinc-900 border border-b-zinc-100 dark:border-b-zinc-800 shadow-lg shadow-zinc-200 dark:shadow-zinc-800 ",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -343,7 +340,7 @@ function NavBar() {
                             children: "AP"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                            lineNumber: 38,
+                            lineNumber: 34,
                             columnNumber: 17
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -354,16 +351,17 @@ function NavBar() {
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$components$2f$ui$2f$tooltip$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TooltipTrigger"], {
                                             asChild: true,
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                href: "/playground",
                                                 className: "hover:cursor-pointer",
                                                 children: "Playground"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                                                lineNumber: 45,
+                                                lineNumber: 41,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                                            lineNumber: 44,
+                                            lineNumber: 40,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$components$2f$ui$2f$tooltip$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TooltipContent"], {
@@ -371,18 +369,18 @@ function NavBar() {
                                                 children: "coming soon"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                                                lineNumber: 48,
+                                                lineNumber: 44,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                                            lineNumber: 47,
+                                            lineNumber: 43,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                                    lineNumber: 43,
+                                    lineNumber: 39,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -392,7 +390,7 @@ function NavBar() {
                                     children: "Articles"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                                    lineNumber: 51,
+                                    lineNumber: 47,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -402,28 +400,30 @@ function NavBar() {
                                     children: "Dashboard"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                                    lineNumber: 52,
+                                    lineNumber: 48,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                    onClick: openResume,
+                                    href: "/Resume.pdf",
+                                    target: "_blank",
+                                    rel: "noopener noreferrer",
                                     className: "hover:cursor-pointer",
                                     children: "Resume"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                                    lineNumber: 53,
+                                    lineNumber: 49,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                            lineNumber: 41,
+                            lineNumber: 37,
                             columnNumber: 17
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                    lineNumber: 37,
+                    lineNumber: 33,
                     columnNumber: 13
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -440,20 +440,20 @@ function NavBar() {
                                             children: "Pune,India"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                                            lineNumber: 59,
+                                            lineNumber: 55,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             children: currTime
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                                            lineNumber: 60,
+                                            lineNumber: 56,
                                             columnNumber: 21
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                                    lineNumber: 58,
+                                    lineNumber: 54,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$components$2f$ui$2f$tooltip$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Tooltip"], {
@@ -465,12 +465,12 @@ function NavBar() {
                                                 children: "Book a Slot"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                                                lineNumber: 64,
+                                                lineNumber: 60,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                                            lineNumber: 63,
+                                            lineNumber: 59,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$components$2f$ui$2f$tooltip$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TooltipContent"], {
@@ -478,18 +478,18 @@ function NavBar() {
                                                 children: "coming soon"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                                                lineNumber: 67,
+                                                lineNumber: 63,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                                            lineNumber: 66,
+                                            lineNumber: 62,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                                    lineNumber: 62,
+                                    lineNumber: 58,
                                     columnNumber: 18
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -497,13 +497,13 @@ function NavBar() {
                                     children: "Contact Me"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                                    lineNumber: 71,
+                                    lineNumber: 67,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                            lineNumber: 57,
+                            lineNumber: 53,
                             columnNumber: 17
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$components$2f$ui$2f$tooltip$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Tooltip"], {
@@ -513,17 +513,17 @@ function NavBar() {
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$languages$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Languages$3e$__["Languages"], {}, void 0, false, {
                                             fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                                            lineNumber: 75,
+                                            lineNumber: 71,
                                             columnNumber: 25
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                                        lineNumber: 75,
+                                        lineNumber: 71,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                                    lineNumber: 74,
+                                    lineNumber: 70,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$components$2f$ui$2f$tooltip$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TooltipContent"], {
@@ -531,18 +531,18 @@ function NavBar() {
                                         children: "coming soon"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                                        lineNumber: 78,
+                                        lineNumber: 74,
                                         columnNumber: 21
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                                    lineNumber: 77,
+                                    lineNumber: 73,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                            lineNumber: 73,
+                            lineNumber: 69,
                             columnNumber: 17
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -550,33 +550,33 @@ function NavBar() {
                             className: "hover:cursor-pointer border-3 border-zinc-400 dark:border-zinc-700",
                             children: theme === "dark" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sun$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Sun$3e$__["Sun"], {}, void 0, false, {
                                 fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                                lineNumber: 82,
+                                lineNumber: 78,
                                 columnNumber: 41
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$moon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Moon$3e$__["Moon"], {}, void 0, false, {
                                 fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                                lineNumber: 82,
+                                lineNumber: 78,
                                 columnNumber: 50
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                            lineNumber: 81,
+                            lineNumber: 77,
                             columnNumber: 17
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-                    lineNumber: 56,
+                    lineNumber: 52,
                     columnNumber: 13
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-            lineNumber: 36,
+            lineNumber: 32,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/Desktop/Website_dev/portfolio2.0/app/src/sections/NavBar.tsx",
-        lineNumber: 35,
+        lineNumber: 31,
         columnNumber: 9
     }, this);
 }
@@ -1034,7 +1034,7 @@ function ServiceSection() {
                                         lineNumber: 92,
                                         columnNumber: 17
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "text-2xl md:text-3xl",
                                         children: activeService.heading
                                     }, void 0, false, {
@@ -1051,7 +1051,7 @@ function ServiceSection() {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "flex gap-18 max-w-2xl",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "max-w-[500px] text-zinc-400 ",
                                         children: activeService.subtext
                                     }, void 0, false, {
@@ -1301,7 +1301,7 @@ function Footer() {
                                 'Contact'
                             ].map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Website_dev$2f$portfolio2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                        href: "#",
+                                        href: `#${item.toLowerCase()}`,
                                         className: "transition hover:text-black",
                                         children: item
                                     }, void 0, false, {
