@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 export default function NavBar(){
     const {theme, setTheme} = useTheme()
     const [mounted, setMounted] = useState(false)
-
+    const [currTime, setCurrTime] = useState("")    
     useEffect(() => setMounted(true),[])
 
     const handleThemeToggle = () => {
@@ -21,11 +21,26 @@ export default function NavBar(){
 
 
 
-    const currTime = new Intl.DateTimeFormat("en-IN", {
+
+
+
+    useEffect(() => {
+        const currTime = () => new Intl.DateTimeFormat("en-IN", {
         timeZone: "Asia/Kolkata",
         hour: "2-digit",
         minute: "2-digit"
     }).format(new Date())
+
+    setCurrTime(currTime())
+
+    const interval = setInterval(() => {
+        setCurrTime(currTime())
+    },1000)
+
+
+    return () => clearInterval(interval)
+
+    },[])
 
     return(
         <section className="fixed top-0 flex justify-center items-center w-screen z-50 bg-white dark:bg-zinc-900 border border-b-zinc-100 dark:border-b-zinc-800 shadow-lg shadow-zinc-200 dark:shadow-zinc-800 ">
