@@ -1,4 +1,5 @@
 import ListingCard from "@/app/components/ListingCard"
+import { link } from "fs"
 import { Pickaxe } from "lucide-react"
 import { ReactElement } from "react"
 
@@ -27,7 +28,8 @@ const experienceList = [
     {
         heading: "Frontend Development Trvalr",
         subtext:"August 2025 - January 2026",
-        logo:<Pickaxe size={45} className={ICON_CLASS}/>
+        logo:<Pickaxe size={45} className={ICON_CLASS}/>,
+        link: true
     },
     {
         heading: "Web Development freelancer",

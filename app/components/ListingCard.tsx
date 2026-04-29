@@ -1,3 +1,4 @@
+import { LinkPreview } from "@/components/ui/link-preview"
 import { Separator } from "@/components/ui/separator"
 import { MoveUpRight } from "lucide-react"
 import React, { ReactElement } from "react"
@@ -35,12 +36,15 @@ function SkillCard({logo, heading, subtext}:SkillCardProps){
     )
 }
 
-function SkillCardLinked({logo, heading, subtext}:SkillCardProps){
+function SkillCardLinked({logo, heading, subtext, link}:SkillCardProps){
     return(
         <div className="flex justify-center items-center gap-4 py-8 ">
             {logo}
             <div className="flex flex-col justify-center items-start w-[300px] md:w-[500px]">
                 <span className="flex justify-between items-center text-xl md:text-2xl w-full">{heading}
+                    {link ? <LinkPreview
+          url="www.google.com"
+        >Hi </LinkPreview>: null}
                     <MoveUpRight size={30} className="p-2 rounded-full bg-zinc-200 dark:bg-zinc-800"/></span>
                 <span className="text-xs md:text-sm">{subtext}</span>
             </div>
