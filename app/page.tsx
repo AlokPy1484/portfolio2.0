@@ -12,15 +12,20 @@ import Footer from "./src/sections/Footer";
 
 export default function Home() {
   return (
-    <div className="bg-white dark:bg-zinc-900">
+    <div className="bg-white dark:bg-black"
+          style={{
+  backgroundColor: "#000000",
+  backgroundImage: "radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)",
+  backgroundSize: "40px 40px",
+}}>
       <NavBar/>
       <HeroSection/>
       <ExperienceAndSkills/>
       <ShowcaseSection/>
       <RecentBlogsSection/>
+      <TestimonialSection/>
       <PortfolioWork/> 
       {/* <Contributions/> */}
-      <TestimonialSection/>
       <ContactSection/>
       <Footer/>
     </div>

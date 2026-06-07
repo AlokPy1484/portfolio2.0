@@ -28,7 +28,7 @@ const testimonials = [
 export default function TestimonialSection(){
 
     return(
-        <section className="flex justify-center w-full mt-30">
+        <section className="flex justify-center w-full my-30">
             <div className="w-full max-w-7xl px-4">
                 <h1 className="text-5xl">What clients says</h1>
                  <Marquee pauseOnHover className="[--duration:35s] mt-20">
