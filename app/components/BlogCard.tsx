@@ -22,10 +22,10 @@ export default function BlogCard({heading, date, views, image, link}:BlogCardPro
                 <h1 className="text-xl font-medium">Dear Indian Students</h1>
                 <div className="flex flex-row justify-between gap-8 w-full text-sm">
                     <a>Why most indian students stays average despite wanting extraordinary results.</a>
-                    <div className="flex justify-start items-center gap-2">Read More <ArrowRight className="w-6 h-4"/></div>
                 </div>
-                <div className="flex justify-start items-center gap-2">
-                    <Calendar className="w-4 h-4"/> June 6, 2026
+                <div className="flex justify-between gap-8 w-full items-center gap-2">
+                   <div className="flex justify-start items-center gap-4"><Calendar className="w-4 h-4"/> June 6, 2026</div> 
+                    <div className="flex justify-start items-center gap-2">Read More <ArrowRight className="w-6 h-4"/></div>
                 </div>
 
             </div>

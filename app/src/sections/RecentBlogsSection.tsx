@@ -26,7 +26,7 @@ export default function RecentBlogsSection(){
 
     return(
             <div className="flex justify-center items-center w-full h-full ">
-            <div className="flex justify-center items-center md:w-[56vw] h-full my-20 p-2 bg-black border border-neutral-900"
+            <div className="flex justify-center items-center md:w-[90vw] h-full my-4 p-2 bg-black border border-neutral-900"
 style={{
   backgroundImage:
     "repeating-linear-gradient(135deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.1) 1px, transparent 1px, transparent 5px)",
@@ -43,7 +43,7 @@ style={{
             <Button><a href="https://alokpydeepdive01.hashnode.dev" target="*">View all</a></Button>
             </div>
         </div>
-        <div className="flex flex-col justify-between items-center gap-8 md:gap-12 p-4 w-full">
+        <div className="flex flex justify-between items-center gap-8 md:gap-12 p-4 w-full">
             {Blogs.map((blog, index) => (
                 <BlogCard key={index} heading={blog.heading} date={blog.date} views={blog.views} image={blog.image} link={blog.link}/>
             ))}

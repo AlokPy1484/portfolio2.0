@@ -23,8 +23,8 @@ export default function Home() {
       <ExperienceAndSkills/>
       <ShowcaseSection/>
       <RecentBlogsSection/>
-      <TestimonialSection/>
       <PortfolioWork/> 
+      <TestimonialSection/>
       {/* <Contributions/> */}
       <ContactSection/>
       <Footer/>

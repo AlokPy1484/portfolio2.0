@@ -46,13 +46,20 @@ export function Marquee({
     <div
       {...props}
       className={cn(
-        "group flex [gap:var(--gap)] overflow-hidden p-2 [--duration:40s] [--gap:1rem]",
+        "group flex [gap:var(--gap)] overflow-hidden p-2 [--duration:40s] [--gap:1rem] ",
         {
           "flex-row": !vertical,
           "flex-col": vertical,
         },
         className
       )}
+      
+style={{
+  WebkitMaskImage:
+    "linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)",
+  maskImage:
+    "linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)",
+}}
     >
       {Array(repeat)
         .fill(0)
@@ -65,6 +72,7 @@ export function Marquee({
               "group-hover:[animation-play-state:paused]": pauseOnHover,
               "[animation-direction:reverse]": reverse,
             })}
+
           >
             {children}
           </div>

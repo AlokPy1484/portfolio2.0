@@ -8,14 +8,17 @@ import { ReactElement } from "react"
 export default function ExperienceAndSkills(){
 
     return(
-        <section
-                style={{
+        <section className="relative flex flex-row justify-center w-full h-full">
+            <div className="absolute inset-0 w-full h-full"
+                            style={{
   backgroundColor: "#000000",
   backgroundImage: "radial-gradient(rgba(255,255,255,0.4) 0.6px, transparent 1px)",
   backgroundSize: "18px 18px",
-}}
-         className="flex flex-row justify-center w-full h-full">
-                <div className="flex justify-center items-start w-[90vw] h-fit  p-2 bg-black "
+  maskImage: "linear-gradient(to bottom, black 0%, transparent 100%)",
+  WebkitMaskImage: "linear-gradient(to bottom, black 0%, transparent 100%)",
+}}></div>
+
+                <div className="flex justify-center items-start w-[90vw] h-fit  p-2 bg-black z-10"
 style={{
   backgroundImage:
     "repeating-linear-gradient(135deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.1) 1px, transparent 1px, transparent 5px)",
@@ -24,7 +27,7 @@ style={{
             style={{
   backgroundImage:
     "repeating-linear-gradient(to right, rgba(255,255,255,0.05) 0, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 100px)",
-}} className="flex flex-col md:flex-row justify-center md:justify-between items-cente w-full bg-black">
+}} className="flex flex-col md:flex-row justify-center md:justify-between items-cente w-full bg-black z-10">
                 <ListingCard heading={"Work experience"} datas={experienceList} varient="linked"/>
                 <ListingCard heading={"Skills and Tech Stack"} datas={skillList} varient="linked"/>
             </div>

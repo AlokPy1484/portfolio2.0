@@ -9,6 +9,7 @@ import Service3 from '../../assets/Service3.png'
 import React, { useEffect } from "react";
 import Autoplay from "embla-carousel-autoplay"
 import type { EmblaCarouselType } from 'embla-carousel'
+import { AsciiArt } from "@/components/ui/ascii-art";
 
 
 type ShowcaseSectionProps = {

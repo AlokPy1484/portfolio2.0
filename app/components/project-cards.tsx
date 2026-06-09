@@ -37,7 +37,7 @@ export default function ProjectCard(){
 
     return(
 
-        <div className="flex flex-col justify-start items-center gap-2 md:w-[350px] h-auto border border-neutral-900 bg-neutral-950 rounded-2xl overflow-hidden"
+        <div className="flex flex-col justify-start items-center gap-2 md:w-[550px] h-auto border border-neutral-900 bg-neutral-950 rounded-2xl overflow-hidden"
           style={{
   backgroundImage:
     "repeating-linear-gradient(135deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.05) 0.01px, transparent 0.5px, transparent 50px),repeating-linear-gradient(45deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.05) 0.01px, transparent 0.5px, transparent 50px)",
