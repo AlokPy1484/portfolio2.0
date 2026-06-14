@@ -1,7 +1,6 @@
 "use client"
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-
 import { Languages, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
@@ -20,7 +19,6 @@ export default function NavBar(){
     }
 
 
-
     const currTime = new Intl.DateTimeFormat("en-IN", {
         timeZone: "Asia/Kolkata",
         hour: "2-digit",
@@ -35,7 +33,8 @@ export default function NavBar(){
         <section
         style={{
   backgroundImage:
-    "repeating-linear-gradient(135deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.1) 1px, transparent 1px, transparent 5px)",
+    theme === "dark" ? "repeating-linear-gradient(135deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.1) 1px, transparent 1px, transparent 5px)" : 
+    "repeating-linear-gradient(135deg, rgba(0,0,0,0.1) 0px, rgba(255,255,255,0.1) 1px, transparent 1px, transparent 5px)"
 }}
  className="fixed top-0 flex justify-center items-center w-screen z-50 bg-white dark:bg-transparent backdrop-blur-xs border border-b-zinc-100 dark:border-b-zinc-800 dark:shadow-zinc-800 ">
             <div className="flex justify-between items-center w-7xl p-4">
@@ -66,10 +65,11 @@ export default function NavBar(){
                 </div>
                  <Tooltip>
                 <TooltipTrigger asChild>
-                <Button         
-                    style={{
-                        backgroundImage: "repeating-linear-gradient(135deg, rgba(0,0,0,0.6) 0.5px, rgba(0,0,0,0.6) 1px, transparent 1px, transparent 6px)",}}
-                    className="bg-black dark:bg-white  hover:cursor-pointer rounded-none text-black px-4">
+                <Button 
+                 style={{
+                        backgroundImage: theme == "dark" ? "repeating-linear-gradient(135deg, rgba(0,0,0,0.6) 0.5px, rgba(0,0,0,0.6) 1px, transparent 1px, transparent 6px)" : "repeating-linear-gradient(135deg, rgba(255,255,255,0.6) 0.5px, rgba(255,255,255,0.6) 1px, transparent 1px, transparent 6px)" ,}}        
+
+                    className="bg-black dark:bg-white  hover:cursor-pointer rounded-none text-white dark:text-black px-4">
                         Book a Slot
                 </Button>
                 </TooltipTrigger>
@@ -80,22 +80,34 @@ export default function NavBar(){
                 
                                 <Button         
                     style={{
-                        backgroundImage: "repeating-linear-gradient(135deg, rgba(0,0,0,0.6) 0.5px, rgba(0,0,0,0.6) 1px, transparent 1px, transparent 6px)",}}
-                    className="bg-black dark:bg-white  hover:cursor-pointer rounded-none text-black px-4">
+                        backgroundImage: theme == "dark" ? "repeating-linear-gradient(135deg, rgba(0,0,0,0.6) 0.5px, rgba(0,0,0,0.6) 1px, transparent 1px, transparent 6px)" : "repeating-linear-gradient(135deg, rgba(255,255,255,0.6) 0.5px, rgba(255,255,255,0.6) 1px, transparent 1px, transparent 6px)" ,}}        
+                    className="bg-black dark:bg-white  hover:cursor-pointer rounded-none text-white dark:text-black px-4">
                         Contact Me
                 </Button>
                 </div>
                 <Tooltip>
                 <TooltipTrigger asChild>
-                <Button><Languages/></Button>
+                <Button style={{
+                        backgroundImage: theme == "dark" ? "repeating-linear-gradient(135deg, rgba(0,0,0,0.6) 0.5px, rgba(0,0,0,0.6) 1px, transparent 1px, transparent 6px)" : "repeating-linear-gradient(135deg, rgba(255,255,255,0.6) 0.5px, rgba(255,255,255,0.6) 1px, transparent 1px, transparent 6px)" ,}}        
+                        className="rounded-none"><Languages/></Button>
                 </TooltipTrigger>
                 <TooltipContent>
                     <span>coming soon</span>
                 </TooltipContent>
                 </Tooltip>
-                <Button onClick={handleThemeToggle} className="hover:cursor-pointer border-3 border-zinc-400 dark:border-zinc-700">
+                 <Tooltip>
+                <TooltipTrigger asChild>
+                <Button 
+                style={{
+                        backgroundImage: theme == "dark" ? "repeating-linear-gradient(135deg, rgba(0,0,0,0.6) 0.5px, rgba(0,0,0,0.6) 1px, transparent 1px, transparent 6px)" : "repeating-linear-gradient(135deg, rgba(255,255,255,0.6) 0.5px, rgba(255,255,255,0.6) 1px, transparent 1px, transparent 6px)" ,}}        
+                className="hover:cursor-pointer rounded-none h-full py-[10px]">
                    { theme === "dark" ? <Sun/> : <Moon/>}
                     </Button>
+                    </TooltipTrigger>
+                <TooltipContent>
+                    <span>coming soon</span>
+                </TooltipContent>
+                </Tooltip>
             </div>
             </div>
         </section>

@@ -6,9 +6,14 @@ import {motion} from "motion/react"
  
 
 
+interface StackButtonProps  {
+    logoLink: string,
+    name: string
+}
 
 
-export default function StackButton(props){
+
+export default function StackButton(props:StackButtonProps){
 
 
     return(

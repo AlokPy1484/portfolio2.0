@@ -36,6 +36,10 @@ export default function TestimonialSection(){
                     {testimonials.map((testimonial) => (
                         <div 
                         className="relative w-[300px] md:w-[350px] max-w-full shrink-0 rounded-2xl border border-b-0 border-zinc-900/10 dark:border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(243,244,246,0.9))] dark:bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))] px-8 py-6 md:w-[450px] backdrop-blur-2xl bg-black"
+                                  style={{
+  backgroundImage:
+    "repeating-linear-gradient(135deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.05) 0.01px, transparent 0.5px, transparent 50px),repeating-linear-gradient(45deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.05) 0.01px, transparent 0.5px, transparent 50px)",
+}}
                         key={testimonial.name}>
                                     <blockquote>
                                     <div

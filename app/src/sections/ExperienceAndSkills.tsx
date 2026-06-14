@@ -1,5 +1,6 @@
 import ListingCard from "@/app/components/ListingCard"
 import { Pickaxe } from "lucide-react"
+import { useTheme } from "next-themes"
 import { ReactElement } from "react"
 
 
@@ -7,18 +8,36 @@ import { ReactElement } from "react"
 
 export default function ExperienceAndSkills(){
 
+    const {theme} = useTheme()
+
     return(
         <section className="relative flex flex-row justify-center w-full h-full">
             <div className="absolute inset-0 w-full h-full"
-                            style={{
-  backgroundColor: "#000000",
-  backgroundImage: "radial-gradient(rgba(255,255,255,0.4) 0.6px, transparent 1px)",
-  backgroundSize: "18px 18px",
-  maskImage: "linear-gradient(to bottom, black 0%, transparent 100%)",
-  WebkitMaskImage: "linear-gradient(to bottom, black 0%, transparent 100%)",
-}}></div>
+                           style={
+  theme === "dark"
+    ? {
+        backgroundColor: "#000000",
+        backgroundImage:
+          "radial-gradient(rgba(255,255,255,0.4) 0.6px, transparent 1px)",
+        backgroundSize: "18px 18px",
+        maskImage:
+          "linear-gradient(to bottom, black 0%, transparent 100%)",
+        WebkitMaskImage:
+          "linear-gradient(to bottom, black 0%, transparent 100%)",
+      }
+    : {
+        backgroundColor: "#ffffff",
+        backgroundImage:
+          "radial-gradient(rgba(0,0,0,0.15) 0.6px, transparent 1px)",
+        backgroundSize: "18px 18px",
+        maskImage:
+          "linear-gradient(to bottom, black 0%, transparent 100%)",
+        WebkitMaskImage:
+          "linear-gradient(to bottom, black 0%, transparent 100%)",
+      }
+}></div>
 
-                <div className="flex justify-center items-start w-[90vw] h-fit  p-2 bg-black z-10"
+                <div className="flex justify-center items-start w-[85vw] h-fit  p-2 bg-white dark:bg-black z-10"
 style={{
   backgroundImage:
     "repeating-linear-gradient(135deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.1) 1px, transparent 1px, transparent 5px)",
@@ -27,7 +46,7 @@ style={{
             style={{
   backgroundImage:
     "repeating-linear-gradient(to right, rgba(255,255,255,0.05) 0, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 100px)",
-}} className="flex flex-col md:flex-row justify-center md:justify-between items-cente w-full bg-black z-10">
+}} className="flex flex-col md:flex-row justify-center md:justify-between items-cente w-full bg-white dark:bg-black z-10">
                 <ListingCard heading={"Work experience"} datas={experienceList} varient="linked"/>
                 <ListingCard heading={"Skills and Tech Stack"} datas={skillList} varient="linked"/>
             </div>
