@@ -32,7 +32,12 @@ export default function ContactCard(){
 
 
     return(
-        <Card className="w-full md:max-w-3xl">
+
+        <div style={{
+  backgroundImage:
+    "repeating-linear-gradient(135deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.1) 1px, transparent 1px, transparent 5px)",
+}} className="p-2 bg-black">
+        <Card className="w-full md:max-w-3xl bg-black border-none rounded-none">
              <CardHeader>
             <CardTitle className="flex justify-center text-3xl font-bold w-full">Contact Us</CardTitle>
             <CardDescription className="flex justify-center  w-full text-sm text-zinc-500">Let's build something greate together</CardDescription>
@@ -46,7 +51,7 @@ export default function ContactCard(){
                      <span className="font-medium">Select a service</span>
                      <div className="flex flex-wrap gap-2 max-w-[400px]">
                      {services.map((service) => (
-                        <Button className="flex  p-2 bg-zinc-100 rounded-2xl text-sm text-black hover:bg-blue-200 dark:bg-zinc-800 dark:text-white/80">{service.service}</Button>
+                        <Button className="flex  p-1 bg-neutral-100 rounded-none border border-dashed text-sm text-black hover:bg-blue-200 dark:bg-neutral-900 dark:text-white/80">{service.service}</Button>
                      ))}
                 </div>
                 </div>
@@ -57,12 +62,16 @@ export default function ContactCard(){
 
             </CardContent>
             <CardFooter>
-                <Button className=" p-6 w-full dark:bg-white">
-                    <span className="flex justify-center items-center gap-2 text-2xl font-light ">Get Quatation</span>
+                <Button className=" p-6 w-full dark:bg-white rounded-none"                             
+                style={{
+                                backgroundImage: "repeating-linear-gradient(135deg, rgba(0,0,0,0.6) 0.5px, rgba(0,0,0,0.6) 1px, transparent 1px, transparent 6px)",}}>
+                    <span className="flex justify-center items-center gap-2 text-2xl font-light "
+                    >Get Quatation</span>
                 </Button>
             </CardFooter>
 
         </Card>
+        </div>
     )
 }
 

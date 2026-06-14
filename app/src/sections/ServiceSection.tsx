@@ -9,6 +9,7 @@ import Service3 from '../../assets/Service3.png'
 import React, { useEffect } from "react";
 import Autoplay from "embla-carousel-autoplay"
 import type { EmblaCarouselType } from 'embla-carousel'
+import { AsciiArt } from "@/components/ui/ascii-art";
 
 
 type ShowcaseSectionProps = {
@@ -22,7 +23,7 @@ export default function ServiceSection(){
 const ServieList = [
     {   
         id: "landing",
-        heading: "Landing Page development",
+        heading: "Landing Page development and page SEO optimization",
         subtext: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt porro ullam nisi, itaque velit at perferendis vitae neque. Eum, officia.",
         image: {Service1}
     },
@@ -40,7 +41,7 @@ const ServieList = [
     },
     {
         id: "refactor",
-        heading: "Landing Page development",
+        heading: "Landing Page development and page SEO optimization",
         subtext: "I make landing page for your business to make your bussiness look professional and improve visibility of your busisness.",
         image: {Service1}
     }
@@ -90,7 +91,7 @@ const ServieList = [
             <div key={activeService.id} className="flex flex-col md:flex-row justify-between items-center w-full animate-in fade-in-10 duration-1000">
                 <div className="flex justify-center items-center gap-6">
                 <Laptop  size={40} className="flex p-2 rounded-full bg-zinc-200 dark:bg-zinc-800"/>
-                <span className="text-2xl md:text-3xl">{activeService.heading}</span>
+                <span className="text-xl md:text-3xl font-medium">{activeService.heading}</span>
                 </div>
                 <div className="flex gap-18 max-w-2xl">
                     <span className="max-w-[500px] text-zinc-400 ">

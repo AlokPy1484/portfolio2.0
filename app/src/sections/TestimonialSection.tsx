@@ -28,13 +28,18 @@ const testimonials = [
 export default function TestimonialSection(){
 
     return(
-        <section className="flex justify-center w-full mt-30">
+        <section className="flex justify-center w-full my-30">
             <div className="w-full max-w-7xl px-4">
                 <h1 className="text-5xl">What clients says</h1>
-                 <Marquee pauseOnHover className="[--duration:35s] mt-20">
+                 <Marquee pauseOnHover className="relative [--duration:35s] mt-20">
+
                     {testimonials.map((testimonial) => (
                         <div 
-                        className="relative w-[300px] md:w-[350px] max-w-full shrink-0 rounded-2xl border border-b-0 border-zinc-900/10 dark:border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(243,244,246,0.9))] dark:bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))] px-8 py-6 md:w-[450px] backdrop-blur-sm"
+                        className="relative w-[300px] md:w-[350px] max-w-full shrink-0 rounded-2xl border border-b-0 border-zinc-900/10 dark:border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(243,244,246,0.9))] dark:bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))] px-8 py-6 md:w-[450px] backdrop-blur-2xl bg-black"
+                                  style={{
+  backgroundImage:
+    "repeating-linear-gradient(135deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.05) 0.01px, transparent 0.5px, transparent 50px),repeating-linear-gradient(45deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.05) 0.01px, transparent 0.5px, transparent 50px)",
+}}
                         key={testimonial.name}>
                                     <blockquote>
                                     <div

@@ -6,7 +6,12 @@ export default function Footer() {
   return (
     <footer className="relative px-6 pt-24 pb-10 text-black">
       {/* Subtle top divider */}
-      <div className="absolute inset-x-0 top-0 h-px bg-white/10" />
+      <div className="absolute inset-x-0 top-0 h-[5px] bg-black"
+      style={{
+  backgroundImage:
+    "repeating-linear-gradient(135deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.1) 1px, transparent 1px, transparent 5px)",
+}} />
+      
 
       <div className="mx-auto max-w-7xl">
         {/* Top row */}
