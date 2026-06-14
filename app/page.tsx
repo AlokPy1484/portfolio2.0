@@ -33,7 +33,11 @@ function ThemeLogger() {
 // ThemeLogger()
 
 
-  const { theme, resolvedTheme, systemTheme } = useTheme();
+  const {setTheme, theme, resolvedTheme, systemTheme } = useTheme();
+
+useEffect(() => {
+  setTheme("dark")
+}, [])
 
   return (
     <div className="bg-white dark:bg-black"

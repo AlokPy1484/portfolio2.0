@@ -20,7 +20,7 @@ export default function HeroSection(){
   <DotField
 
 />
-<div className="flex justify-center bg-black">
+<div className="flex justify-center dark:bg-black">
 
               <DotField
 />
@@ -43,10 +43,10 @@ export default function HeroSection(){
                     <span className="md:text-3xl text-zinc-500">Passionate developer building websites</span>
                     <div className="flex justify-between md:justify-start gap-8 px-8 md:px-0 pt-4 w-full"> 
                         <PortfolioButton varient="outline">
-                            <a className="text-xl">See my work </a>    
+                            <a className="md:text-xl">See my work </a>    
                         </PortfolioButton>
                         <PortfolioButton varient="outline">
-                            <a className="text-xl">Book a meeting </a>    
+                            <a className="md:text-xl">Book a meeting </a>    
                         </PortfolioButton>
                     </div>
                 </div>

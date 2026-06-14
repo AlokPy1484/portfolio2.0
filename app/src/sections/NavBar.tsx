@@ -98,6 +98,7 @@ export default function NavBar(){
                  <Tooltip>
                 <TooltipTrigger asChild>
                 <Button 
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 style={{
                         backgroundImage: theme == "dark" ? "repeating-linear-gradient(135deg, rgba(0,0,0,0.6) 0.5px, rgba(0,0,0,0.6) 1px, transparent 1px, transparent 6px)" : "repeating-linear-gradient(135deg, rgba(255,255,255,0.6) 0.5px, rgba(255,255,255,0.6) 1px, transparent 1px, transparent 6px)" ,}}        
                 className="hover:cursor-pointer rounded-none h-full py-[10px]">
