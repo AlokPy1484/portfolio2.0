@@ -85,19 +85,19 @@ const experienceList = [
 const skillList = [
   {
     heading: "Frontend Development ",
-    subtext: "ReactJS, NextJS, Tailwind CSS, ShadCN, Zustand.....",
+    subtext: "ReactJS, NextJS, Tailwind CSS",
     logo: <Pickaxe size={45} strokeWidth={2} className={ICON_CLASS}
     />
   },
   {
     heading: "Backend Systems Development",
-    subtext: "NodeJS, Django, DRF, Postgres, Prisma, Supabase....",
+    subtext: "NodeJS, Django DRF",
     logo: <Pickaxe size={45} strokeWidth={2} className={ICON_CLASS}
     />
   },
   {
     heading: "CI/CD and Automation",
-    subtext: "Docker, AWS, Netlify, Github Actions, Cypress....",
+    subtext: "Docker, AWS, Netlify",
     logo: <Pickaxe size={45} strokeWidth={2} className={ICON_CLASS}
     />
   }

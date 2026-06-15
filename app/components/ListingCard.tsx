@@ -43,7 +43,7 @@ function SkillCardLinked({ logo, heading, subtext }: SkillCardProps) {
                 <span className="flex justify-between items-center text-[18px] md:text-xl md:text-2xl w-full">{heading}
                     {/* <MoveUpRight size={30} className="p-2 rounded-full bg-zinc-200 dark:bg-zinc-900"/> */}
                 </span>
-                <span className="hidden md:block md:text-sm">{subtext}</span>
+                <span className="text-xs md:text-sm">{subtext}</span>
             </div>
         </div>
 
@@ -58,10 +58,9 @@ export default function ListingCard({ heading, datas, varient }: ListingCardProp
         <div className="flex flex-col justify-center items-start p-4">
             <h1 className="text-5xl mb-18">{heading}</h1>
             {datas.map((data, index) => (
-                <div>
+                <div className="flex divide-x divide-neutral-600">
                     {varient === "linked" ? <SkillCardLinked key={index} logo={data.logo} heading={data.heading} subtext={data.subtext} /> :
                         <SkillCard key={index} logo={data.logo} heading={data.heading} subtext={data.subtext} />}
-                    {index + 1 !== datas.length && <Separator />}
                 </div>
             ))}
 
