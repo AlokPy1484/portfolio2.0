@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import blog1 from "../../assets/blog1.webp"
 import blog2 from "../../assets/blog2.jpg"
 import Image from "next/image";
+import { getStripedBackground } from "@/app/background-style";
+import { useTheme } from "next-themes";
 
 
 const Blogs = [{
@@ -19,18 +21,17 @@ const Blogs = [{
 }
 ]
 
+
 export default function RecentBlogsSection() {
 
+    const { theme } = useTheme()
 
     return (
         <div className="flex  justify-center items-center w-full h-full mt-30 ">
-            <div className="flex justify-center items-center md:w-[90vw] h-full my-4 p-2 bg-black border border-neutral-900"
-                style={{
-                    backgroundImage:
-                        "repeating-linear-gradient(135deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.05) 0.01px, transparent 0.5px, transparent 50px),repeating-linear-gradient(45deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.05) 0.01px, transparent 0.5px, transparent 50px)",
-                }}>
+            <div className="flex justify-center items-center md:w-[90vw] h-full my-4 p-2 "
+                style={getStripedBackground(theme)}>
 
-                <div className="flex flex-col  justify-center md:items-start items-center gap-8 p-4 w-full h-full  bg-black border border-neutral-900"
+                <div className="flex flex-col  justify-center md:items-start items-center gap-8 p-4 w-full h-full bg-white  dark:bg-black "
                     style={{
                         backgroundImage:
                             "repeating-linear-gradient(to right, rgba(255,255,255,0.05) 0, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 100px)",

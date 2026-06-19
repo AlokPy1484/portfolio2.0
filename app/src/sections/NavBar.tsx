@@ -63,21 +63,15 @@ export default function NavBar() {
                             <span className="font-bold">Pune,India</span>
                             <span>{currTime}</span>
                         </div>
-                        <Tooltip>
-                            <TooltipTrigger asChild className="hidden md:block">
-                                <Button
-                                    style={{
-                                        backgroundImage: theme == "dark" ? "repeating-linear-gradient(135deg, rgba(0,0,0,0.6) 0.5px, rgba(0,0,0,0.6) 1px, transparent 1px, transparent 6px)" : "repeating-linear-gradient(135deg, rgba(255,255,255,0.6) 0.5px, rgba(255,255,255,0.6) 1px, transparent 1px, transparent 6px)",
-                                    }}
+                        <Button
+                            style={{
+                                backgroundImage: theme == "dark" ? "repeating-linear-gradient(135deg, rgba(0,0,0,0.6) 0.5px, rgba(0,0,0,0.6) 1px, transparent 1px, transparent 6px)" : "repeating-linear-gradient(135deg, rgba(255,255,255,0.6) 0.5px, rgba(255,255,255,0.6) 1px, transparent 1px, transparent 6px)",
+                            }}
 
-                                    className="bg-black dark:bg-white  hover:cursor-pointer rounded-none text-white dark:text-black px-4">
-                                    Book a Slot
-                                </Button>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                                <span>coming soon</span>
-                            </TooltipContent>
-                        </Tooltip>
+                            className="bg-black dark:bg-white  hover:cursor-pointer rounded-none text-white dark:text-black px-4">
+                            Book a Slot
+                        </Button>
+
 
                         <Button
                             style={{

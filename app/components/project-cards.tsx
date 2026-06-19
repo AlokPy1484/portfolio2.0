@@ -8,6 +8,8 @@ import StackButton from "../components/StackButton";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import type { StaticImageData } from "next/image";
 import { strict } from "assert";
+import { getCrossPatternBackground } from "../background-style";
+import { useTheme } from "next-themes";
 
 type ShowcaseProps = {
   title: string,
@@ -51,20 +53,18 @@ export default function ProjectCard(props: ShowcaseProps) {
     }
   ]
 
+  const { theme } = useTheme()
 
   return (
 
-    <div className="flex flex-col justify-start items-center gap-2 md:w-[550px] h-auto border border-neutral-900 bg-neutral-950 rounded-2xl overflow-hidden"
-      style={{
-        backgroundImage:
-          "repeating-linear-gradient(135deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.05) 0.01px, transparent 0.5px, transparent 50px),repeating-linear-gradient(45deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.05) 0.01px, transparent 0.5px, transparent 50px)",
-      }}>
+    <div className="flex flex-col justify-start items-center gap-2 md:w-[550px] h-auto border  dark:border-neutral-900 bg-neutral-100 dark:bg-neutral-950 rounded-2xl overflow-hidden "
+      style={getCrossPatternBackground(theme)}>
 
       <Image src={props.image} alt="image" width={350} height={200} className="z-10 object-fill w-full" />
 
 
-      <div className="flex flex-col justify-start items-start gap-4 w-full p-4 text-white">
-        <div className="flex justify-between items-center w-full ">
+      <div className="flex flex-col justify-start items-start gap-4 w-full p-4 text-black dark:text-white border-t border dark:border-none">
+        <div className="flex justify-between items-center w-full  ">
           <h1 className="text-lg">{props.title}</h1>
           <div className="flex justify-end items-center text-neutral-600 gap-2">
             <Tooltip>
@@ -88,7 +88,7 @@ export default function ProjectCard(props: ShowcaseProps) {
 
           </div>
         </div>
-        <div className="w-full text-sm">
+        <div className="w-full text-sm ">
           {props.description}
         </div>
 

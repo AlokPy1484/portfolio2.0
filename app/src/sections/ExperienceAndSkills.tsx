@@ -1,3 +1,4 @@
+import { getStripedBackground } from "@/app/background-style"
 import ListingCard from "@/app/components/ListingCard"
 import { Pickaxe } from "lucide-react"
 import { useTheme } from "next-themes"
@@ -38,10 +39,7 @@ export default function ExperienceAndSkills() {
         }></div>
 
       <div className="flex justify-center items-start w-[85vw] h-fit  p-2 bg-white dark:bg-black z-10"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(135deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.1) 1px, transparent 1px, transparent 5px)",
-        }}>
+        style={getStripedBackground(theme)}>
         <div
           style={{
             backgroundImage:
