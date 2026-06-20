@@ -1,4 +1,5 @@
 import PortfolioCard from "@/app/components/PortfolioCard";
+import Showcase0 from '../../assets/Showcase0.png'
 import Showcase1 from '../../assets/Showcase1.png'
 import Showcase2 from '../../assets/Showcase2.png'
 import Showcase3 from '../../assets/Showcase3.png'
@@ -45,9 +46,9 @@ const Projects = [
   {
     title: "Blognest",
     description: "BlogNest is an innovative social networking app designed for creators to share stories, build communities, and engage with diverse audiences.",
-    image: Showcase3,
+    image: Showcase0,
     github: "https://github.com/AlokPy1484/BlogNestAPI",
-    link: "https://blog-nest-ui-98u2.vercel.app",
+    link: "https://blognest-ui-2.vercel.app",
     StackList: [
       {
         logoLink: "https://thesvg.org/icons/nextdotjs/default.svg",
