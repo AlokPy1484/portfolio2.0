@@ -1,3 +1,5 @@
+"use client"
+
 import BlogCard from "@/app/components/BlogCard";
 import { Button } from "@/components/ui/button";
 import blog1 from "../../assets/blog1.webp"
@@ -5,7 +7,8 @@ import blog2 from "../../assets/blog2.jpg"
 import Image from "next/image";
 import { getStripedBackground } from "@/app/background-style";
 import { useTheme } from "next-themes";
-
+import { useState } from "react";
+import { AnimatePresence, motion } from 'motion/react'
 
 const Blogs = [{
     heading: "GitHub for Beginners",
@@ -26,6 +29,8 @@ export default function RecentBlogsSection() {
 
     const { theme } = useTheme()
 
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+
     return (
         <div className="flex  justify-center items-center w-full h-full mt-30 ">
             <div className="flex justify-center items-center md:w-[90vw] h-full my-4 p-2 "
@@ -42,9 +47,24 @@ export default function RecentBlogsSection() {
                             <Button><a href="https://alokpydeepdive01.hashnode.dev" target="*">View all</a></Button>
                         </div>
                     </div>
-                    <div className="flex md:flex-row flex-col justify-between items-center gap-8 md:gap-12 p-4 w-full">
+                    <div className="flex md:flex-row flex-col justify-between items-center gap-8 md:gap-12 p-4 w-full "
+                        onMouseLeave={() => { setHoveredIndex(null) }}>
                         {Blogs.map((blog, index) => (
-                            <BlogCard key={index} heading={blog.heading} date={blog.date} link={blog.link} description={blog.description} />
+                            <div className="flex relative h-full w-full"
+                                onMouseEnter={() => setHoveredIndex(index)}
+
+                                key={index}>
+
+                                <AnimatePresence>
+                                    {hoveredIndex == index && (
+                                        <motion.div
+                                            layoutId="hover"
+                                            className="absolute inset-0 bg-neutral-900 rounded-md z-10"></motion.div>
+                                    )}
+
+                                </AnimatePresence>
+                                < BlogCard heading={blog.heading} date={blog.date} link={blog.link} description={blog.description} />
+                            </div>
                         ))}
                     </div>
                 </div>
