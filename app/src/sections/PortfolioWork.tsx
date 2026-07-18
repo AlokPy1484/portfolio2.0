@@ -60,11 +60,11 @@ const Projects = [
       },
       {
         logoLink: "https://thesvg.org/icons/tailwind-css/default.svg",
-        name: "Tailwind"
+        name: "Tailwind CSS"
       },
       {
         logoLink: "https://thesvg.org/icons/django/default.svg",
-        name: "Django"
+        name: "Django Rest Framewrok"
       }
     ]
   },
@@ -85,7 +85,7 @@ const Projects = [
       },
       {
         logoLink: "https://thesvg.org/icons/tailwind-css/default.svg",
-        name: "Tailwind"
+        name: "Tailwind CSS"
       }
     ]
   },
@@ -106,7 +106,7 @@ const Projects = [
       },
       {
         logoLink: "https://thesvg.org/icons/tailwind-css/default.svg",
-        name: "Tailwind"
+        name: "Tailwind CSS"
       },
       {
         logoLink: "https://thesvg.org/icons/nodedotjs/default.svg",
@@ -131,7 +131,7 @@ const Projects = [
       },
       {
         logoLink: "https://thesvg.org/icons/tailwind-css/default.svg",
-        name: "Tailwind"
+        name: "Tailwind CSS"
       }
     ]
   }

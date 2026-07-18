@@ -58,8 +58,9 @@ export default function RecentBlogsSection() {
                                 <AnimatePresence>
                                     {hoveredIndex == index && (
                                         <motion.div
+
                                             layoutId="hover"
-                                            className="absolute inset-0 bg-neutral-900 rounded-md z-10"></motion.div>
+                                            className="absolute inset-0 bg-neutral-900 rounded-md border border-dashed border-neutral-800 cursor-pointer   z-10"></motion.div>
                                     )}
 
                                 </AnimatePresence>

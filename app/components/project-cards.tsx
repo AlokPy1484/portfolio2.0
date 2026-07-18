@@ -37,11 +37,11 @@ export default function ProjectCard(props: ShowcaseProps) {
     },
     {
       logoLink: "https://thesvg.org/icons/typescript/default.svg",
-      name: "Typescript"
+      name: "Typescript CSS"
     },
     {
       logoLink: "https://thesvg.org/icons/tailwind-css/default.svg",
-      name: "Tailwind"
+      name: "Tailwind CSS"
     },
     {
       logoLink: "https://thesvg.org/icons/django/default.svg",
@@ -94,7 +94,7 @@ export default function ProjectCard(props: ShowcaseProps) {
 
         <div className="flex justify-start items-center gap-2 w-full flex-wrap">
           {props.StackList.map((stack) => (
-            <StackButton logoLink={stack.logoLink} name={stack.name} />
+            <StackButton logoLink={stack.logoLink} name={stack.name} size="" />
           ))}
         </div>
       </div>

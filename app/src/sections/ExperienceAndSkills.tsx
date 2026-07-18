@@ -6,6 +6,7 @@ import { ArrowBigRight, ChevronRight, MoveRight, Pickaxe } from "lucide-react"
 import { useTheme } from "next-themes"
 import { ReactElement, useState } from "react"
 import { motion } from "motion/react"
+import StackButton from "@/app/components/StackButton"
 
 
 
@@ -56,7 +57,7 @@ export default function ExperienceAndSkills() {
 
             </div>
             <div className="flex justify-center items-center text-sm md:text-lg gap-4">
-              <a className="min-w-[60px]">View All</a>
+              <a href="/work" className="min-w-[60px]">View All</a>
               <MoveRight />
             </div>
           </div>
@@ -69,7 +70,7 @@ export default function ExperienceAndSkills() {
                 {hoveredIndex === index && (
                   <motion.div
                     layoutId="hover"
-                    className="absolute inset-0 bg-neutral-950 rounded-md w-full z-10"
+                    className="absolute inset-0 bg-neutral-950 rounded-md w-full border border-dashed border-neutral-800 cursor-pointer z-10"
                   ></motion.div>
                 )}
                 <ExperienceCard
@@ -88,15 +89,18 @@ export default function ExperienceAndSkills() {
 }
 
 
-const ICON_CLASS =
-  "p-2 bg-black text-md md:text-xl dark:bg-black bg-white dark:text-white text-black"
-
+type StackItem = {
+  logoLink: string,
+  name: string
+}
 
 type experienceContentType = {
   duration: string,
   title: string,
   organization: string,
-  description: string
+  description: string,
+  stackList: StackItem[]
+
 }
 
 const experienceContent: experienceContentType[] = [
@@ -104,19 +108,75 @@ const experienceContent: experienceContentType[] = [
     duration: "August 2025 - January 2026",
     title: "Frontend Development Intern",
     organization: "Trvalrone Pvt Ltd.",
-    description: "Building scalable web applications with React, TypeScript, and Node. js. Developed and maintained client-facing features."
+    description: "Building scalable web applications with React, TypeScript, and Node. js. Developed and maintained client-facing features.",
+    stackList: [
+      {
+        logoLink: "https://thesvg.org/icons/nextdotjs/default.svg",
+        name: "Next.js"
+      },
+      {
+        logoLink: "https://thesvg.org/icons/typescript/default.svg",
+        name: "Typescript"
+      },
+      {
+        logoLink: "https://thesvg.org/icons/tailwind-css/default.svg",
+        name: "Tailwind CSS"
+      }, {
+        logoLink: "https://thesvg.org/icons/nodedotjs/default.svg",
+        name: "Node.js"
+      }
+    ]
   },
   {
     duration: "January 2025 - present",
     title: "Web Development freelancer",
     organization: "Upwork/Fiverr",
-    description: "Developed and maintained client-facing features. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+    description: "Developed and maintained client-facing features. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    stackList: [
+      {
+        logoLink: "https://thesvg.org/icons/nextdotjs/default.svg",
+        name: "Next.js"
+      },
+      {
+        logoLink: "https://thesvg.org/icons/typescript/default.svg",
+        name: "Typescript"
+      },
+      {
+        logoLink: "https://thesvg.org/icons/tailwind-css/default.svg",
+        name: "Tailwind CSS"
+      }, {
+        logoLink: "https://thesvg.org/icons/nodedotjs/default.svg",
+        name: "Node.js"
+      },
+      {
+        logoLink: "https://thesvg.org/icons/django/default.svg",
+        name: "Django Rest Framewrok"
+      }
+    ]
   },
   {
     duration: "September 2025 - present",
     title: "Open Source contributer",
     organization: "Rocket.Chat / Accord Project",
-    description: "Worked on UI components and internal tools. Deploying features and testing them for performance and scalability.  "
+    description: "Worked on UI components and internal tools. Deploying features and testing them for performance and scalability.  ",
+    stackList: [
+      {
+        logoLink: "https://thesvg.org/icons/nextdotjs/default.svg",
+        name: "Next.js"
+      },
+      {
+        logoLink: "https://thesvg.org/icons/typescript/default.svg",
+        name: "Typescript"
+      },
+      {
+        logoLink: "https://thesvg.org/icons/nodedotjs/default.svg",
+        name: "Node.js"
+      },
+      {
+        logoLink: "https://thesvg.org/icons/python/default.svg",
+        name: "Python"
+      }
+    ]
   }
 ]
 
@@ -129,8 +189,13 @@ const ExperienceCard = ({ experience }: { experience: experienceContentType }) =
         <a className="text-2xl"> {experience.title}</a>
         <a className="text-sm">{experience.organization}</a>
       </div>
-      <div className=" max-w-[500px] text-sm md:text-xl z-50">
+      <div className="flex flex-col justify-between items-start h-full gap-4 max-w-[500px] text-sm md:text-sm z-50">
         <a>{experience.description}</a>
+        <div className="flex flex-wrap gap-2">
+          {experience.stackList.map((item, idx) => (
+            <StackButton key={item.name} logoLink={item.logoLink} name={item.name} size="small" />
+          ))}
+        </div>
       </div>
 
     </div>
@@ -138,45 +203,3 @@ const ExperienceCard = ({ experience }: { experience: experienceContentType }) =
 }
 
 
-const experienceList = [
-  {
-    heading: "Frontend Development Trvalr",
-    subtext: "August 2025 - January 2026",
-    logo: <Pickaxe size={45} strokeWidth={2} className={ICON_CLASS}
-
-    />
-  },
-  {
-    heading: "Web Development freelancer",
-    subtext: "January 2025 - present",
-    logo: <Pickaxe size={45} strokeWidth={2} className={ICON_CLASS}
-    />
-  },
-  {
-    heading: "Open Source contributer",
-    subtext: "September 2025 - present",
-    logo: <Pickaxe size={45} strokeWidth={2} className={ICON_CLASS}
-    />
-  }
-]
-
-const skillList = [
-  {
-    heading: "Frontend Development ",
-    subtext: "ReactJS, NextJS, Tailwind CSS",
-    logo: <Pickaxe size={45} strokeWidth={2} className={ICON_CLASS}
-    />
-  },
-  {
-    heading: "Backend Systems Development",
-    subtext: "NodeJS, Django DRF",
-    logo: <Pickaxe size={45} strokeWidth={2} className={ICON_CLASS}
-    />
-  },
-  {
-    heading: "CI/CD and Automation",
-    subtext: "Docker, AWS, Netlify",
-    logo: <Pickaxe size={45} strokeWidth={2} className={ICON_CLASS}
-    />
-  }
-]

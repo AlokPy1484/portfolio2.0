@@ -3,12 +3,14 @@
 
 import Image from "next/image";
 import { motion } from "motion/react"
+import { cn } from "@/lib/utils";
 
 
 
 interface StackButtonProps {
     logoLink: string,
-    name: string
+    name: string,
+    size: string
 }
 
 
@@ -20,7 +22,7 @@ export default function StackButton(props: StackButtonProps) {
         <motion.div
 
             initial={
-                { width: 40 }
+                { ...(props.size === "small" ? { width: 30 } : { width: 40 }) }
             }
             whileHover={{
                 width: "auto"
@@ -31,11 +33,11 @@ export default function StackButton(props: StackButtonProps) {
             }}
 
 
-            className="group flex justify-center items-center h-[40px]  overflow-hidden p-1 bg-neutral-200/50 dark:bg-neutral-900 border border-dashed border-white dark:border-neutral-700 border-[1px] rounded-lg gap-2 px-2 cursor-pointer">
-            <Image src={props.logoLink} alt="logo" width={30} height={30} className=" rounded-full" />
+            className={cn(props.size === "small" ? "h-[30px] p-[4px]" : "h-[40px] p-2", "group flex justify-start  items-center overflow-hidden bg-neutral-200/50 dark:bg-neutral-900 border border-dashed border-white dark:border-neutral-700 border-[1px] rounded-lg gap-2  cursor-pointer")} >
+            <Image src={props.logoLink} alt="logo" width={props.size === "small" ? 20 : 30} height={props.size === "small" ? 20 : 30} className=" rounded-full" />
             <motion.span
-                className="font-light block opacity-0 group-hover:opacity-100 transition-all duration-300 text-[12px] line-clamp-1">
+                className="font-light block opacity-0 group-hover:opacity-100 transition-all duration-300 text-[12px] whitespace-nowrap">
                 {props.name}</motion.span>
-        </motion.div>
+        </motion.div >
     )
 }
