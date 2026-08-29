@@ -8,12 +8,12 @@ export default function ProjectSection() {
 
 
     return (
-        <div className="hero-container flex flex-col justify-start items-start gap-8  w-full max-w-2xl mt-12">
+        <div className="hero-container flex flex-col justify-start items-start gap-8  w-full max-w-2xl px-8 md:px-0 mt-20 md:mt-12">
             <div className="title-container flex justify-between items-end w-full">
                 <h1 className="text-sm font-">PROJECTS</h1>
-                <a href="#" className="text-xs font-">VIEW ALL</a>
+                <a href="/projects" className="text-xs font-">VIEW ALL</a>
             </div>
-            <div className="card-container flex justify-between items-center gap-4 w-full">
+            <div className="card-container flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4 w-full">
 
                 <div className="card flex flex-col justify-between items-center gap-4">
 
