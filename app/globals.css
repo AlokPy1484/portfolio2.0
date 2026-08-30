@@ -10,6 +10,7 @@
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
   --font-geist: var(--font-geist-sans);
+
   --font-heading: var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -84,6 +85,14 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+html[data-font="geist"] {
+  --font-site: var(--font-geist);
+}
+
+html[data-font="sans"] {
+  --font-site: var(--font-sans);
+}
+
 .dark {
   --background: oklch(20.5% 0 none);
   --foreground: oklch(97% 0 none);
@@ -118,6 +127,34 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+
+.theme-blue {
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+
+  --secondary: #dbeafe;
+  --secondary-foreground: #1e3a8a;
+}
+
+/* Green */
+.theme-green {
+  --primary: #22c55e;
+  --primary-foreground: #ffffff;
+
+  --secondary: #dcfce7;
+  --secondary-foreground: #166534;
+}
+
+/* Yellow */
+.theme-yellow {
+  --primary: #eab308;
+  --primary-foreground: #18181b;
+
+  --secondary: #fef9c3;
+  --secondary-foreground: #713f12;
+}
+
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -128,6 +165,8 @@
   }
 
   html {
-    @apply font-sans;
+    font-family: var(--font-site);
   }
+
+
 }

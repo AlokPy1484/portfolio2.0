@@ -1,6 +1,8 @@
 "use client"
 import { Palette, Sun, Type } from "lucide-react"
 import { useTheme } from "next-themes"
+import FontToggle from "../providers/font-toggle"
+import { ThemeToggle } from "../providers/theme-provider"
 
 
 
@@ -66,11 +68,13 @@ export default function Navbar() {
                 <div className="flex justify-end items-center gap-2">
                     <button className="rounded-sm bg-secondary text-xs text-secondary-foreground px-2 py-1">Get in touch</button>
                     <div className="flex gap-1 ">
-                        {navbarControls.map((item, idx) => (
+                        {/* {navbarControls.map((item, idx) => (
                             <button key={idx} className="rounded-full p-1.5 bg-primary" onClick={item.function}>
                                 {item.icon}
                             </button>
-                        ))}
+                        ))} */}
+                        <FontToggle />
+                        <ThemeToggle />
                     </div>
                 </div>
             </div>
