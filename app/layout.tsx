@@ -28,15 +28,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`} suppressHydrationWarning
     >
       <body className="relative min-h-full flex flex-col">
-        <div className="relative flex flex-col justify-start items-center w-screen bg-background text-foreground ">
-          <Navbar />
-          <Script src="/oneko.js" strategy="afterInteractive" />
-          <ThemeProvider>
+        <ThemeProvider>
+          <div className="relative flex flex-col justify-start items-center w-screen bg-background text-foreground ">
+            <Navbar />
+            <Script src="/oneko.js" strategy="afterInteractive" />
+
             <TooltipProvider>
               {children}
             </TooltipProvider>
-          </ThemeProvider>
-        </div>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
