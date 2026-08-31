@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import ThemeProvider from "./providers/theme-provider";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import Navbar from "./sections/navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,11 +28,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`} suppressHydrationWarning
     >
       <body className="relative min-h-full flex flex-col">
-        <Script src="/oneko.js" strategy="afterInteractive" />
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
-
+        <div className="relative flex flex-col justify-start items-center w-screen bg-background text-foreground ">
+          <Navbar />
+          <Script src="/oneko.js" strategy="afterInteractive" />
+          <ThemeProvider>
+            <TooltipProvider>
+              {children}
+            </TooltipProvider>
+          </ThemeProvider>
+        </div>
       </body>
     </html>
   );

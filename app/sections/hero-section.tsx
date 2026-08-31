@@ -1,6 +1,8 @@
 import Image from "next/image";
 import heroImage from "../../public/siddharth.webp"
 import { Mail, MapPin, User } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+
 
 
 
@@ -173,29 +175,28 @@ export default function HeroSection() {
                     <a className="text-xs">LOCATION</a>
                     <div className="flex justify-start items-center gap-2">
                         <MapPin size={12} strokeWidth={2} />
-                        <a className="font-semibold">Pune, India</a>
+                        <a className="font-semibold border-b border-primary/0 hover:border-primary">Pune, India</a>
                     </div>
                 </div>
                 <div className="flex flex-col justify-center items-start  gap-1 text-sm">
                     <a className="text-xs">EMAIL</a>
                     <div className="flex justify-start items-center gap-2">
                         <Mail size={12} strokeWidth={2} />
-                        <a className="font-semibold">alokpandey0697@gmail.com</a>
+                        <a className="font-semibold border-b border-primary/0 hover:border-primary">alokpandey0697@gmail.com</a>
                     </div>
                 </div>
                 <div className="hidden md:flex flex-col justify-center items-start  gap-1 text-sm">
                     <a className="text-xs">PRONOUNS</a>
                     <div className="flex justify-start items-center gap-2">
                         <User size={12} strokeWidth={2} />
-                        <a className="font-semibold">he/him</a>
+                        <a className="font-semibold border-b border-primary/0 hover:border-primary">he/him</a>
                     </div>
                 </div>
             </div>
 
 
             <div className="about-container w-full text-md leading- tracking-normal font-extralight">
-                I build full-stack web products end-to-end, obsessing over small details that make software feel right to use. Currently working with TypeScript, React, Next.js, and Tailwind CSS.
-            </div>
+                I build websites and digital products that help brands shape their identity in the digital world. I also like to build and maintain tools that makes development a bit less painful.             </div>
 
             <div className="textStack-container flex  justify-start items-center gap-2 w-full">
                 {/* <a className="text-">This is my tech stack for development </a> */}
@@ -213,14 +214,20 @@ export default function HeroSection() {
                         {reactSVG()}
                     </div>
                     <div className="size-6">
-                        {nodeSVG()}
+                        {nodeSVG()} 
                     </div> */}
                     {techstack.map((item, index) => (
-                        <div className="flex justify-center items-center gap-2" key={index}>
-                            <div className="size-6">
-                                {item.icon}
-                            </div>
-                        </div>
+                        <Tooltip>
+                            <TooltipTrigger>
+                                <div key={index} className="size-6">
+                                    {item.icon}
+                                </div>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                                <a className="text-xs">{item.lable}</a>
+                            </TooltipContent>
+                        </Tooltip>
+
                     ))}
 
                 </div>

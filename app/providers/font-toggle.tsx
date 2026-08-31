@@ -29,7 +29,7 @@ export default function FontToggle() {
 
 
     return (
-        <button className="rounded-full p-1.5 bg-primary cursor-pointer" onClick={toggleFont}>
+        <button className="rounded-full p-1.5 bg-primary dark:hover:bg-black hover:bg-white cursor-pointer" onClick={toggleFont}>
             <Type size={14} strokeWidth={1} />
         </button>
     )

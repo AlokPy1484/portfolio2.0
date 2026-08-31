@@ -9,7 +9,7 @@ import Navbar from "./sections/navbar";
 export default function Home() {
   return (
     <div className="relative flex flex-col justify-start items-center w-screen bg-background text-foreground ">
-      <Navbar />
+
       <HeroSection />
       <ExperienceSection />
       <ProjectSection />
