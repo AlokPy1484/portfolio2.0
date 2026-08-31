@@ -1,5 +1,5 @@
 import Image from "next/image";
-import heroImage from "../../public/siddharth.webp"
+import heroImage from "../../public/Hero1.jpg"
 import { Mail, MapPin, User } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
