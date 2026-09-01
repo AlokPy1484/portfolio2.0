@@ -66,7 +66,7 @@ export function ProjectCard(props: ProjectCardType) {
     return (
         <div className="group  card flex flex-col justify-between items-center gap-4">
 
-            <div className="relative image-container flex justify-center items-end px-6 pt-6  rounded-xl overflow-hidden"
+            <a href={props.link} className="relative image-container flex justify-center items-end px-6 pt-6  rounded-xl overflow-hidden"
                 style={{ backgroundColor: props.backgroundColor }}>
 
                 {props.unreleased && (
@@ -79,7 +79,7 @@ export function ProjectCard(props: ProjectCardType) {
                     <Image src={props.imageSrc} alt="Logo" width={250} height={160} className="object-cover w-full h-full rounded-t-lg " />
 
                 </div>
-            </div>
+            </a>
 
             <div className="content-container flex justify-between items-center max-w-[290px] w-full">
                 <div className="title-container flex flex-col justify-start items-start w-full gap-2">
