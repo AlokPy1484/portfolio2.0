@@ -12,6 +12,10 @@ export default function FontToggle() {
     useEffect(() => {
         const savedFont = localStorage.getItem("font")
 
+        if (!savedFont) {
+            localStorage.setItem("font", font)
+        }
+
         if (savedFont) {
             setFont(savedFont)
             document.documentElement.dataset.font = savedFont
