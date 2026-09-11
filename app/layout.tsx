@@ -6,7 +6,7 @@ import ThemeProvider from "./providers/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from "./sections/navbar";
 import { Toaster } from "@/components/ui/toast";
-
+import { Analytics } from "@vercel/analytics/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +37,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 
             <TooltipProvider>
               {children}
+              <Analytics />
               <Toaster />
             </TooltipProvider>
           </div>
