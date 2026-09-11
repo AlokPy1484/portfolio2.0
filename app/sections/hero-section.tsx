@@ -1,8 +1,9 @@
+"use client"
 import Image from "next/image";
 import heroImage from "../../public/Hero1.jpg"
 import { Mail, MapPin, User } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-
+import { easeInOut, motion } from "motion/react"
 
 
 
@@ -158,7 +159,20 @@ export default function HeroSection() {
 
 
     return (
-        <div className="hero-container flex flex-col justify-start items-center gap-8 bg-background text-foreground  w-full px-8 md:px-0 max-w-2xl  mt-24">
+        <motion.div
+            initial={{
+                y: 8,
+                opacity: 0
+            }}
+            animate={{
+                y: 0,
+                opacity: 1
+            }}
+            transition={{
+                duration: 0.3,
+                ease: easeInOut
+            }}
+            className="hero-container flex flex-col justify-start items-center gap-8 bg-background text-foreground  w-full mb-8 md:mb-0 px-8 md:px-0 max-w-2xl  mt-24 ">
 
 
             <div className="title-container flex justify-start items-center gap-4 w-full">
@@ -195,12 +209,16 @@ export default function HeroSection() {
             </div>
 
 
-            <div className="about-container w-full text-md leading- tracking-normal font-extralight">
-                I build websites and digital products that help brands shape their identity in the digital world. I also like to build and maintain tools that makes development a bit less painful.             </div>
+            <div className="about-container relative w-full text-md leading- tracking-normal font-light">
+                <a>
+                    I build websites and digital products that help brands shape their identity in the digital world. I also like to build and maintain tools that makes development a bit less painful.
+                </a>
+            </div >
 
-            <div className="textStack-container flex  justify-start items-center gap-2 w-full">
+            <div className="textStack-container relative flex  justify-start items-center gap-2 w-full">
                 {/* <a className="text-">This is my tech stack for development </a> */}
                 <div className="flex justify-center items-center gap-4">
+
                     {/* <div className="size-6">
                         {nextSVG()}
                     </div>
@@ -227,12 +245,60 @@ export default function HeroSection() {
                                 <a className="text-xs">{item.lable}</a>
                             </TooltipContent>
                         </Tooltip>
-
                     ))}
+                    { }
+                    {/* <div className=" block md:hidden absolute top-4 -left-2 w-full">
+                        <span className="relative inset-0 w-full">
+                            <svg
+
+                                height="30"
+                                viewBox="0 0 482 30"
+                                preserveAspectRatio="none"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M480.689 0.123309C480.689 0.123309 487.06 25.0208 464.089 25.0208C464.089 25.0208 385.303 25.0208 348.425 25.0208C311.548 25.0208 253.995 25.0208 253.995 25.0208C253.995 25.0208 35.7388 29.1233 15.5621 29.1233C-4.61462 29.1233 1.31147 0.123302 1.31147 0.123302"
+                                    stroke="white"
+                                    opacity={0.4} />
+                            </svg>
+                        </span>
+                    </div> */}
+                    <div className=" hidden md:block absolute -top-4 right-28">
+                        <span className="relative inset-0">
+                            <svg
+                                width="19" height="53"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 53" >
+                                <motion.path
+                                    initial={{ pathLength: 0 }}
+                                    animate={{ pathLength: 1 }}
+                                    transition={{
+                                        duration: 0.9,
+                                        ease: "easeInOut"
+                                    }}
+                                    d="M0.130646 1.08256C0.130646 1.08256 17.6306 -1.75161 17.6306 5.08256C17.6306 5.08256 17.6306 10.4821 17.6306 14.5826C17.6306 18.6831 17.6306 25.0826 17.6306 25.0826C17.6306 25.0826 19.0735 48.0826 15.1306 51.0826C11.1878 54.0826 0.130646 51.0826 0.130646 51.0826"
+                                    stroke="white"
+                                    strokeWidth={0.6}
+                                    strokeOpacity={0.4} />
+                            </svg>
+                        </span>
+
+                        <motion.p
+
+                            transition={{
+                                duration: 0.3,
+                                ease: "easeInOut"
+                            }}
+                            className="relative bottom-10 left-8 text-2xl font-reenie text-secondary/40">
+                            these are my tech stacks
+                        </motion.p>
+                    </div>
+
+
+
+
 
                 </div>
             </div>
-        </div>
+        </motion.div >
     )
 }
 

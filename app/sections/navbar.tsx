@@ -3,7 +3,7 @@ import { Calendar, Mail, Palette, Sun, Type } from "lucide-react"
 import { useTheme } from "next-themes"
 import FontToggle from "../providers/font-toggle"
 import { ThemeToggle } from "../providers/theme-provider"
-import { motion } from "motion/react"
+import { easeInOut, motion } from "motion/react"
 import { useEffect, useState } from "react"
 import MagneticButton from "../providers/MagneticButton"
 import { toast } from "@/components/ui/toast"
@@ -94,11 +94,23 @@ export default function Navbar() {
         }
     }, [isExpanded])
 
-
     const [contactMethod, setContactMethod] = useState<string>("Get in touch")
 
     return (
-        <div className="fixed flex justify-center w-full backdrop-blur-sm pt-4 pb-2 px-4 md:px-0 z-9999">
+        <motion.div
+            initial={{
+                y: -8,
+                opacity: 0
+            }}
+            animate={{
+                y: 0,
+                opacity: 1
+            }}
+            transition={{
+                duration: 0.5,
+                ease: easeInOut
+            }}
+            className="fixed flex justify-center w-full backdrop-blur-sm pt-4 pb-2 px-4 md:px-0 z-9999">
             <div className="flex justify-between items-center w-full max-w-2xl">
                 <div className="flex justify-start items-center gap-4">
                     {navitems.map((item, idx) => (
@@ -172,6 +184,6 @@ export default function Navbar() {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }

@@ -1,8 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+
+
+
 @custom-variant dark (&:is(.dark *));
+
+@font-face {
+  font-family: "biro";
+  src: url("/fonts/Biro.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 @theme inline {
   --color-background: var(--background);
@@ -11,6 +24,8 @@
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
   --font-geist: var(--font-geist-sans);
+  --font-biro: "Biro", sans-serif;
+  --font-reenie: "Reenie Beanie", cursive;
 
   --font-heading: var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -171,5 +186,8 @@ html[data-font="sans"] {
     font-family: var(--font-site);
   }
 
+  html[data-font="biro"] {
+    --font-site: var(--font-biro);
+  }
 
 }

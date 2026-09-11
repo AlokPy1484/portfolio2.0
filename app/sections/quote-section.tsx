@@ -1,3 +1,5 @@
+"use client"
+import { easeInOut, motion } from "motion/react"
 import { JSX } from "react/jsx-runtime"
 
 
@@ -45,7 +47,20 @@ export default function QuoteSection() {
 
 
     return (
-        <div className="hero-container flex flex-col justify-start items-start gap-8  w-full max-w-2xl px-8 md:px-0 mt-20 pt-16 border-t border-neutral-800/80 border-dashed">
+        <motion.div
+            initial={{
+                y: 16,
+                opacity: 0
+            }}
+            animate={{
+                y: 0,
+                opacity: 1
+            }}
+            transition={{
+                duration: 0.5,
+                ease: easeInOut
+            }}
+            className="hero-container flex flex-col justify-start items-start gap-8  w-full max-w-2xl px-8 md:px-0 mt-20 pt-16 border-t border-neutral-800/80 border-dashed">
             <div className="flex flex-col justify-start items-start w-full">
                 <p className="text-lg tracking-wide">"मंज़िल मिलेगी, भटक कर ही सही, गुमराह तो वो हैं, जो घर से निकले ही नहीं।"</p>
                 {/* <p className="text-lg tracking-tight">"You will reach your destination, even if you wander along the way; the truly lost are those who never even left their homes."</p> */}
@@ -73,6 +88,6 @@ export default function QuoteSection() {
 
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }

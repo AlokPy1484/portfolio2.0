@@ -76,7 +76,7 @@ export default function ExperienceSection() {
 
 
 const ExperienceCard = (props: { timeline: string, title: string, description: string }) => (
-    <div className="group flex justify-between items-start w-full px-[15px] opacity-40 hover:opacity-100 transition-opacity ease-in-out duration-300">
+    <div className="group flex justify-between items-start w-full px-[15px] opacity-80 hover:opacity-100 transition-opacity ease-in-out duration-300">
         <a className="text-xs w-40 -translate-x-[10px]  group-hover:translate-x-0 transition-transform ease-in-out duration-300">{props.timeline}</a>
         <div className="flex flex-col justify-start items-start w-full translate-x-[10px] group-hover:translate-x-0 transition-transform ease-in-out duration-300">
             <a className="text- font-semibold ">{props.title}</a>

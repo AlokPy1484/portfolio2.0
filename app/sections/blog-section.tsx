@@ -1,4 +1,5 @@
-
+"use client"
+import { easeInOut, motion } from "motion/react"
 
 
 
@@ -8,7 +9,20 @@ export default function BlogSection() {
 
 
     return (
-        <div className="group hero-container flex flex-col justify-start items-start gap-  w-full max-w-2xl px-8 md:px-0 mt-12 ">
+        <motion.div
+            initial={{
+                y: 16,
+                opacity: 0
+            }}
+            whileInView={{
+                y: 0,
+                opacity: 1
+            }}
+            transition={{
+                duration: 0.5,
+                ease: easeInOut
+            }}
+            className="group hero-container flex flex-col justify-start items-between w-full max-w-2xl px-8 md:px-0 mt-12 ">
             <h1 className="text-sm w-full mb-4">WRITING</h1>
 
             <div className="flex justify-start items-start gap-4 w-full border-t border-neutral-800/80 border-dashed py-2">
@@ -35,6 +49,6 @@ export default function BlogSection() {
 
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
