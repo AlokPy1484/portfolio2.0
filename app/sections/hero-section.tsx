@@ -228,7 +228,7 @@ export default function HeroSection() {
                 {/* <a className="text-">This is my tech stack for development </a> */}
                 <div className="relative flex justify-between md:justify-start items-center gap-4 w-full">
 
-                    <div className=" block md:hidden absolute top-4 -left-2 w-full">
+                    {/* <div className=" block md:hidden absolute top-4 -left-2 w-full">
                         <span className="relative inset-0 w-full overflow-visible">
                             <svg
                                 height="30"
@@ -242,11 +242,10 @@ export default function HeroSection() {
 
 
 
-                            {/* <svg class="rough-annotation" style="position: absolute; top: 0px; left: 0px; overflow: visible; pointer-events: none; width: 100px; height: 100px;"><path d="M-8.31926592234522 56.31466247383505 C-7.326295403521508 60.51982948686928, -8.118943259995431 62.97298787105829, -8.921544208563864 69.3395084137097" fill="none" stroke="currentColor" stroke-width="1"></path><path d="M-6.923302515926547 67.97170970961496 C129.59363811733823 66.74033299238383, 268.4475428062225 67.06947846266651, 469.8807514343687 67.0611436114176" fill="none" stroke="currentColor" stroke-width="1"></path><path d="M469.02920485492797 67.94755222741514 C469.23688986619936 64.57214910369366, 470.19723597487433 60.7152512671426, 470.3829787766561 56.76852796617895" fill="none" stroke="currentColor" stroke-width="1"></path></svg> */}
 
 
                         </span>
-                    </div>
+                    </div> */}
 
                     {/* <div className="size-6">
                         {nextSVG()}
