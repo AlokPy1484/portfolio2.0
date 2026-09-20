@@ -1,6 +1,8 @@
+"use client"
 import { MoveUpRight } from "lucide-react";
 import Image from "next/image";
 import placeholer from "../../public/projectsAssets/placeholder.png"
+import { useState } from "react";
 
 
 
@@ -62,18 +64,24 @@ type ProjectCardType = {
 
 
 export function ProjectCard(props: ProjectCardType) {
+    const [unreleased, setUnreleased] = useState(false)
 
     return (
-        <div className="group  card flex flex-col justify-between items-center gap-4">
+        <div onClick={() => setUnreleased(true)} className="group  card flex flex-col justify-between items-center gap-4">
 
-            <a href={props.link} className="relative image-container flex justify-center items-end px-6 pt-6  rounded-xl overflow-hidden"
+            <a className="relative image-container flex justify-center items-end px-6 pt-6  rounded-xl overflow-hidden"
                 style={{ backgroundColor: props.backgroundColor }}>
 
                 {props.unreleased && (
-                    <span className="absolute inset-0 flex justify-center items-center w-full h-full bg-none backdrop-blur-xs opacity-0 group-hover:opacity-100 z-100 transition-all duration-300 ease-in-out">
+                    <span className="hidden md:flex absolute inset-0 justify-center items-center w-full h-full bg-none backdrop-blur-xs opacity-0 group-hover:opacity-100 z-100 transition-all duration-300 ease-in-out">
                         <a>Coming Soon...</a>
                     </span>
                 )}
+                {unreleased &&
+                    <span className="flex absolute inset-0 justify-center items-center w-full h-full bg-none backdrop-blur-xs opacity-100 z-100 transition-all duration-300 ease-in-out">
+                        <a>Coming Soon...</a>
+                    </span>
+                }
                 <div className="flex justify-center items-center w-full h-full bg-neutral-700 rounded-t-lg group-hover:scale-110 transition-all ease-in-out duration-300">
 
                     <Image src={props.imageSrc} alt="Logo" width={250} height={160} className="object-cover w-full h-full rounded-t-lg " />

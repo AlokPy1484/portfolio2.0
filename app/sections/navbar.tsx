@@ -3,7 +3,7 @@ import { Calendar, Mail, Palette, Sun, Type } from "lucide-react"
 import { useTheme } from "next-themes"
 import FontToggle from "../providers/font-toggle"
 import { ThemeToggle } from "../providers/theme-provider"
-import { easeInOut, motion } from "motion/react"
+import { AnimatePresence, easeInOut, motion } from "motion/react"
 import { useEffect, useState } from "react"
 import MagneticButton from "../providers/MagneticButton"
 import { toast } from "@/components/ui/toast"
@@ -94,6 +94,32 @@ export default function Navbar() {
         }
     }, [isExpanded])
 
+
+
+    useEffect(() => {
+        if (!isExpanded) return
+
+        const collapse = () => {
+            setIsExpanded(false)
+            setContactMethod("Get in touch") // see note below
+        }
+
+        // Window lost focus entirely — alt-tab, clicking another app, devtools, etc.
+        window.addEventListener("blur", collapse)
+
+        // Mouse physically left the browser viewport. relatedTarget is null
+        // only when there's nowhere left in the document to go to.
+        const handleMouseOut = (e: MouseEvent) => {
+            if (!e.relatedTarget) collapse()
+        }
+        document.addEventListener("mouseout", handleMouseOut)
+
+        return () => {
+            window.removeEventListener("blur", collapse)
+            document.removeEventListener("mouseout", handleMouseOut)
+        }
+    }, [isExpanded])
+
     const [contactMethod, setContactMethod] = useState<string>("Get in touch")
 
     return (
@@ -121,56 +147,59 @@ export default function Navbar() {
                     <div className="relative flex justify-center items-center">
 
                         {isExpanded ?
-                            <motion.div
-                                layoutId="contact"
-                                onMouseLeave={() => setIsExpanded(false)}
-                                className="absolute flex flex-col justify-start items-center gap-1 p-4 px-4 gap-1 -left-[130px] -top-[12.5px] w-[130px] h-[100px] rounded-sm bg-secondary text-xs text-secondary-foreground  px-2 py-1 hover:bg-black dark:hover:bg-white cursor-pointer">
-
+                            <AnimatePresence mode="popLayout">
                                 <motion.div
-                                    layoutId="contact-lable"
-                                    className="flex justify-center items-center  p-1 rounded-sm w-full tracking-wider text-secondary-foreground transition-all duration-300">{contactMethod}</motion.div>
-                                <div className="flex justify-between items-center gap-4">
-                                    <MagneticButton>
-                                        <a
-                                            href="mailto:alokpandey0697@gmail.com"
-                                            onMouseEnter={() => setContactMethod("Write a mail")}
-                                            onMouseLeave={() => setContactMethod("Get in touch")}
-                                            className="flex justify-center items-center bg-secondary/70 hover:bg-secondary rounded-lg p-2 group "><Mail size={24} strokeWidth={1} className="text-secondary-foreground/80 scale-100 group-hover:scale-120 transition-all duration-300 ease-in-out group-hover:text-secondary-foreground" /></a>
-                                    </MagneticButton>
+                                    layoutId="contact"
+                                    onMouseLeave={() => setIsExpanded(false)}
+                                    className="absolute flex flex-col justify-start items-center gap-1 p-4 px-4 gap-1 -left-[130px] -top-[12.5px] w-[130px] h-[100px] rounded-sm bg-secondary text-xs text-secondary-foreground  px-2 py-1 hover:bg-black dark:hover:bg-white cursor-pointer">
 
-                                    <MagneticButton>
-                                        <a
-                                            href="https://cal.com/alokpandey/15min"
-                                            target="_blank"
-                                            onMouseEnter={() => setContactMethod("Book a call")}
-                                            onMouseLeave={() => setContactMethod("Get in touch")}
-                                            className="flex justify-center items-center bg-secondary/70 hover:bg-secondary rounded-lg p-2 group"><Calendar size={24} strokeWidth={1} className="text-secondary-foreground/80 scale-100 group-hover:scale-120 transition-all duration-300 ease-in-out group-hover:text-secondary-foreground" /></a>
-                                    </MagneticButton>
-                                </div>
-                                <div className="flex justify-center items-center gap-1  p-1 rounded-sm w-full text-[8px] text-secondary-foreground/70">
-                                    <a>* press</a>
-                                    <a className="p-[2px] bg-secondary/90 font-black rounded-xs">C</a>
-                                    <a> to copy mail</a>
-                                </div>
+                                    <motion.div
+                                        initial={{
+                                            opacity: 0
+                                        }}
+                                        animate={{
+                                            opacity: 1
+                                        }}
+                                        layoutId="contact-lable"
+                                        className="flex justify-center items-center  p-1 rounded-sm w-full tracking-wider text-secondary-foreground transition-all duration-300">{contactMethod}</motion.div>
+                                    <div className="flex justify-between items-center gap-4">
+                                        <MagneticButton>
+                                            <a
+                                                href="mailto:alokpandey0697@gmail.com"
+                                                onMouseEnter={() => setContactMethod("Write a mail")}
+                                                onMouseLeave={() => setContactMethod("Get in touch")}
+                                                className="flex justify-center items-center bg-secondary/70 hover:bg-secondary rounded-lg p-2 group "><Mail size={24} strokeWidth={1} className="text-secondary-foreground/80 scale-100 group-hover:scale-120 transition-all duration-300 ease-in-out group-hover:text-secondary-foreground" /></a>
+                                        </MagneticButton>
 
-                            </motion.div>
+                                        <MagneticButton>
+                                            <a
+                                                href="https://cal.com/alokpandey/15min"
+                                                target="_blank"
+                                                onMouseEnter={() => setContactMethod("Book a call")}
+                                                onMouseLeave={() => setContactMethod("Get in touch")}
+                                                className="flex justify-center items-center bg-secondary/70 hover:bg-secondary rounded-lg p-2 group"><Calendar size={24} strokeWidth={1} className="text-secondary-foreground/80 scale-100 group-hover:scale-120 transition-all duration-300 ease-in-out group-hover:text-secondary-foreground" /></a>
+                                        </MagneticButton>
+                                    </div>
+                                    <div className="flex justify-center items-center gap-1  p-1 rounded-sm w-full text-[8px] text-secondary-foreground/70">
+                                        <a>* press</a>
+                                        <a className="p-[2px] bg-secondary/90 font-black rounded-xs">C</a>
+                                        <a> to copy mail</a>
+                                    </div>
+
+                                </motion.div>
+                            </AnimatePresence>
                             :
+                            <AnimatePresence mode="popLayout">
+                                <motion.button
+                                    layoutId="contact"
+                                    onMouseEnter={() => setIsExpanded(true)}
+                                    onClick={() => setIsExpanded(true)}
 
-                            <motion.button
-                                layoutId="contact"
-                                onMouseEnter={() => setIsExpanded(true)}
-                                onClick={() => setIsExpanded(true)}
-
-                                className="absolute -left-[90px] w-[90px] h-[25px] rounded-sm bg-secondary text-xs text-secondary-foreground  px-2 py-1 hover:bg-black dark:hover:bg-white cursor-pointer">
-                                <motion.a
-                                    initial={{
-                                        opacity: 0
-                                    }}
-                                    animate={{
-                                        opacity: 1
-                                    }}
-                                    layoutId="contact-lable">Get in touch</motion.a>
-                            </motion.button>
+                                    className="absolute -left-[90px] w-[90px] h-[25px] rounded-sm bg-secondary text-xs text-secondary-foreground  px-2 py-1 hover:bg-black dark:hover:bg-white cursor-pointer">
+                                    <motion.a
+                                        layoutId="contact-lable">Get in touch</motion.a>
+                                </motion.button>
+                            </AnimatePresence>
                         }
                     </div>
                     <div className="flex gap-1 ">
