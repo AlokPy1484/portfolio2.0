@@ -67,13 +67,13 @@ export function ProjectCard(props: ProjectCardType) {
     const [unreleased, setUnreleased] = useState(false)
 
     return (
-        <div onClick={() => setUnreleased(true)} className="group  card flex flex-col justify-between items-center gap-4">
+        <a href={props.unreleased ? undefined : props.link} className="group  card flex flex-col justify-between items-center gap-4">
 
             <a className="relative image-container flex justify-center items-end px-6 pt-6  rounded-xl overflow-hidden"
                 style={{ backgroundColor: props.backgroundColor }}>
 
                 {props.unreleased && (
-                    <span className="hidden md:flex absolute inset-0 justify-center items-center w-full h-full bg-none backdrop-blur-xs opacity-0 group-hover:opacity-100 z-100 transition-all duration-300 ease-in-out">
+                    <span onClick={() => setUnreleased(true)} className="hidden md:flex absolute inset-0 justify-center items-center w-full h-full bg-none backdrop-blur-xs opacity-0 group-hover:opacity-100 z-100 transition-all duration-300 ease-in-out">
                         <a>Coming Soon...</a>
                     </span>
                 )}
@@ -99,6 +99,6 @@ export function ProjectCard(props: ProjectCardType) {
                 </a>
             </div>
 
-        </div>
+        </a>
     )
 }
