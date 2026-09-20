@@ -40,9 +40,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               <Analytics />
               <Toaster />
             </TooltipProvider>
-          </div>
-        </ThemeProvider>
-      </body>
-    </html>
+          </div >
+        </ThemeProvider >
+      </body >
+    </html >
   );
 }
