@@ -7,9 +7,6 @@ import gsap from "gsap"
 
 
 
-
-
-
 export default function ExperienceSection() {
 
 
@@ -108,7 +105,7 @@ export default function ExperienceSection() {
 
 
 
-            <Model modal={modal} scaleAnimation={scaleAnimation} index={modal.index} array={Modalprojects} />
+            {/* <Model modal={modal} scaleAnimation={scaleAnimation} index={modal.index} array={Modalprojects} /> */}
 
         </div>
     )
@@ -129,65 +126,65 @@ const ExperienceCard = (props: { timeline: string, title: string, description: s
 )
 
 
-export function Model(props) {
+// export function Model(props) {
 
-    const container = useRef(null)
-    const cursor = useRef(null)
-
-
-
-    useEffect(() => {
-        const moveContainerX = gsap.quickTo(container.current, "left", { duration: 0.8, ease: "power3" })
-        const moveContainerY = gsap.quickTo(container.current, "top", { duration: 0.8, ease: "power3" })
-
-        const moveCursorX = gsap.quickTo(cursor.current, "left", { duration: 0.5, ease: "power3" })
-        const moveCursorY = gsap.quickTo(cursor.current, "top", { duration: 0.5, ease: "power3" })
-
-        window.addEventListener("mousemove", (e) => {
-            const { clientX, clientY } = e
-            moveContainerX(clientX)
-            moveContainerY(clientY)
-
-            moveCursorX(clientX)
-            moveCursorY(clientY)
-
-        })
+//     const container = useRef(null)
+//     const cursor = useRef(null)
 
 
 
+//     useEffect(() => {
+//         const moveContainerX = gsap.quickTo(container.current, "left", { duration: 0.8, ease: "power3" })
+//         const moveContainerY = gsap.quickTo(container.current, "top", { duration: 0.8, ease: "power3" })
 
-    }, [])
+//         const moveCursorX = gsap.quickTo(cursor.current, "left", { duration: 0.5, ease: "power3" })
+//         const moveCursorY = gsap.quickTo(cursor.current, "top", { duration: 0.5, ease: "power3" })
 
+//         window.addEventListener("mousemove", (e) => {
+//             const { clientX, clientY } = e
+//             moveContainerX(clientX)
+//             moveContainerY(clientY)
 
-    return (
+//             moveCursorX(clientX)
+//             moveCursorY(clientY)
 
-        <div className="flex justify-center items-center">
-            <motion.div
-                layoutId="modal"
-                ref={container}
-                variants={props.scaleAnimation}
-                initial="initial"
-                animate={props.modal.active ? "open" : "closed"}
-                className="model-container cursor-none fixed flex justify-center items-center w-[218px] h-[143px] overflow-hidden pointer-events-none" >
-                <div className="model-slider fixed flex justify-center items-center w-full h-full transition-all duration-300"
-                    style={{
-                        top: props.index * -100 + "%"
-                    }}>
-                    <div className=" relative flex flex-col justify-start items-center images-container  h-full ">
-                        {props.array.map((project, idx) => (
-                            <div className="flex justify-center items-center p-1 bg-none backdrop-blur-lg border w-[218px] h-[143px]">
-                                <video key={idx} src="https://lorem.video/720p" autoPlay={true} muted={true} loop={true} className="object-cover w-full h-full" />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </motion.div >
+//         })
 
 
 
-        </div >
+
+//     }, [])
 
 
-    )
+//     return (
 
-}
+//         <div className="flex justify-center items-center">
+//             <motion.div
+//                 layoutId="modal"
+//                 ref={container}
+//                 variants={props.scaleAnimation}
+//                 initial="initial"
+//                 animate={props.modal.active ? "open" : "closed"}
+//                 className="model-container cursor-none fixed flex justify-center items-center w-[218px] h-[143px] overflow-hidden pointer-events-none" >
+//                 <div className="model-slider fixed flex justify-center items-center w-full h-full transition-all duration-300"
+//                     style={{
+//                         top: props.index * -100 + "%"
+//                     }}>
+//                     <div className=" relative flex flex-col justify-start items-center images-container  h-full ">
+//                         {props.array.map((project, idx) => (
+//                             <div className="flex justify-center items-center p-1 bg-none backdrop-blur-lg border w-[218px] h-[143px]">
+//                                 <video key={idx} src="https://lorem.video/720p" autoPlay={true} muted={true} loop={true} className="object-cover w-full h-full" />
+//                             </div>
+//                         ))}
+//                     </div>
+//                 </div>
+//             </motion.div >
+
+
+
+//         </div >
+
+
+//     )
+
+// }

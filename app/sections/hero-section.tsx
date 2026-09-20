@@ -4,6 +4,7 @@ import heroImage from "../../public/Hero1.jpg"
 import { Mail, MapPin, User } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { easeInOut, motion } from "motion/react"
+import { Mascot } from "page-mascot";
 
 
 
@@ -176,7 +177,15 @@ export default function HeroSection() {
 
 
             <div className="title-container flex justify-start items-center gap-4 w-full">
-                <Image src={heroImage} alt="heroImage" className="object-cover size-16 rounded-xl" />
+                {/* <Image src={heroImage} alt="heroImage" className="object-cover size-16 rounded-xl" /> */}
+                <div className="relative bg-secondary/10 rounded-xl hover:scale-110 transition-all duration-300 ease-in-out">
+                    <Mascot
+                        className=""
+                        size={70}
+                        directions="/mascots/cat-directions.webp"
+                        reactions="/mascots/cat-reactions.webp"
+                    />
+                </div>
                 <div className="flex flex-col justify-center items-start gap-1">
                     <h1 className="text-3xl font-semibold">Alok Pandey</h1>
                     <a className="text-sm">Product Engineer</a>

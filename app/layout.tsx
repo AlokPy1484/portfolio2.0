@@ -33,7 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <ThemeProvider>
           <div className="relative flex flex-col justify-start items-center w-screen bg-background text-foreground ">
             <Navbar />
-            <Script src="/oneko.js" strategy="afterInteractive" />
+            {/* <Script src="/oneko.js" strategy="afterInteractive" /> */}
 
             <TooltipProvider>
               {children}
