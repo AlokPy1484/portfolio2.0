@@ -5,6 +5,7 @@ import { Mail, MapPin, User } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { easeInOut, motion } from "motion/react"
 import { Mascot } from "page-mascot";
+import { FlipWords } from "@/components/ui/flip-words";
 
 
 
@@ -188,7 +189,9 @@ export default function HeroSection() {
                 </div>
                 <div className="flex flex-col justify-center items-start gap-1">
                     <h1 className="text-3xl font-semibold">Alok Pandey</h1>
-                    <a className="text-sm">Product Engineer</a>
+                    {/* <a className="text-sm">Product Engineer</a> */}
+                    <FlipWords duration={3000} words={["Product Engineer", "Web Designer", "Homo Sapien"]}
+                        className="flex p-0 m-0 justify-start text-sm" />
                 </div>
             </div>
 
@@ -226,7 +229,7 @@ export default function HeroSection() {
 
             <div className="textStack-container relative flex justify-between md:justify-start items-center gap-2 w-full md:mb-0 mb-8">
                 {/* <a className="text-">This is my tech stack for development </a> */}
-                <div className="relative flex justify-between md:justify-start items-center gap-4 px-4 w-full">
+                <div className="relative flex justify-between md:justify-start items-center gap-4  w-full">
 
                     {techstack.map((item, index) => (
                         <Tooltip>
@@ -257,7 +260,7 @@ export default function HeroSection() {
                     ))}
 
 
-                    <div className=" hidden md:block absolute -top-4 right-24">
+                    <div className=" hidden md:block absolute -top-4 right-28">
                         <span className="relative inset-0">
                             <svg
                                 width="19" height="53"
