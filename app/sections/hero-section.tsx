@@ -224,44 +224,10 @@ export default function HeroSection() {
                 </a>
             </div >
 
-            <div className="textStack-container relative flex justify-between md:justify-start items-center gap-2 w-full">
+            <div className="textStack-container relative flex justify-between md:justify-start items-center gap-2 w-full md:mb-0 mb-8">
                 {/* <a className="text-">This is my tech stack for development </a> */}
-                <div className="relative flex justify-between md:justify-start items-center gap-4 w-full">
+                <div className="relative flex justify-between md:justify-start items-center gap-4 px-4 w-full">
 
-                    {/* <div className=" block md:hidden absolute top-4 -left-2 w-full">
-                        <span className="relative inset-0 w-full overflow-visible">
-                            <svg
-                                height="30"
-                                viewBox="0 0 482 30"
-                                preserveAspectRatio="none"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M480.689 0.123309C480.689 0.123309 487.06 25.0208 464.089 25.0208C464.089 25.0208 385.303 25.0208 348.425 25.0208C311.548 25.0208 253.995 25.0208 253.995 25.0208C253.995 25.0208 35.7388 29.1233 15.5621 29.1233C-4.61462 29.1233 1.31147 0.123302 1.31147 0.123302"
-                                    stroke="white"
-                                    opacity={0.4} />
-                            </svg>
-
-
-
-
-
-                        </span>
-                    </div> */}
-
-                    {/* <div className="size-6">
-                        {nextSVG()}
-                    </div>
-                    <div className="size-5">
-                        {htmlSVG()}
-                    </div>
-                    <div className="size-6">
-                        {tailwindSVG()}
-                    </div>
-                    <div className="size-6">
-                        {reactSVG()}
-                    </div>
-                    <div className="size-6">
-                        {nodeSVG()} 
-                    </div> */}
                     {techstack.map((item, index) => (
                         <Tooltip>
                             <TooltipTrigger>
@@ -269,7 +235,7 @@ export default function HeroSection() {
                                     {item.icon}
                                 </div>
                             </TooltipTrigger>
-                            <TooltipContent>
+                            <TooltipContent >
                                 <motion.a
                                     initial={{
                                         opacity: 0,
@@ -284,13 +250,14 @@ export default function HeroSection() {
                                         duration: 0.3,
                                         ease: easeInOut
                                     }}
+
                                     className="text-xs">{item.lable}</motion.a>
                             </TooltipContent>
                         </Tooltip>
                     ))}
 
 
-                    <div className=" hidden md:block absolute -top-4 right-28">
+                    <div className=" hidden md:block absolute -top-4 right-24">
                         <span className="relative inset-0">
                             <svg
                                 width="19" height="53"
@@ -304,7 +271,7 @@ export default function HeroSection() {
                                         ease: "easeInOut"
                                     }}
                                     d="M0.130646 1.08256C0.130646 1.08256 17.6306 -1.75161 17.6306 5.08256C17.6306 5.08256 17.6306 10.4821 17.6306 14.5826C17.6306 18.6831 17.6306 25.0826 17.6306 25.0826C17.6306 25.0826 19.0735 48.0826 15.1306 51.0826C11.1878 54.0826 0.130646 51.0826 0.130646 51.0826"
-                                    stroke="white"
+                                    stroke="currentColor"
                                     strokeWidth={0.6}
                                     strokeOpacity={0.4} />
                             </svg>
@@ -322,6 +289,62 @@ export default function HeroSection() {
 
 
 
+                    <div className="block md:hidden absolute top-0 left-2 w-full">
+                        <span className="relative w-full overflow-visible">
+                            <svg
+                                className="rough-annotation overflow-visible w-full"
+                                viewBox="0 0 550 100"
+                                preserveAspectRatio="none"
+
+                            >
+                                <path
+                                    d="M-8.809488068893552 55.601426439359784
+       C-9.313544436655938 60.20472450666129,
+       -6.384545906744897 64.00702655650676,
+       -7.765107225654178 66.50912975557148"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth={0.6}
+                                    strokeOpacity={0.4}
+                                />
+
+                                <path
+                                    d="M-8.093042171746493 67.16132762506604,
+       C101.72007595859468 68.63641321528704,
+       212.79502193927766 69.07524070609361,
+       542.8882578723133 69.09575443342328"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth={0.6}
+                                    strokeOpacity={0.4}
+                                />
+
+                                <path
+                                    d="M541.9244508992881 67.96935953386128
+       C542.6667804358527 65.4205935176462,
+       542.8309355972335 62.592132753506306,
+       541.7371922623366 56.407695250585675"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth={0.6}
+                                    strokeOpacity={0.4}
+                                />
+                            </svg>
+                            <motion.p
+                                transition={{
+                                    duration: 0.3,
+                                    ease: "easeInOut"
+                                }}
+                                className="absolute top-16 left-1/2 -translate-x-1/2 w-[220px] text-2xl font-reenie text-secondary/40">
+                                these are my tech stacks
+                            </motion.p>
+                        </span>
+
+                    </div>
+
+
+
+
 
 
                 </div>
@@ -329,5 +352,10 @@ export default function HeroSection() {
         </motion.div >
     )
 }
+
+
+
+
+
 
 
