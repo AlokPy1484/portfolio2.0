@@ -66,8 +66,12 @@ type ProjectCardType = {
 export function ProjectCard(props: ProjectCardType) {
     const [unreleased, setUnreleased] = useState(false)
 
+    const handleProjectUnreleased = () => {
+        props.unreleased && setUnreleased(true)
+    }
+
     return (
-        <a onClick={props.unreleased ? () => setUnreleased(true) : undefined} href={props.unreleased ? undefined : props.link} className="relative group  card flex flex-col justify-between items-center gap-4">
+        <a onClick={handleProjectUnreleased} onMouseEnter={handleProjectUnreleased} href={props.unreleased ? undefined : props.link} className="relative group  card flex flex-col justify-between items-center gap-4">
 
             {unreleased &&
                 <span className="flex absolute inset-0 justify-center items-center w-full h-full bg-none backdrop-blur-xs opacity-100 z-100 transition-all duration-300 ease-in-out">

@@ -160,6 +160,11 @@ export default function HeroSection() {
     ]
 
 
+    const transition = {
+        duration: 0.9,
+        ease: "easeInOut"
+    }
+
     return (
         <motion.div
             initial={{
@@ -270,6 +275,7 @@ export default function HeroSection() {
                                     initial={{ pathLength: 0 }}
                                     animate={{ pathLength: 1 }}
                                     transition={{
+                                        delay: 0.3,
                                         duration: 0.9,
                                         ease: "easeInOut"
                                     }}
@@ -292,53 +298,72 @@ export default function HeroSection() {
 
 
 
-                    <div className="block md:hidden absolute top-0 left-2 w-full">
+                    <div className="block md:hidden absolute top-8 left-0 w-full">
                         <span className="relative w-full overflow-visible">
-                            <svg
+                            {/* <svg
                                 className="rough-annotation overflow-visible w-full"
                                 viewBox="0 0 550 100"
                                 preserveAspectRatio="none"
-
                             >
-                                <path
-                                    d="M-8.809488068893552 55.601426439359784
-       C-9.313544436655938 60.20472450666129,
-       -6.384545906744897 64.00702655650676,
-       -7.765107225654178 66.50912975557148"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth={0.6}
-                                    strokeOpacity={0.4}
-                                />
+                                <motion.path
+                                    initial={{ pathLength: 0 }}
+                                    animate={{ pathLength: 1 }}
+                                    d="
+                                        M-8.809488068893552 55.601426439359784
+                                        C-9.313544436655938 60.20472450666129,
+                                        -6.384545906744897 64.00702655650676,
+                                        -7.765107225654178 66.50912975557148
 
-                                <path
-                                    d="M-8.093042171746493 67.16132762506604,
-       C101.72007595859468 68.63641321528704,
-       212.79502193927766 69.07524070609361,
-       542.8882578723133 69.09575443342328"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth={0.6}
-                                    strokeOpacity={0.4}
-                                />
+                                        M-8.093042171746493 67.16132762506604
+                                        C101.72007595859468 68.63641321528704,
+                                        212.79502193927766 69.07524070609361,
+                                        542.8882578723133 69.09575443342328
 
-                                <path
-                                    d="M541.9244508992881 67.96935953386128
-       C542.6667804358527 65.4205935176462,
-       542.8309355972335 62.592132753506306,
-       541.7371922623366 56.407695250585675"
+                                        M541.9244508992881 67.96935953386128
+                                        C542.6667804358527 65.4205935176462,
+                                        542.8309355972335 62.592132753506306,
+                                        541.7371922623366 56.407695250585675
+                                    "
                                     fill="none"
                                     stroke="currentColor"
                                     strokeWidth={0.6}
                                     strokeOpacity={0.4}
+                                    initial={{ pathLength: 0 }}
+                                    animate={{ pathLength: 1 }}
+                                    transition={{
+                                        duration: 2,
+                                        ease: "easeInOut",
+                                    }}
                                 />
+                            </svg> */}
+
+                            <svg
+                                viewBox="0 0 711 19"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="scale-x-[-1]">
+                                <motion.path
+                                    initial={{ pathLength: 0 }}
+                                    animate={{ pathLength: 1 }}
+                                    transition={{
+                                        delay: 0.3,
+                                        duration: 0.9,
+                                        ease: "easeInOut"
+                                    }}
+                                    d="M710 0.0227352C710 0.0227352 709.207 17.5228 698.329 17.5228C698.329 17.5228 565.328 17.5228 511.84 17.5227C458.352 17.5227 374.876 17.5227 374.876 17.5227C374.876 17.5227 16.0787 17.5227 8.37482 17.5227C0.6709 17.5227 0.5 0.0227432 0.5 0.0227432"
+                                    stroke="currentColor"
+                                    strokeWidth={0.6}
+                                    strokeOpacity={0.4} />
                             </svg>
+
+
+
                             <motion.p
                                 transition={{
                                     duration: 0.3,
                                     ease: "easeInOut"
                                 }}
-                                className="absolute top-16 left-1/2 -translate-x-1/2 w-[220px] text-2xl font-reenie text-secondary/40">
+                                className="absolute top-4 left-1/2 -translate-x-1/2 w-[220px] text-2xl font-reenie text-secondary/40">
                                 these are my tech stacks
                             </motion.p>
                         </span>
