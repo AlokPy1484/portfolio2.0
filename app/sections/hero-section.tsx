@@ -6,6 +6,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip
 import { easeInOut, motion } from "motion/react"
 import { Mascot } from "page-mascot";
 import { FlipWords } from "@/components/ui/flip-words";
+import { useRef, useState } from "react";
 
 
 
@@ -165,6 +166,28 @@ export default function HeroSection() {
         ease: "easeInOut"
     }
 
+    const [isHovered, setIsHovered] = useState<number | null>(null)
+    const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+    const handleHovered = (index: number) => {
+
+        timerRef.current = setTimeout(() => {
+            setIsHovered(index)
+            timerRef.current = null
+        }, 100)
+    }
+
+    const handleHoverLeave = () => {
+        if (timerRef.current) {
+            clearTimeout(timerRef.current)
+        }
+        timerRef.current = null
+    }
+
+
+
+
+
     return (
         <motion.div
             initial={{
@@ -234,34 +257,58 @@ export default function HeroSection() {
 
             <div className="textStack-container relative flex justify-between md:justify-start items-center gap-2 w-full md:mb-0 mb-8">
                 {/* <a className="text-">This is my tech stack for development </a> */}
-                <div className="relative flex justify-between md:justify-start items-center gap-4  w-full">
+                <div
+                    onMouseLeave={() => setIsHovered(null)}
+                    className="relative flex justify-between md:justify-start items-center gap-4  w-full">
 
                     {techstack.map((item, index) => (
-                        <Tooltip>
-                            <TooltipTrigger>
-                                <div key={index} className="size-6">
-                                    {item.icon}
-                                </div>
-                            </TooltipTrigger>
-                            <TooltipContent >
-                                <motion.a
+
+                        <div
+                            onMouseEnter={() => handleHovered(index)}
+                            onMouseLeave={handleHoverLeave}
+
+
+
+                            key={index} className="relative size-6">
+                            {item.icon}
+                            {isHovered === index &&
+                                <motion.span
                                     initial={{
-                                        opacity: 0,
-                                        y: 2
+                                        y: 8,
+                                        opacity: 0.6
                                     }}
                                     animate={{
-                                        opacity: 1,
-                                        y: 0
-
+                                        y: 0,
+                                        opacity: 1
+                                    }}
+                                    exit={{
+                                        y: 8,
+                                        opacity: 0.6
                                     }}
                                     transition={{
-                                        duration: 0.3,
-                                        ease: easeInOut
+                                        duration: 0.2
                                     }}
+                                    layoutId="tooltip" className=" absolute -top-8 left-1/2 -translate-x-1/2  bg-secondary rounded-sm  text-xs text-primary whitespace-nowrap">
+                                    <div className="relative w-full h-full p-1 px-2 rounded-sm ">
+                                        <motion.a
+                                            initial={{
+                                                filter: "blur(2px)",
+                                            }}
+                                            animate={{
+                                                filter: "blur(0px)",
 
-                                    className="text-xs">{item.lable}</motion.a>
-                            </TooltipContent>
-                        </Tooltip>
+                                            }}
+                                            transition={{
+                                                duration: 0.2,
+                                                ease: easeInOut
+                                            }}
+
+                                            className="text-xs z-100">{item.lable}</motion.a>
+                                        <span className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-1/3 size-2 bg-secondary rounded-xs rotate-45 "></span>
+                                    </div>
+                                </motion.span>}
+                        </div>
+
                     ))}
 
 
