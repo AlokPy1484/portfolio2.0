@@ -1,5 +1,4 @@
 "use client"
-
 import { useEffect, useRef, useState } from "react"
 import { motion } from "motion/react"
 import Image from "next/image"
@@ -9,13 +8,11 @@ import gsap from "gsap"
 
 export default function ExperienceSection() {
 
-
     type ExperienceType = {
         title: string,
         timeline: string,
         description: string
     }
-
 
     const realExperiences: ExperienceType[] = [
         {
@@ -37,23 +34,6 @@ export default function ExperienceSection() {
 
     ]
 
-    const experiences: ExperienceType[] = [
-        {
-            title: "Designer at 24Labs",
-            timeline: "2025 - NOW",
-            description: "Helped shape brand identity and landing pages, working hand in hand with the team and group."
-        },
-        {
-            title: "Frontend engineer at RocketChat",
-            timeline: "2025 - 2024",
-            description: "Took the landing page live (v0 → v1), cut load time to under 2s, and work"
-        },
-        {
-            title: "Lead developer at trvalr",
-            timeline: "2024 - 2021",
-            description: "Revamped landing + web app for better UX and speed, scaled to 8M+ impressions/month."
-        }
-    ]
 
     const [modal, setModal] = useState({ active: false, index: 0 })
 
