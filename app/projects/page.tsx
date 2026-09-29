@@ -10,7 +10,7 @@ export default function page() {
         {
             name: "LetterBox",
             lable: "Social Media",
-            link: "www.google.com",
+            link: "",
             backgroundColor: "oklch(40.8% 0.123 38.172 / 0.1)",
             imageSrc: "/projectsAssets/letter-box.png"
 

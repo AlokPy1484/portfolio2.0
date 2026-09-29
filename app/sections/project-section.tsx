@@ -1,5 +1,5 @@
 "use client"
-import { MoveUpRight } from "lucide-react";
+import { MoveUpRight, Wrench } from "lucide-react";
 import Image from "next/image";
 import placeholer from "../../public/projectsAssets/placeholder.png"
 import { useState } from "react";
@@ -88,7 +88,29 @@ export function ProjectCard(props: ProjectCardType) {
                                 transition={{
                                     duration: 0.3
                                 }}
-                                className="absolute top-0 left-0 right-0 bottom-0 z-10 rounded-t-lg backdrop-blur-xs" />}
+                                className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center z-10 rounded-t-lg backdrop-blur-xs" >
+                                <motion.div
+                                    initial={{
+                                        y: 8,
+                                        scale: 0.8
+                                    }}
+                                    animate={{
+                                        y: 0,
+                                        scale: 1
+                                    }}
+                                    exit={{
+                                        y: 8,
+                                        scale: 0.8
+                                    }}
+                                    transition={{
+
+                                        duration: 0.3
+                                    }}
+                                    className="flex justify-center items-center gap-4">
+                                    <Wrench fill="white" strokeWidth={1} size={16} />
+                                    <a className="font-bold text-lg">Under Development</a>
+                                </motion.div>
+                            </motion.span>}
                     </AnimatePresence>
                     <Image
                         src={props.imageSrc}
@@ -105,7 +127,7 @@ export function ProjectCard(props: ProjectCardType) {
                     <a className="text-sm tracking-widest  ">{props.name}</a>
                     <a className="text-xs text-secondary/50 ">{props.lable}</a>
                 </div>
-                <a href={props.link}>
+                <a href={props.unreleased ? "" : props.link} className={props.unreleased ? "cursor-not-allowed hover:opacity-50" : "cursor-pointer opacity-100"}>
                     <MoveUpRight size={16} strokeWidth={1} />
                 </a>
             </div>
