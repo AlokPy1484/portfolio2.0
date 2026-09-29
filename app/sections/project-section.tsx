@@ -30,23 +30,16 @@ export default function ProjectSection() {
 
 
     return (
-        <div className="hero-container flex flex-col justify-start items-start gap-8  w-full max-w-2xl px-8 md:px-0 mt-20 md:mt-12 ">
+        <div className="hero-container flex flex-col justify-start items-start gap-8  w-screen max-w-2xl px-8 md:px-0 mt-20 md:mt-12 ">
             <div className="title-container flex justify-between items-end w-full">
                 <h1 className="text-sm font-">PROJECTS</h1>
                 <a href="/projects" className="text-xs border-b border-primary/0 hover:border-primary">VIEW ALL</a>
             </div>
             <div className="card-container flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4 w-full">
 
-
-
                 {projects.map((project, idx) => (
-
-
                     <ProjectCard unreleased={false} backgroundColor={project.backgroundColor} imageSrc={project.imageSrc} key={idx} name={project.name} lable={project.lable} link={project.link} />
                 ))}
-
-
-
 
             </div>
         </div>
@@ -58,6 +51,8 @@ type ProjectCardType = {
     lable: string,
     link: string,
     imageSrc: string,
+    // optimizedSrc: string,
+    // placeholderSrc: string,
     backgroundColor: string,
     unreleased: boolean
 }
@@ -70,7 +65,7 @@ export function ProjectCard(props: ProjectCardType) {
     }
 
     return (
-        <div onClick={handleProjectUnreleased} onMouseEnter={handleProjectUnreleased} href={props.unreleased ? undefined : props.link} className="relative group w-full h-full flex flex-col justify-between items-center gap-6">
+        <div className="relative group w-full h-full flex flex-col justify-between items-center gap-6">
 
             {unreleased &&
                 <span className="flex absolute inset-0 justify-center items-center w-full h-full bg-none backdrop-blur-xs opacity-100 z-100 transition-all duration-300 ease-in-out">
