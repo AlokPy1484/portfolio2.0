@@ -15,15 +15,17 @@ export default function ProjectSection() {
             lable: "Design Tool",
             link: "https://product1-nu.vercel.app",
             backgroundColor: "oklch(14.5% 0 none/0.1)",
-            imageSrc: "/projectsAssets/dotgrid.png"
-
+            imageSrc: "/projectsAssets/dotgrid.png",
+            optimizedSrc: "https://res.cloudinary.com/dvclqzpkz/image/upload/q_auto/v1790660585/dotgrid_cfabyj.png",
         },
         {
             name: "Landing Page",
             lable: "Single Page Website",
             link: "https://digital-heroes-internship.vercel.app",
             backgroundColor: "oklch(26.6% 0.065 152.934 / 0.1)",
-            imageSrc: "/projectsAssets/landing-page.png"
+            imageSrc: "/projectsAssets/landing-page.png",
+            optimizedSrc: "https://res.cloudinary.com/dvclqzpkz/image/upload/q_auto/v1790660586/landing-page_maaqwc.png",
+
 
         }
     ]
@@ -38,7 +40,7 @@ export default function ProjectSection() {
             <div className="card-container flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4 w-full">
 
                 {projects.map((project, idx) => (
-                    <ProjectCard key={project.name} unreleased={false} backgroundColor={project.backgroundColor} imageSrc={project.imageSrc} name={project.name} lable={project.lable} link={project.link} />
+                    <ProjectCard key={project.name} unreleased={false} backgroundColor={project.backgroundColor} imageSrc={project.optimizedSrc} name={project.name} lable={project.lable} link={project.link} />
                 ))}
 
             </div>
