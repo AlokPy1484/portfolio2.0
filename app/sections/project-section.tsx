@@ -3,7 +3,7 @@ import { MoveUpRight } from "lucide-react";
 import Image from "next/image";
 import placeholer from "../../public/projectsAssets/placeholder.png"
 import { useState } from "react";
-
+import { AnimatePresence, motion } from "motion/react"
 
 
 
@@ -38,7 +38,7 @@ export default function ProjectSection() {
             <div className="card-container flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4 w-full">
 
                 {projects.map((project, idx) => (
-                    <ProjectCard unreleased={false} backgroundColor={project.backgroundColor} imageSrc={project.imageSrc} key={idx} name={project.name} lable={project.lable} link={project.link} />
+                    <ProjectCard key={project.name} unreleased={false} backgroundColor={project.backgroundColor} imageSrc={project.imageSrc} name={project.name} lable={project.lable} link={project.link} />
                 ))}
 
             </div>
@@ -58,26 +58,38 @@ type ProjectCardType = {
 }
 
 export function ProjectCard(props: ProjectCardType) {
-    const [unreleased, setUnreleased] = useState(false)
 
-    const handleProjectUnreleased = () => {
-        props.unreleased && setUnreleased(true)
-    }
+    const [isHovered, setIsHoverd] = useState<boolean>(false)
 
     return (
-        <div className="relative group w-full h-full flex flex-col justify-between items-center gap-6">
-
-            {unreleased &&
-                <span className="flex absolute inset-0 justify-center items-center w-full h-full bg-none backdrop-blur-xs opacity-100 z-100 transition-all duration-300 ease-in-out">
-                    <a>Coming Soon...</a>
-                </span>
-            }
+        <div
+            onMouseEnter={() => setIsHoverd(true)}
+            onMouseLeave={() => setIsHoverd(false)}
+            className="relative group w-full h-full flex flex-col justify-between items-center gap-6">
 
             <div
                 className="w-full aspect-[300/170] p-6 pb-0 rounded-xl overflow-hidden"
                 style={{ backgroundColor: props.backgroundColor }}
             >
                 <div className="relative w-full h-full overflow-hidden rounded-t-lg transition-transform duration-300 group-hover:scale-110">
+                    <AnimatePresence>
+                        {(props.unreleased && isHovered) &&
+                            <motion.span
+                                key="unreleased-overlay"
+                                initial={{
+                                    opacity: 0
+                                }}
+                                animate={{
+                                    opacity: 1
+                                }}
+                                exit={{
+                                    opacity: 0
+                                }}
+                                transition={{
+                                    duration: 0.3
+                                }}
+                                className="absolute top-0 left-0 right-0 bottom-0 z-10 rounded-t-lg backdrop-blur-xs" />}
+                    </AnimatePresence>
                     <Image
                         src={props.imageSrc}
                         alt={props.name}
