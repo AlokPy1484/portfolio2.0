@@ -30,7 +30,7 @@ export default function ProjectSection() {
 
 
     return (
-        <div className="hero-container flex flex-col justify-start items-start gap-8  w-full max-w-2xl px-8 md:px-0 mt-20 md:mt-12">
+        <div className="hero-container flex flex-col justify-start items-start gap-8  w-full max-w-2xl px-8 md:px-0 mt-20 md:mt-12 ">
             <div className="title-container flex justify-between items-end w-full">
                 <h1 className="text-sm font-">PROJECTS</h1>
                 <a href="/projects" className="text-xs border-b border-primary/0 hover:border-primary">VIEW ALL</a>
@@ -62,7 +62,6 @@ type ProjectCardType = {
     unreleased: boolean
 }
 
-
 export function ProjectCard(props: ProjectCardType) {
     const [unreleased, setUnreleased] = useState(false)
 
@@ -71,7 +70,7 @@ export function ProjectCard(props: ProjectCardType) {
     }
 
     return (
-        <a onClick={handleProjectUnreleased} onMouseEnter={handleProjectUnreleased} href={props.unreleased ? undefined : props.link} className="relative group  card flex flex-col justify-between items-center gap-4">
+        <div onClick={handleProjectUnreleased} onMouseEnter={handleProjectUnreleased} href={props.unreleased ? undefined : props.link} className="relative group w-full h-full flex flex-col justify-between items-center gap-6">
 
             {unreleased &&
                 <span className="flex absolute inset-0 justify-center items-center w-full h-full bg-none backdrop-blur-xs opacity-100 z-100 transition-all duration-300 ease-in-out">
@@ -79,25 +78,31 @@ export function ProjectCard(props: ProjectCardType) {
                 </span>
             }
 
-            <a className="image-container flex justify-center items-end px-6 pt-6  rounded-xl overflow-hidden"
-                style={{ backgroundColor: props.backgroundColor }}>
-                <div className="flex justify-center items-center w-full h-full bg-neutral-700 rounded-t-lg group-hover:scale-110 transition-all ease-in-out duration-300">
-
-                    <Image src={props.imageSrc} alt="Logo" width={250} height={160} className="object-cover w-full h-full rounded-t-lg " />
-
+            <div
+                className="w-full aspect-[300/170] p-6 pb-0 rounded-xl overflow-hidden"
+                style={{ backgroundColor: props.backgroundColor }}
+            >
+                <div className="relative w-full h-full overflow-hidden rounded-t-lg transition-transform duration-300 group-hover:scale-110">
+                    <Image
+                        src={props.imageSrc}
+                        alt={props.name}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 300px"
+                        className="object-cover"
+                    />
                 </div>
-            </a>
+            </div>
 
-            <div className="content-container flex justify-between items-center max-w-[290px] w-full">
+            <div className="content-container flex justify-between items-center w-full px-4">
                 <div className="title-container flex flex-col justify-start items-start w-full gap-2">
-                    <a className="text-sm font-semibold">{props.name}</a>
-                    <a className="text-sm">{props.lable}</a>
+                    <a className="text-sm tracking-widest  ">{props.name}</a>
+                    <a className="text-xs text-secondary/50 ">{props.lable}</a>
                 </div>
                 <a href={props.link}>
                     <MoveUpRight size={16} strokeWidth={1} />
                 </a>
             </div>
 
-        </a>
+        </div>
     )
 }

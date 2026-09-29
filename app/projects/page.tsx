@@ -3,11 +3,6 @@ import { ProjectCard } from "../sections/project-section"
 
 
 
-
-
-
-
-
 export default function page() {
 
 
@@ -58,10 +53,12 @@ export default function page() {
         <div className="relative flex justify-center items-center w-screen bg-background text-foreground font-geist">
             <div className="flex flex-col justify-start items-center gap-12 max-w-2xl px-8 md:px-0 w-full my-25">
                 <div className="text-2xl w-full">Projects:</div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-12  w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-12 w-full ">
 
                     {projects.map((project, idx) => (
                         <ProjectCard unreleased={idx == 0 ? true : false} imageSrc={project.imageSrc} backgroundColor={project.backgroundColor} key={idx} name={project.name} lable={project.lable} link={project.link} />
+
+                        // <div className="w-[300px] h-[200px] bg-amber-400"></div>
                     ))}
 
                 </div>
