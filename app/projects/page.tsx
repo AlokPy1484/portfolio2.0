@@ -10,7 +10,7 @@ export default function page() {
         {
             name: "LetterBox",
             lable: "Social Media",
-            link: "www.google.com",
+            link: "",
             backgroundColor: "oklch(40.8% 0.123 38.172 / 0.1)",
             imageSrc: "/projectsAssets/letter-box.png"
 
@@ -56,11 +56,10 @@ export default function page() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-12 w-full ">
 
                     {projects.map((project, idx) => (
-                        <ProjectCard unreleased={idx == 0 ? true : false} imageSrc={project.imageSrc} backgroundColor={project.backgroundColor} key={idx} name={project.name} lable={project.lable} link={project.link} />
+                        <ProjectCard key={project.name} unreleased={idx == 0 ? true : false} imageSrc={project.imageSrc} backgroundColor={project.backgroundColor} name={project.name} lable={project.lable} link={project.link} />
 
                         // <div className="w-[300px] h-[200px] bg-amber-400"></div>
                     ))}
-
                 </div>
             </div>
         </div>
