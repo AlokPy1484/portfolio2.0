@@ -6,7 +6,6 @@ import { ProjectCard } from "../sections/project-section"
 
 export default function page() {
 
-
     const projects = [
         {
             name: "LetterBox",
@@ -14,7 +13,8 @@ export default function page() {
             link: "",
             backgroundColor: "oklch(40.8% 0.123 38.172 / 0.1)",
             imageSrc: "/projectsAssets/letter-box.png",
-            optimizedSrc: "https://res.cloudinary.com/dvclqzpkz/image/upload/q_auto/v1790659851/letter-box_ixv0na.png"
+            optimizedSrc: "https://res.cloudinary.com/dvclqzpkz/image/upload/q_auto/v1790659851/letter-box_ixv0na.png",
+            placeholder: "/letterboxPlaceholder.png"
         },
         {
             name: "dotgrid.io",
@@ -23,6 +23,7 @@ export default function page() {
             backgroundColor: "oklch(14.5% 0 none/0.1)",
             imageSrc: "/projectsAssets/dotgrid.png",
             optimizedSrc: "https://res.cloudinary.com/dvclqzpkz/image/upload/q_auto/v1790660585/dotgrid_cfabyj.png",
+            placeholder: "/dotgridPlaceholder.png"
         },
         {
             name: "Landing Page",
@@ -31,6 +32,7 @@ export default function page() {
             backgroundColor: "oklch(26.6% 0.065 152.934 / 0.1)",
             imageSrc: "/projectsAssets/landing-page.png",
             optimizedSrc: "https://res.cloudinary.com/dvclqzpkz/image/upload/q_auto/v1790660586/landing-page_maaqwc.png",
+            placeholder: "/landingPagePlaceholder.webp"
         },
         {
             name: "Blognest",
@@ -38,27 +40,25 @@ export default function page() {
             link: "https://blognest-ui-2.vercel.app",
             backgroundColor: "oklch(26.8% 0.007 34.298 / 0.1)",
             imageSrc: "/projectsAssets/blognest.png",
-            optimizedSrc: "https://res.cloudinary.com/dvclqzpkz/image/upload/v1790660585/blognest_vr5fyh.png"
+            optimizedSrc: "https://res.cloudinary.com/dvclqzpkz/image/upload/v1790660585/blognest_vr5fyh.png",
+            placeholder: "/blognestPlaceholder.png"
         },
         {
             name: "trvalr",
             lable: "Online Travel Agency",
             link: "https://trvalr.com",
             backgroundColor: "oklch(20.8% 0.042 265.755/0.1)",
-            optimizedSrc: "https://res.cloudinary.com/dvclqzpkz/image/upload/v1790660586/trvalr_ne7rcb.png"
+            optimizedSrc: "https://res.cloudinary.com/dvclqzpkz/image/upload/v1790660586/trvalr_ne7rcb.png",
+            placeholder: "/trvalrPlaceholder.png"
         }]
-
 
     return (
         <div className="relative flex justify-center items-center w-screen bg-background text-foreground font-geist">
             <div className="flex flex-col justify-start items-center gap-12 max-w-2xl px-8 md:px-0 w-full my-25">
                 <div className="text-2xl w-full">Projects:</div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-12 w-full ">
-
                     {projects.map((project, idx) => (
-                        <ProjectCard key={project.name} unreleased={idx == 0 ? true : false} imageSrc={project.optimizedSrc} backgroundColor={project.backgroundColor} name={project.name} lable={project.lable} link={project.link} />
-
-                        // <div className="w-[300px] h-[200px] bg-amber-400"></div>
+                        <ProjectCard key={project.name} unreleased={idx == 0 ? true : false} imageSrc={project.optimizedSrc} placeholder={project.placeholder} backgroundColor={project.backgroundColor} name={project.name} lable={project.lable} link={project.link} />
                     ))}
                 </div>
             </div>

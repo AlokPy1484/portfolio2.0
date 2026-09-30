@@ -400,14 +400,12 @@ export default function HeroSection() {
                                     strokeOpacity={0.4} />
                             </svg>
 
-
-
                             <motion.p
                                 transition={{
                                     duration: 0.3,
                                     ease: "easeInOut"
                                 }}
-                                className="absolute top-4 left-1/2 -translate-x-1/2 w-[220px] text-2xl font-reenie text-secondary/40">
+                                className="absolute top-4 left-1/2 -translate-x-1/2 w-[220px] text-2xl font-biro text-secondary/40">
                                 these are my tech stacks
                             </motion.p>
                         </span>

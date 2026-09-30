@@ -17,6 +17,7 @@ export default function ProjectSection() {
             backgroundColor: "oklch(14.5% 0 none/0.1)",
             imageSrc: "/projectsAssets/dotgrid.png",
             optimizedSrc: "https://res.cloudinary.com/dvclqzpkz/image/upload/q_auto/v1790660585/dotgrid_cfabyj.png",
+            placeholder: "/landingPagePlaceholder.webp"
         },
         {
             name: "Landing Page",
@@ -25,10 +26,19 @@ export default function ProjectSection() {
             backgroundColor: "oklch(26.6% 0.065 152.934 / 0.1)",
             imageSrc: "/projectsAssets/landing-page.png",
             optimizedSrc: "https://res.cloudinary.com/dvclqzpkz/image/upload/q_auto/v1790660586/landing-page_maaqwc.png",
+            placeholder: "/landingPagePlaceholder.webp"
 
 
         }
     ]
+
+
+    // const getPlaceholderSrc = (url: string, width = 20) => {
+    //     return url.replace(
+    //         "/image/upload/",
+    //         `/image/upload/w_${width},q_10,e_blur:100,f_auto/`
+    //     );
+    // }
 
 
     return (
@@ -40,7 +50,7 @@ export default function ProjectSection() {
             <div className="card-container flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4 w-full">
 
                 {projects.map((project, idx) => (
-                    <ProjectCard key={project.name} unreleased={false} backgroundColor={project.backgroundColor} imageSrc={project.optimizedSrc} name={project.name} lable={project.lable} link={project.link} />
+                    <ProjectCard key={project.name} unreleased={false} backgroundColor={project.backgroundColor} imageSrc={project.optimizedSrc} placeholder={project.placeholder} name={project.name} lable={project.lable} link={project.link} />
                 ))}
 
             </div>
@@ -53,22 +63,29 @@ type ProjectCardType = {
     lable: string,
     link: string,
     imageSrc: string,
-    // optimizedSrc: string,
-    // placeholderSrc: string,
     backgroundColor: string,
-    unreleased: boolean
+    unreleased: boolean,
+    placeholder: string
 }
 
 export function ProjectCard(props: ProjectCardType) {
 
     const [isHovered, setIsHoverd] = useState<boolean>(false)
 
+
+    const getPlaceholderSrc = (url: string, width = 20) => {
+        return url.replace(
+            "/image/upload/",
+            `/image/upload/`
+        );
+    }
+
+
     return (
         <div
             onMouseEnter={() => setIsHoverd(true)}
             onMouseLeave={() => setIsHoverd(false)}
             className="relative group w-full h-full flex flex-col justify-between items-center gap-6">
-
             <div
                 className="w-full aspect-[300/170] p-6 pb-0 rounded-xl overflow-hidden"
                 style={{ backgroundColor: props.backgroundColor }}
@@ -114,9 +131,13 @@ export function ProjectCard(props: ProjectCardType) {
                                 </motion.div>
                             </motion.span>}
                     </AnimatePresence>
+
                     <Image
                         src={props.imageSrc}
                         alt={props.name}
+                        placeholder="blur"
+                        // blurDataURL="/Hero1.jpg"
+                        blurDataURL={props.placeholder}
                         fill
                         sizes="(max-width: 768px) 100vw, 300px"
                         className="object-cover"
