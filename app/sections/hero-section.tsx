@@ -335,7 +335,7 @@ export default function HeroSection() {
                                 duration: 0.3,
                                 ease: "easeInOut"
                             }}
-                            className="relative bottom-10 left-8 text-2xl font-reenie text-secondary/40">
+                            className="relative bottom-10 left-8 text-2xl font-biro text-secondary/40">
                             these are my tech stacks
                         </motion.p>
                     </div>

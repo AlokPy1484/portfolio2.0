@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
@@ -25,7 +24,7 @@
   --font-mono: var(--font-geist-mono);
   --font-geist: var(--font-geist-sans);
   --font-biro: "Biro", sans-serif;
-  --font-reenie: "Reenie Beanie", cursive;
+  /* --font-reenie: "Reenie Beanie", cursive; */
 
   --font-heading: var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);
