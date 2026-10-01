@@ -97,7 +97,7 @@ export default function ExperienceSection() {
 
 
 
-const ExperienceCard = (props: { timeline: string, title: string, description: string, setModal: any, index: number, setHoveredIndex: any, hoveredIndex: any }) => (
+const ExperienceCard = (props: { timeline: string, title: string, description: string, index: number, setHoveredIndex: any, hoveredIndex: any }) => (
     <div
         onMouseEnter={() => { props.setHoveredIndex(props.index); console.log(props.index) }}
         className={cn(props.hoveredIndex === props.index && "text-secondary", "group flex justify-between items-start w-full px-[15px] transition-all duration-300 ease-in-out")}>
