@@ -10,11 +10,19 @@ import RenderAnimate from "./providers/loading-animation";
 export default function Home() {
   return (
     <div className="relative flex flex-col justify-start items-center w-screen bg-background text-foreground ">
-      <RenderAnimate><HeroSection /></RenderAnimate>
+
+      {/* <RenderAnimate><HeroSection /></RenderAnimate>
       <RenderAnimate><ExperienceSection /></RenderAnimate>
       <RenderAnimate><ProjectSection /></RenderAnimate>
       <BlogSection />
+      <QuoteSection /> */}
+
+      <HeroSection />
+      <ExperienceSection />
+      <ProjectSection />
+      <BlogSection />
       <QuoteSection />
+
     </div>
   )
 }

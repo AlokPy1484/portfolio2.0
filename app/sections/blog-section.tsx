@@ -1,5 +1,6 @@
 "use client"
 import { easeInOut, motion } from "motion/react"
+import { useState } from "react"
 
 
 
@@ -7,6 +8,12 @@ import { easeInOut, motion } from "motion/react"
 
 export default function BlogSection() {
 
+
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+
+    const blogs = [
+        {}
+    ]
 
     return (
         <motion.div
@@ -46,7 +53,6 @@ export default function BlogSection() {
                         <a href="https://portfolio-five-silk-61.vercel.app/pages/blog" className="font-medium cursor-pointer">Github's Basic</a>
                         <a className="text-sm">14/11</a>
                     </div>
-
                 </div>
             </div>
         </motion.div>

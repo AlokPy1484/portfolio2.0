@@ -3,10 +3,10 @@ import Image from "next/image";
 import heroImage from "../../public/Hero1.jpg"
 import { Mail, MapPin, User } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import { easeInOut, motion } from "motion/react"
+import { AnimatePresence, easeInOut, motion } from "motion/react"
 import { Mascot } from "page-mascot";
 import { FlipWords } from "@/components/ui/flip-words";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 
 
@@ -182,35 +182,55 @@ export default function HeroSection() {
     }
 
 
+    const [isLoaded, setIsLoaded] = useState(false)
+    const [isMascotLoaded, setMascotLoaded] = useState(false)
+
+
+    useEffect(() => {
+        setIsLoaded(true)
+    }, [])
+
+
 
 
 
     return (
         <motion.div
-            initial={{
-                y: 8,
-                opacity: 0
-            }}
-            animate={{
-                y: 0,
-                opacity: 1
-            }}
-            transition={{
-                duration: 0.3,
-                ease: easeInOut
-            }}
+            // initial={{
+            //     y: 8,
+            //     opacity: 0
+            // }}
+            // animate={{
+            //     y: 0,
+            //     opacity: 1
+            // }}
+            // transition={{
+            //     duration: 0.3,
+            //     ease: easeInOut
+            // }}
             className="hero-container flex flex-col justify-start items-center gap-8 bg-background text-foreground  w-full mb-8 md:mb-0 px-8 md:px-0 max-w-2xl  mt-24 ">
-
 
             <div className="title-container flex justify-start items-center gap-4 w-full">
                 {/* <Image src={heroImage} alt="heroImage" className="object-cover size-16 rounded-xl" /> */}
                 <div className="relative bg-secondary/10 rounded-xl hover:scale-110 transition-all duration-300 ease-in-out">
-                    <Mascot
-                        className=""
-                        size={70}
-                        directions="/mascots/cat-directions.webp"
-                        reactions="/mascots/cat-reactions.webp"
-                    />
+
+                    {isLoaded ?
+                        <motion.div
+                        >
+                            <Mascot
+                                className=""
+                                size={70}
+                                directions="/mascots/cat-directions.webp"
+                                reactions="/mascots/cat-reactions.webp"
+                            />
+                        </motion.div>
+                        :
+                        <motion.div
+                            className="imageWrapper size-[70px]">
+                            <Image src="/MascotPlaceholder.png" alt="mascot placeholder" className="object-cover" width={70} height={70} />
+                        </motion.div>
+                    }
+
                 </div>
                 <div className="flex flex-col justify-center items-start gap-1">
                     <h1 className="text-3xl font-semibold">Alok Pandey</h1>
@@ -329,7 +349,6 @@ export default function HeroSection() {
                                     strokeOpacity={0.4} />
                             </svg>
                         </span>
-
                         <motion.p
                             transition={{
                                 duration: 0.3,

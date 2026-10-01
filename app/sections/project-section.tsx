@@ -136,6 +136,7 @@ export function ProjectCard(props: ProjectCardType) {
                         src={props.imageSrc}
                         alt={props.name}
                         placeholder="blur"
+                        loading="eager"
                         // blurDataURL="/Hero1.jpg"
                         blurDataURL={props.placeholder}
                         fill

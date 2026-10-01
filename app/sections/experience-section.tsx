@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react"
 import { motion } from "motion/react"
 import Image from "next/image"
 import gsap from "gsap"
+import { cn } from "@/lib/utils"
 
 
 
@@ -69,21 +70,24 @@ export default function ExperienceSection() {
     ]
 
 
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+
+
     return (
         <div className="hero-container flex flex-col justify-start items-center gap-8  w-full max-w-2xl px-8 md:px-0 mt-12">
             <div className="title-container flex flex-col justify-start items-start gap-2 w-full">
                 <h1 className="text-xs">EXPERIENCE</h1>
                 <a className="text-">People, teams, and products I’ve had the opportunity to build with.</a>
             </div>
-            <div className="content-container flex flex-col justify-start items-start gap-4 w-full">
+            <div
+
+                onMouseLeave={() => { setHoveredIndex(null) }}
+                className={cn(hoveredIndex === null ? "text-secondary" : "text-secondary/40", "content-container flex flex-col justify-start items-start gap-4 w-full")}>
 
                 {realExperiences.map((experience, idx) => (
-                    <ExperienceCard key={idx} index={idx} setModal={setModal} timeline={experience.timeline} title={experience.title} description={experience.description} />
+                    <ExperienceCard key={idx} hoveredIndex={hoveredIndex} setHoveredIndex={setHoveredIndex} index={idx} timeline={experience.timeline} title={experience.title} description={experience.description} />
                 ))}
             </div>
-
-
-
 
             {/* <Model modal={modal} scaleAnimation={scaleAnimation} index={modal.index} array={Modalprojects} /> */}
 
@@ -93,12 +97,13 @@ export default function ExperienceSection() {
 
 
 
-const ExperienceCard = (props: { timeline: string, title: string, description: string, setModal: any, index: number }) => (
-    <div className="group flex justify-between items-start w-full px-[15px] opacity-80 hover:opacity-100 transition-opacity ease-in-out duration-300"
-        onMouseEnter={() => props.setModal({ active: true, index: props.index })}
-        onMouseLeave={() => props.setModal({ active: false, index: props.index })}>
+const ExperienceCard = (props: { timeline: string, title: string, description: string, setModal: any, index: number, setHoveredIndex: any, hoveredIndex: any }) => (
+    <div
+        onMouseEnter={() => { props.setHoveredIndex(props.index); console.log(props.index) }}
+        className={cn(props.hoveredIndex === props.index && "text-secondary", "group flex justify-between items-start w-full px-[15px] transition-all duration-300 ease-in-out")}>
         <a className="text-xs w-40 -translate-x-[10px]  group-hover:translate-x-0 transition-transform ease-in-out duration-300">{props.timeline}</a>
-        <div className="flex flex-col justify-start items-start w-full translate-x-[10px] group-hover:translate-x-0 transition-transform ease-in-out duration-300">
+        <div
+            className={cn("flex flex-col justify-start items-start w-full translate-x-[10px] group-hover:translate-x-0 transition-transform ease-in-out duration-300")}>
             <a className="text- font-semibold ">{props.title}</a>
             <p className="text-">{props.description}</p>
         </div>
