@@ -96,7 +96,6 @@ export default function ExperienceSection() {
 }
 
 
-
 const ExperienceCard = (props: { timeline: string, title: string, description: string, index: number, setHoveredIndex: any, hoveredIndex: any }) => (
     <div
         onMouseEnter={() => { props.setHoveredIndex(props.index); console.log(props.index) }}
