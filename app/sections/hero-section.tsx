@@ -191,6 +191,23 @@ export default function HeroSection() {
 
 
 
+    const [isEmailHovered, setEmailHovered] = useState(false)
+    const [isEmailCopied, setIsEmailCopied] = useState(false)
+
+
+
+    const handleEmailCopy = () => {
+        navigator.clipboard.writeText("alokpandey0697@gmail.com")
+        setIsEmailCopied(true)
+        setEmailHovered(true)
+        setTimeout(() => {
+            setIsEmailCopied(false)
+            setEmailHovered(false)
+        }, 3000)
+    }
+
+
+
 
 
     return (
@@ -212,7 +229,6 @@ export default function HeroSection() {
             <div className="title-container flex justify-start items-center gap-4 w-full">
                 {/* <Image src={heroImage} alt="heroImage" className="object-cover size-16 rounded-xl" /> */}
                 <div className="relative bg-secondary/10 rounded-xl hover:scale-110 transition-all duration-300 ease-in-out">
-
                     {isLoaded ?
                         <motion.div
                         >
@@ -248,12 +264,78 @@ export default function HeroSection() {
                         <a className="font-semibold border-b border-primary/0 hover:border-primary">Pune, India</a>
                     </div>
                 </div>
-                <div className="flex flex-col justify-center items-start  gap-1 text-sm">
+                <div className="relative flex flex-col justify-center items-start  gap-1 text-sm cursor-copy">
+
+
+                    {isEmailHovered && (
+                        <motion.span
+                            initial={{
+                                y: 8,
+                                opacity: 0.6
+                            }}
+                            animate={{
+                                y: 0,
+                                opacity: 1
+                            }}
+                            exit={{
+                                y: 8,
+                                opacity: 0.6
+                            }}
+                            transition={{
+                                duration: 0.2
+                            }}
+                            layoutId="tooltip" className=" absolute -top-8 left-1/2 -translate-x-1/2  bg-secondary rounded-sm  text-xs text-primary whitespace-nowrap">
+                            <div className="relative w-full h-full p-1 px-2 rounded-sm ">
+
+                                {isEmailCopied ?
+                                    <motion.a
+                                        initial={{
+                                            filter: "blur(2px)",
+                                        }}
+                                        animate={{
+                                            filter: "blur(0px)",
+
+                                        }}
+                                        transition={{
+                                            duration: 0.2,
+                                            ease: easeInOut
+                                        }}
+
+                                        className="text-xs z-100">succesfully copied</motion.a>
+
+                                    :
+
+                                    <motion.a
+                                        initial={{
+                                            filter: "blur(2px)",
+                                        }}
+                                        animate={{
+                                            filter: "blur(0px)",
+
+                                        }}
+                                        transition={{
+                                            duration: 0.2,
+                                            ease: easeInOut
+                                        }}
+
+                                        className="text-xs z-100">click to copy</motion.a>}
+
+                                <span className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-1/3 size-2 bg-secondary rounded-xs rotate-45 "></span>
+                            </div>
+                        </motion.span>
+                    )}
+
                     <a className="text-xs">EMAIL</a>
-                    <div className="flex justify-start items-center gap-2">
+
+                    <div
+                        onMouseEnter={() => { setEmailHovered(true) }}
+                        onMouseLeave={() => { setEmailHovered(false) }}
+                        onClick={() => handleEmailCopy()}
+                        className="flex justify-start items-center gap-2">
                         <Mail size={12} strokeWidth={2} />
                         <a className="font-semibold border-b border-primary/0 hover:border-primary">alokpandey0697@gmail.com</a>
                     </div>
+
                 </div>
                 <div className="hidden md:flex flex-col justify-center items-start  gap-1 text-sm">
                     <a className="text-xs">PRONOUNS</a>
@@ -316,7 +398,6 @@ export default function HeroSection() {
                                             }}
                                             animate={{
                                                 filter: "blur(0px)",
-
                                             }}
                                             transition={{
                                                 duration: 0.2,
