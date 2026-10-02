@@ -56,6 +56,8 @@ export default function ExperienceSection() {
         title: string,
         timeline: string,
         description: string,
+        org: string,
+        logo: React.ReactNode
     }
 
     const realExperiences: ExperienceType[] = [
@@ -64,7 +66,7 @@ export default function ExperienceSection() {
             timeline: "FEB 26 - NOW",
             org: "Upwork",
             description: "Working with clients across the globe to build innovative and engaging web applications",
-            logo: trvalrSVG()
+            logo: upworkSVG()
         },
         {
 
@@ -72,7 +74,7 @@ export default function ExperienceSection() {
             org: "Trvalr",
             timeline: "SEPT 25 - FEB 26",
             description: "Built the core flight booking interface and checkout flow",
-            logo: upworkSVG()
+            logo: trvalrSVG()
         },
         {
             title: "Contributer at ",
@@ -145,17 +147,17 @@ export default function ExperienceSection() {
 }
 
 
-const ExperienceCard = (props: { timeline: string, title: string, description: string, index: number, setHoveredIndex: any, hoveredIndex: any, logo: any, org: string }) => (
+const ExperienceCard = (props: { timeline: string, title: string, description: string, index: number, setHoveredIndex: React.Dispatch<React.SetStateAction<number | null>>, hoveredIndex: number | null, logo: React.ReactNode, org: string }) => (
     <div
         onMouseEnter={() => { props.setHoveredIndex(props.index); console.log(props.index) }}
         className={cn(props.hoveredIndex != props.index && props.hoveredIndex != null ? "opacity-40" : "opacity-100", "group flex justify-between items-start w-full px-[15px] transition-all duration-300 ease-in-out")}>
         <a className="text-xs w-40 -translate-x-[10px]  group-hover:translate-x-0 transition-transform ease-in-out duration-300">{props.timeline}</a>
         <div
             className={cn("flex flex-col justify-start items-start gap-1 w-full translate-x-[10px] group-hover:translate-x-0 transition-transform ease-in-out duration-300")}>
-            <div className="flex justify-start items-center gap-1 text- font-semibold ">
+            <div className="flex justify-start items-center gap-[6px] text- font-semibold ">
                 <a className="">{props.title}</a>
+                <span>{props.logo}</span>
 
-                {props.logo}
 
                 <a className="">{props.org}</a>
             </div>
