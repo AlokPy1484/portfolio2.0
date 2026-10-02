@@ -1,5 +1,6 @@
 "use client"
-import { easeInOut, motion } from "motion/react"
+import { AnimatePresence, easeInOut, motion } from "motion/react"
+import { useState } from "react"
 import { JSX } from "react/jsx-runtime"
 
 
@@ -45,6 +46,8 @@ export default function QuoteSection() {
         }
     ]
 
+    const [isTranslated, setIsTranslated] = useState<boolean>(false)
+
 
     return (
         <motion.div
@@ -61,9 +64,64 @@ export default function QuoteSection() {
                 ease: easeInOut
             }}
             className="hero-container flex flex-col justify-start items-start gap-8  w-full max-w-2xl px-8 md:px-0 mt-20 pt-16 border-t border-neutral-800/80 border-dashed">
-            <div className="flex flex-col justify-start items-start w-full">
-                <p className="text-lg tracking-wide">"मंज़िल मिलेगी, भटक कर ही सही, गुमराह तो वो हैं, जो घर से निकले ही नहीं।"</p>
-                {/* <p className="text-lg tracking-tight">"You will reach your destination, even if you wander along the way; the truly lost are those who never even left their homes."</p> */}
+            <div className="relative flex flex-col justify-start items-start w-full">
+                <span onClick={() => { setIsTranslated(prev => !prev) }} className="absolute top-[-28px] text-[8px] tracking-widest opacity-60 cursor-pointer uppercase">
+                    translate
+                </span>
+                <div className="relative w-full h-[90px] md:h-[40px]">
+                    {isTranslated ?
+                        <AnimatePresence>
+                            <motion.p
+                                key="english"
+                                initial={{
+                                    opacity: 0,
+                                    filter: "blur(4px)",
+                                    y: 4
+                                }}
+                                animate={{
+                                    opacity: 1,
+                                    filter: "blur(0px)",
+                                    y: 0
+                                }}
+                                exit={{
+                                    opacity: 0,
+                                    filter: "blur(4px)",
+                                    y: -6
+                                }}
+                                transition={{
+                                    duration: 0.2
+                                }}
+                                className="absolute inset-0 text-lg tracking-tight">
+                                "You will reach your destination, even if you wander along the way; the truly lost are those who never even left their homes."
+                            </motion.p>
+                        </AnimatePresence>
+                        :
+                        <AnimatePresence>
+                            <motion.p
+                                key="hindi"
+                                initial={{
+                                    opacity: 0,
+                                    filter: "blur(4px)",
+                                    y: 4
+                                }}
+                                animate={{
+                                    opacity: 1,
+                                    filter: "blur(0px)",
+                                    y: 0
+                                }}
+                                exit={{
+                                    opacity: 0,
+                                    filter: "blur(4px)",
+                                    y: -4
+                                }}
+                                transition={{
+                                    duration: 0.2
+                                }}
+                                className="absolute inset-0 text-lg tracking-wide">"मंज़िल मिलेगी, भटक कर ही सही, गुमराह तो वो हैं, जो घर से निकले ही नहीं।"
+                            </motion.p>
+                        </AnimatePresence>
+                    }
+                </div>
                 <div className="flex justify-end w-full text-left ">
                     {/* <p className="text-[8px] text-neutral-500 pt-2 ">TRANSLATE</p> */}
                     <p className="">— Mirza Ghalib</p>
