@@ -181,7 +181,6 @@ export default function HeroSection() {
         timerRef.current = null
     }
 
-
     const [isLoaded, setIsLoaded] = useState(false)
     const [isMascotLoaded, setMascotLoaded] = useState(false)
 
@@ -265,10 +264,14 @@ export default function HeroSection() {
                 </div>
             </div>
 
-
             <div className="about-container relative w-full text-md leading- tracking-normal font-light">
                 <a>
                     I build websites and digital products that help brands shape their identity in the digital world. I also like to build and maintain tools that makes development a bit less painful.
+                    You can reach out to me on
+                    <a href="https://github.com/alokpy1484" target="_blank" className="border-b border-neutral-100/10 mx-1">Github,</a>
+                    <a href="https://x.com/AlokPandey37305" target="_blank" className="border-b border-neutral-100/10 mx-1">X</a>
+                    or
+                    <a href="https://www.linkedin.com/in/alokpy1484" target="_blank" className="border-b border-neutral-100/10 mx-1"> LinkedIn .</a>
                 </a>
             </div >
 
