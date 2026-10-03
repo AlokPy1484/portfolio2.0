@@ -7,9 +7,7 @@ import { AnimatePresence, easeInOut, motion } from "motion/react"
 import { useEffect, useState } from "react"
 import MagneticButton from "../providers/MagneticButton"
 import { toast } from "@/components/ui/toast"
-
-
-
+import { useRouter } from "next/navigation"
 
 
 const navitems = [
@@ -20,13 +18,6 @@ const navitems = [
     },
 
 ]
-
-
-
-
-
-
-
 
 
 export default function Navbar() {
@@ -122,6 +113,8 @@ export default function Navbar() {
 
     const [contactMethod, setContactMethod] = useState<string>("Get in touch")
 
+    const router = useRouter()
+
     return (
         <motion.div
             initial={{
@@ -146,7 +139,7 @@ export default function Navbar() {
                 <div className="flex justify-end items-center gap-2">
                     <div className="relative flex justify-center items-center">
 
-                        {isExpanded ?
+                        {/*      
                             <AnimatePresence mode="popLayout">
                                 <motion.div
                                     layoutId="contact"
@@ -187,20 +180,21 @@ export default function Navbar() {
                                     </div>
 
                                 </motion.div>
-                            </AnimatePresence>
-                            :
-                            <AnimatePresence mode="popLayout">
-                                <motion.button
-                                    layoutId="contact"
-                                    onMouseEnter={() => setIsExpanded(true)}
-                                    onClick={() => setIsExpanded(true)}
+                            </AnimatePresence> */}
 
-                                    className="absolute -left-[90px] w-[90px] h-[25px] rounded-sm bg-secondary text-xs text-secondary-foreground  px-2 py-1 hover:bg-black dark:hover:bg-white cursor-pointer">
-                                    <motion.a
-                                        layoutId="contact-lable">Get in touch</motion.a>
-                                </motion.button>
-                            </AnimatePresence>
-                        }
+                        {/* <AnimatePresence mode="popLayout"> */}
+                        <motion.button
+                            layoutId="contact"
+                            // onMouseEnter={() => setIsExpanded(true)}
+                            // onClick={() => setIsExpanded(true)}
+                            onClick={() => window.open("https://cal.com/alokpandey/15min", "_blank")}
+
+                            className="absolute -left-[90px] w-[90px] h-[25px] rounded-sm bg-secondary text-xs text-secondary-foreground  px-2 py-1 hover:bg-black dark:hover:bg-white cursor-pointer">
+                            <motion.a
+                                layoutId="contact-lable">Get in touch</motion.a>
+                        </motion.button>
+                        {/* </AnimatePresence> */}
+
                     </div>
                     <div className="flex gap-1 ">
                         {/* {navbarControls.map((item, idx) => (
