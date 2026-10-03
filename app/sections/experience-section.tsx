@@ -154,14 +154,12 @@ const ExperienceCard = (props: { timeline: string, title: string, description: s
         <a className="text-xs w-40 -translate-x-[10px]  group-hover:translate-x-0 transition-transform ease-in-out duration-300">{props.timeline}</a>
         <div
             className={cn("flex flex-col justify-start items-start gap-1 w-full translate-x-[10px] group-hover:translate-x-0 transition-transform ease-in-out duration-300")}>
-            <div className="flex justify-start items-center gap-[6px] text- font-semibold ">
+            <div className="flex justify-start items-center gap-[6px] font-semibold text-sm md:text-[16px] ">
                 <a className="">{props.title}</a>
                 <span>{props.logo}</span>
-
-
                 <a className="">{props.org}</a>
             </div>
-            <p className="text-">{props.description}</p>
+            <p className="text-[14px]">{props.description}</p>
         </div>
     </div>
 )
