@@ -79,7 +79,7 @@ export default function ExperienceSection() {
         {
             title: "Contributer at ",
             timeline: "DEC 25 - MAY 26",
-            org: "RocketChat",
+            org: "GitHub",
             description: "Contributed to several open source repositories like RocketChat, AccordProject, etc",
             logo: githubSVG()
         }
