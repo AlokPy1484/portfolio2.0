@@ -1,8 +1,7 @@
 "use client"
 import { AnimatePresence, easeInOut, motion } from "motion/react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { JSX } from "react/jsx-runtime"
-
 
 
 export default function QuoteSection() {
@@ -132,6 +131,9 @@ export default function QuoteSection() {
                     <a>Services</a>
                     <a>Contact</a> */}
                 </div>
+                <div>
+                    {VisitorCount()}
+                </div>
                 <div className="flex justify-end items-center gap-4">
 
                     {socials.map((social, idx) => (
@@ -145,5 +147,25 @@ export default function QuoteSection() {
                 </div>
             </div>
         </motion.div>
+
+
     )
+}
+
+
+
+
+
+export function VisitorCount() {
+    const [count, setCount] = useState<number | null>(null);
+
+    useEffect(() => {
+        fetch("/api/visitor-count")
+            .then((res) => res.json())
+            .then((data) => setCount(data.count));
+    }, []);
+
+    if (count === null) return null;
+
+    return <span>{count.toLocaleString()} visitors</span>;
 }
