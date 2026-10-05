@@ -8,7 +8,12 @@ import { useEffect, useState } from "react"
 import MagneticButton from "../providers/MagneticButton"
 import { toast } from "@/components/ui/toast"
 import { useRouter } from "next/navigation"
+import posthog from "posthog-js"
+import { portfolioLogger } from "@/lib/posthog-logger"
 
+const isPostHogConfigured = Boolean(
+    process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN && process.env.NEXT_PUBLIC_POSTHOG_HOST
+)
 
 const navitems = [
     {
@@ -115,6 +120,14 @@ export default function Navbar() {
 
     const router = useRouter()
 
+    const handleConsultationBooking = () => {
+        if (isPostHogConfigured) {
+            posthog.capture("consultation_booking_started")
+            portfolioLogger.consultationBookingOpened()
+        }
+        window.open("https://cal.com/alokpandey/15min", "_blank")
+    }
+
     return (
         <motion.div
             initial={{
@@ -187,7 +200,7 @@ export default function Navbar() {
                             layoutId="contact"
                             // onMouseEnter={() => setIsExpanded(true)}
                             // onClick={() => setIsExpanded(true)}
-                            onClick={() => window.open("https://cal.com/alokpandey/15min", "_blank")}
+                            onClick={handleConsultationBooking}
 
                             className="absolute -left-[90px] w-[90px] h-[25px] rounded-sm bg-secondary text-xs text-secondary-foreground  px-2 py-1 hover:bg-black dark:hover:bg-white cursor-pointer">
                             <motion.a

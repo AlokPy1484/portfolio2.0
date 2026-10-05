@@ -2,8 +2,11 @@
 import { AnimatePresence, easeInOut, motion } from "motion/react"
 import { useState } from "react"
 import { JSX } from "react/jsx-runtime"
+import posthog from "posthog-js"
 
-
+const isPostHogConfigured = Boolean(
+    process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN && process.env.NEXT_PUBLIC_POSTHOG_HOST
+)
 
 export default function QuoteSection() {
 
@@ -137,7 +140,11 @@ export default function QuoteSection() {
                     {socials.map((social, idx) => (
 
 
-                        <a key={idx} href={social.href} className="size-5 cursor-pointer" target="_blank">
+                        <a key={idx} href={social.href} onClick={() => {
+                            if (isPostHogConfigured) {
+                                posthog.capture("social_profile_opened", { platform: social.label.toLowerCase(), placement: "footer" })
+                            }
+                        }} className="size-5 cursor-pointer" target="_blank">
                             {social.icon()}
                         </a>
                     ))}

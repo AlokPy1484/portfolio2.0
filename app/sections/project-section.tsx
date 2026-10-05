@@ -4,8 +4,12 @@ import Image from "next/image";
 import placeholer from "../../public/projectsAssets/placeholder.png"
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react"
+import posthog from "posthog-js"
+import { portfolioLogger } from "@/lib/posthog-logger"
 
-
+const isPostHogConfigured = Boolean(
+    process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN && process.env.NEXT_PUBLIC_POSTHOG_HOST
+)
 
 export default function ProjectSection() {
 
@@ -81,6 +85,16 @@ export function ProjectCard(props: ProjectCardType) {
     }
 
 
+    const handleProjectOpen = () => {
+        if (!props.unreleased && isPostHogConfigured) {
+            posthog.capture("project_opened", {
+                project_name: props.name,
+                project_category: props.lable,
+            })
+            portfolioLogger.projectOpened(props.lable)
+        }
+    }
+
     return (
         <div
             onMouseEnter={() => setIsHoverd(true)}
@@ -151,7 +165,7 @@ export function ProjectCard(props: ProjectCardType) {
                     <a className="text-sm tracking-widest  ">{props.name}</a>
                     <a className="text-xs text-secondary/50 ">{props.lable}</a>
                 </div>
-                <a href={props.unreleased ? "" : props.link} className={props.unreleased ? "cursor-not-allowed hover:opacity-50" : "cursor-pointer opacity-100"}>
+                <a href={props.unreleased ? "" : props.link} onClick={handleProjectOpen} className={props.unreleased ? "cursor-not-allowed hover:opacity-50" : "cursor-pointer opacity-100"}>
                     <MoveUpRight size={16} strokeWidth={1} />
                 </a>
             </div>

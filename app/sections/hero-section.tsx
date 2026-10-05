@@ -7,8 +7,11 @@ import { AnimatePresence, easeInOut, motion } from "motion/react"
 import { Mascot } from "page-mascot";
 import { FlipWords } from "@/components/ui/flip-words";
 import { useEffect, useRef, useState } from "react";
+import posthog from "posthog-js";
 
-
+const isPostHogConfigured = Boolean(
+    process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN && process.env.NEXT_PUBLIC_POSTHOG_HOST
+)
 
 
 export default function HeroSection() {
@@ -197,6 +200,9 @@ export default function HeroSection() {
 
 
     const handleEmailCopy = () => {
+        if (isPostHogConfigured) {
+            posthog.capture("email_copied")
+        }
         navigator.clipboard.writeText("alokpandey0697@gmail.com")
         setIsEmailCopied(true)
         setEmailHovered(true)
@@ -204,6 +210,15 @@ export default function HeroSection() {
             setIsEmailCopied(false)
             setEmailHovered(false)
         }, 3000)
+    }
+
+    const handleSocialProfileOpen = (platform: string) => {
+        if (isPostHogConfigured) {
+            posthog.capture("social_profile_opened", {
+                platform,
+                placement: "hero",
+            })
+        }
     }
 
 
@@ -350,10 +365,10 @@ export default function HeroSection() {
                 <a>
                     I build websites and digital products that help brands shape their identity in the digital world. I also like to build and maintain tools that makes development a bit less painful.
                     You can reach out to me on
-                    <a href="https://github.com/alokpy1484" target="_blank" className="border-b border-neutral-100/10 mx-1">Github,</a>
-                    <a href="https://x.com/AlokPandey37305" target="_blank" className="border-b border-neutral-100/10 mx-1">X</a>
+                    <a href="https://github.com/alokpy1484" target="_blank" onClick={() => handleSocialProfileOpen("github")} className="border-b border-neutral-100/10 mx-1">Github,</a>
+                    <a href="https://x.com/AlokPandey37305" target="_blank" onClick={() => handleSocialProfileOpen("x")} className="border-b border-neutral-100/10 mx-1">X</a>
                     or
-                    <a href="https://www.linkedin.com/in/alokpy1484" target="_blank" className="border-b border-neutral-100/10 mx-1"> LinkedIn .</a>
+                    <a href="https://www.linkedin.com/in/alokpy1484" target="_blank" onClick={() => handleSocialProfileOpen("linkedin")} className="border-b border-neutral-100/10 mx-1"> LinkedIn .</a>
                 </a>
             </div >
 
