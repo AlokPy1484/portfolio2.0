@@ -1,0 +1,15 @@
+.frame { position: relative; width: 70px; height: 70px; flex-shrink: 0; border-radius: 12px; background: color-mix(in srgb, var(--secondary) 10%, transparent); }
+.cat { position: relative; display: block; width: 100%; height: 100%; border: 0; padding: 0; background: transparent; cursor: pointer; border-radius: inherit; }
+.cat:focus-visible, .treat:focus-visible { outline: 2px solid var(--foreground); outline-offset: 3px; }
+.body { position: relative; display: block; width: 100%; height: 100%; transform-origin: 50% 78%; }
+.sprite { position: absolute; inset: 0; background-size: 300% 300%; background-repeat: no-repeat; pointer-events: none; }
+.target { outline: 2px solid #a3a3a3; outline-offset: 3px; background: #a3a3a326; }
+.treat { position: absolute; right: -9px; bottom: -9px; display: grid; place-items: center; width: 36px; height: 32px; padding: 0; border: 1px solid color-mix(in srgb, var(--foreground) 15%, transparent); border-radius: 10px; background: var(--background); box-shadow: 0 2px 5px #00000015; cursor: grab; touch-action: none; user-select: none; z-index: 1; }
+.treat:active { cursor: grabbing; }
+.treat[aria-disabled="true"] { cursor: not-allowed; }
+.cooldownTooltip { position: absolute; left: 43px; top: 85px; z-index: 2; width: max-content; padding: 6px 9px; border-radius: 6px; background: var(--foreground); color: var(--background); font-size: 11px; line-height: 1.4; pointer-events: none; box-shadow: 0 2px 8px #0002; }
+.ghost { position: fixed; left: 0; top: 0; width: 36px; height: 32px; display: grid; place-items: center; pointer-events: none; z-index: 2147483647; filter: drop-shadow(0 3px 3px #0003); }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .frame { transition: scale 300ms ease-in-out; }
+  .frame:hover { scale: 1.1; }
+}

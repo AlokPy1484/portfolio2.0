@@ -4,14 +4,11 @@ import heroImage from "../../public/Hero1.jpg"
 import { Mail, MapPin, User } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { AnimatePresence, easeInOut, motion } from "motion/react"
-import { Mascot } from "page-mascot";
+import { InteractiveMascot } from "@/components/mascot/interactive-mascot";
 import { FlipWords } from "@/components/ui/flip-words";
 import { useEffect, useRef, useState } from "react";
-import posthog from "posthog-js";
 
-const isPostHogConfigured = Boolean(
-    process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN && process.env.NEXT_PUBLIC_POSTHOG_HOST
-)
+
 
 
 export default function HeroSection() {
@@ -185,7 +182,6 @@ export default function HeroSection() {
     }
 
     const [isLoaded, setIsLoaded] = useState(false)
-    const [isMascotLoaded, setMascotLoaded] = useState(false)
 
 
     useEffect(() => {
@@ -200,9 +196,6 @@ export default function HeroSection() {
 
 
     const handleEmailCopy = () => {
-        if (isPostHogConfigured) {
-            posthog.capture("email_copied")
-        }
         navigator.clipboard.writeText("alokpandey0697@gmail.com")
         setIsEmailCopied(true)
         setEmailHovered(true)
@@ -210,15 +203,6 @@ export default function HeroSection() {
             setIsEmailCopied(false)
             setEmailHovered(false)
         }, 3000)
-    }
-
-    const handleSocialProfileOpen = (platform: string) => {
-        if (isPostHogConfigured) {
-            posthog.capture("social_profile_opened", {
-                platform,
-                placement: "hero",
-            })
-        }
     }
 
 
@@ -243,16 +227,11 @@ export default function HeroSection() {
 
             <div className="title-container flex justify-start items-center gap-4 w-full">
                 {/* <Image src={heroImage} alt="heroImage" className="object-cover size-16 rounded-xl" /> */}
-                <div className="relative bg-secondary/10 rounded-xl hover:scale-110 transition-all duration-300 ease-in-out">
+                <div className="relative">
                     {isLoaded ?
                         <motion.div
                         >
-                            <Mascot
-                                className=""
-                                size={70}
-                                directions="/mascots/cat-directions.webp"
-                                reactions="/mascots/cat-reactions.webp"
-                            />
+                            <InteractiveMascot />
                         </motion.div>
                         :
                         <motion.div
@@ -265,7 +244,7 @@ export default function HeroSection() {
                 <div className="flex flex-col justify-center items-start gap-1">
                     <h1 className="text-3xl font-semibold">Alok Pandey</h1>
                     {/* <a className="text-sm">Product Engineer</a> */}
-                    <FlipWords duration={3000} words={["Product Engineer", "Web Designer", "Homo Sapiens"]}
+                    <FlipWords duration={3000} words={["Product Engineer", "Web Designer", "Homo Sapien"]}
                         className="flex p-0 m-0 justify-start text-sm" />
                 </div>
             </div>
@@ -365,10 +344,10 @@ export default function HeroSection() {
                 <a>
                     I build websites and digital products that help brands shape their identity in the digital world. I also like to build and maintain tools that makes development a bit less painful.
                     You can reach out to me on
-                    <a href="https://github.com/alokpy1484" target="_blank" onClick={() => handleSocialProfileOpen("github")} className="border-b border-neutral-100/10 mx-1">Github,</a>
-                    <a href="https://x.com/AlokPandey37305" target="_blank" onClick={() => handleSocialProfileOpen("x")} className="border-b border-neutral-100/10 mx-1">X</a>
+                    <a href="https://github.com/alokpy1484" target="_blank" className="border-b border-neutral-100/10 mx-1">Github,</a>
+                    <a href="https://x.com/AlokPandey37305" target="_blank" className="border-b border-neutral-100/10 mx-1">X</a>
                     or
-                    <a href="https://www.linkedin.com/in/alokpy1484" target="_blank" onClick={() => handleSocialProfileOpen("linkedin")} className="border-b border-neutral-100/10 mx-1"> LinkedIn .</a>
+                    <a href="https://www.linkedin.com/in/alokpy1484" target="_blank" className="border-b border-neutral-100/10 mx-1"> LinkedIn .</a>
                 </a>
             </div >
 
@@ -540,7 +519,6 @@ export default function HeroSection() {
         </motion.div >
     )
 }
-
 
 
 

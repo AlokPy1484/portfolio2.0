@@ -77,7 +77,7 @@ export default function ExperienceSection() {
             logo: trvalrSVG()
         },
         {
-            title: "Contributor at ",
+            title: "Contributer at ",
             timeline: "DEC 25 - MAY 26",
             org: "GitHub",
             description: "Contributed to several open source repositories like RocketChat, AccordProject, etc",

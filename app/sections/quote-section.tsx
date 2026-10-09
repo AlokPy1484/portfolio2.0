@@ -1,12 +1,8 @@
 "use client"
 import { AnimatePresence, easeInOut, motion } from "motion/react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { JSX } from "react/jsx-runtime"
-import posthog from "posthog-js"
 
-const isPostHogConfigured = Boolean(
-    process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN && process.env.NEXT_PUBLIC_POSTHOG_HOST
-)
 
 export default function QuoteSection() {
 
@@ -135,16 +131,15 @@ export default function QuoteSection() {
                     <a>Services</a>
                     <a>Contact</a> */}
                 </div>
+                <div>
+                    {VisitorCount()}
+                </div>
                 <div className="flex justify-end items-center gap-4">
 
                     {socials.map((social, idx) => (
 
 
-                        <a key={idx} href={social.href} onClick={() => {
-                            if (isPostHogConfigured) {
-                                posthog.capture("social_profile_opened", { platform: social.label.toLowerCase(), placement: "footer" })
-                            }
-                        }} className="size-5 cursor-pointer" target="_blank">
+                        <a key={idx} href={social.href} className="size-5 cursor-pointer" target="_blank">
                             {social.icon()}
                         </a>
                     ))}
@@ -152,5 +147,23 @@ export default function QuoteSection() {
                 </div>
             </div>
         </motion.div>
+
+
     )
+}
+
+
+
+export function VisitorCount() {
+    const [count, setCount] = useState<number | null>(null);
+
+    useEffect(() => {
+        fetch("/api/visitor-count")
+            .then((res) => res.json())
+            .then((data) => setCount(data.count));
+    }, []);
+
+    if (count === null) return null;
+
+    return <span>{count.toLocaleString()} visitors</span>;
 }
