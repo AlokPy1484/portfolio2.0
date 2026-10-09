@@ -6,6 +6,7 @@ import ProjectSection from "./sections/project-section";
 import QuoteSection from "./sections/quote-section";
 import Navbar from "./sections/navbar";
 import RenderAnimate from "./providers/loading-animation";
+import LifeBar from "./sections/life-bar";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <QuoteSection /> */}
 
       <HeroSection />
+      <LifeBar />
       <ExperienceSection />
       <ProjectSection />
       <BlogSection />
