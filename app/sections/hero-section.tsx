@@ -265,7 +265,7 @@ export default function HeroSection() {
                 <div className="flex flex-col justify-center items-start gap-1">
                     <h1 className="text-3xl font-semibold">Alok Pandey</h1>
                     {/* <a className="text-sm">Product Engineer</a> */}
-                    <FlipWords duration={3000} words={["Product Engineer", "Web Designer", "Homo Sapien"]}
+                    <FlipWords duration={3000} words={["Product Engineer", "Web Designer", "Homo Sapiens"]}
                         className="flex p-0 m-0 justify-start text-sm" />
                 </div>
             </div>
