@@ -2,12 +2,9 @@
 import { cn } from "@/lib/utils"
 import { easeInOut, motion } from "motion/react"
 import { useState } from "react"
-import posthog from "posthog-js"
-import { portfolioLogger } from "@/lib/posthog-logger"
 
-const isPostHogConfigured = Boolean(
-    process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN && process.env.NEXT_PUBLIC_POSTHOG_HOST
-)
+
+
 
 
 export default function BlogSection() {
@@ -15,15 +12,6 @@ export default function BlogSection() {
 
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
-    const handleArticleOpen = (articleTitle: string, publicationYear: number) => {
-        if (isPostHogConfigured) {
-            posthog.capture("article_opened", {
-                article_title: articleTitle,
-                publication_year: publicationYear,
-            })
-            portfolioLogger.articleOpened(publicationYear)
-        }
-    }
 
     return (
         <motion.div
@@ -55,7 +43,7 @@ export default function BlogSection() {
                         <a className="text-sm">27/02</a>
                     </div> */}
                         <div className="flex justify-between items-center w-full border- border-neutral-800 py-1">
-                            <a href="https://alokpydeepdive01.hashnode.dev/understanding-frontend-development-a-deep-dive" onClick={() => handleArticleOpen("Deep Dive: Frontend", 2026)} className="text- font-medium cursor-pointer">Deep Dive: Frontend</a>
+                            <a href="https://alokpydeepdive01.hashnode.dev/understanding-frontend-development-a-deep-dive" className="text- font-medium cursor-pointer">Deep Dive: Frontend</a>
                             <a className="text-sm">27/02</a>
                         </div>
                     </div>
@@ -66,7 +54,7 @@ export default function BlogSection() {
                     <h1 className="text-sm w-40">2025</h1>
                     <div className="flex flex-col justify-start items-between gap-2 w-full">
                         <div className="flex justify-between items-center w-full border- border-neutral-800 py-1">
-                            <a href="https://portfolio-five-silk-61.vercel.app/pages/blog" onClick={() => handleArticleOpen("Github's Basic", 2025)} className="font-medium cursor-pointer">Github's Basic</a>
+                            <a href="https://portfolio-five-silk-61.vercel.app/pages/blog" className="font-medium cursor-pointer">Github's Basic</a>
                             <a className="text-sm">14/11</a>
                         </div>
                     </div>

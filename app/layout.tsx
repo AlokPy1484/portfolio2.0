@@ -7,6 +7,10 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from "./sections/navbar";
 import { Toaster } from "@/components/ui/toast";
 import { Analytics } from "@vercel/analytics/next"
+import VisitorTracker from "@/components/VisitorTracker";
+import { bind } from "cuelume";
+
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,6 +28,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
+  bind();
   return (
     <html
       lang="en"
@@ -36,6 +41,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             {/* <Script src="/oneko.js" strategy="afterInteractive" /> */}
 
             <TooltipProvider>
+              <VisitorTracker />
               {children}
               <Analytics />
               <Toaster />
