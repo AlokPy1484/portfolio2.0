@@ -20,7 +20,9 @@ export function ThemeToggle() {
     }
 
     return (
-        <button className="rounded-full p-1.5 bg-primary dark:hover:bg-black hover:bg-white cursor-pointer" onClick={toggleTheme}>
+        <button
+            data-cuelume-toggle
+            className="rounded-full p-1.5 bg-primary dark:hover:bg-black hover:bg-white cursor-pointer" onClick={toggleTheme}>
             {theme === "dark" ? <Sun size={14} strokeWidth={1} /> : <Moon size={14} strokeWidth={1} />}
         </button>
     )

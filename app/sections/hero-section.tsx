@@ -7,6 +7,7 @@ import { AnimatePresence, easeInOut, motion } from "motion/react"
 import { InteractiveMascot } from "@/components/mascot/interactive-mascot";
 import { FlipWords } from "@/components/ui/flip-words";
 import { useEffect, useRef, useState } from "react";
+import { play } from "cuelume";
 
 
 
@@ -195,8 +196,20 @@ export default function HeroSection() {
 
 
 
-    const handleEmailCopy = () => {
-        navigator.clipboard.writeText("alokpandey0697@gmail.com")
+    const handleEmailCopy = async () => {
+        try {
+            await navigator.clipboard.writeText("alokpandey0697@gmail.com")
+
+            play("success", {
+                volume: 0.8
+            })
+        }
+        catch (err) {
+            play("error", {
+                volume: 0.8
+            })
+        }
+
         setIsEmailCopied(true)
         setEmailHovered(true)
         setTimeout(() => {
@@ -258,7 +271,10 @@ export default function HeroSection() {
                         <a className="font-semibold border-b border-primary/0 hover:border-primary">Pune, India</a>
                     </div>
                 </div>
-                <div className="relative flex flex-col justify-center items-start  gap-1 text-sm cursor-copy">
+                <motion.div
+                    onHoverStart={() => play("open")}
+                    onHoverEnd={() => play("close")}
+                    className="relative flex flex-col justify-center items-start  gap-1 text-sm cursor-copy">
 
 
                     {isEmailHovered && (
@@ -330,7 +346,7 @@ export default function HeroSection() {
                         <a className="font-semibold border-b border-primary/0 hover:border-primary">alokpandey0697@gmail.com</a>
                     </div>
 
-                </div>
+                </motion.div>
                 <div className="hidden md:flex flex-col justify-center items-start  gap-1 text-sm">
                     <a className="text-xs">PRONOUNS</a>
                     <div className="flex justify-start items-center gap-2">
@@ -344,10 +360,18 @@ export default function HeroSection() {
                 <a>
                     I build websites and digital products that help brands shape their identity in the digital world. I also like to build and maintain tools that makes development a bit less painful.
                     You can reach out to me on
-                    <a href="https://github.com/alokpy1484" target="_blank" className="border-b border-neutral-100/10 mx-1">Github,</a>
-                    <a href="https://x.com/AlokPandey37305" target="_blank" className="border-b border-neutral-100/10 mx-1">X</a>
+                    <motion.a
+                        onClick={() => play("navigate")}
+                        href="https://github.com/alokpy1484"
+                        target="_blank"
+                        className="border-b border-neutral-100/10 mx-1 hover:scale-120">Github,</motion.a>
+                    <a
+                        onClick={() => play("navigate")}
+                        href="https://x.com/AlokPandey37305" target="_blank" className="border-b border-neutral-100/10 mx-1">X</a>
                     or
-                    <a href="https://www.linkedin.com/in/alokpy1484" target="_blank" className="border-b border-neutral-100/10 mx-1"> LinkedIn .</a>
+                    <a
+                        onClick={() => play("navigate")}
+                        href="https://www.linkedin.com/in/alokpy1484" target="_blank" className="border-b border-neutral-100/10 mx-1"> LinkedIn .</a>
                 </a>
             </div >
 
@@ -355,6 +379,7 @@ export default function HeroSection() {
                 {/* <a className="text-">This is my tech stack for development </a> */}
                 <div
                     onMouseLeave={() => setIsHovered(null)}
+
                     className="relative flex justify-between md:justify-start items-center gap-4  w-full">
 
                     {techstack.map((item, index) => (

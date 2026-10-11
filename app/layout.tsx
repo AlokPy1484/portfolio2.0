@@ -9,6 +9,7 @@ import { Toaster } from "@/components/ui/toast";
 import { Analytics } from "@vercel/analytics/next"
 import VisitorTracker from "@/components/VisitorTracker";
 import { bind } from "cuelume";
+import CuelumeProvide from "@/components/CuelumeProvider";
 
 
 
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 
             <TooltipProvider>
               <VisitorTracker />
+              <CuelumeProvide />
               {children}
               <Analytics />
               <Toaster />
