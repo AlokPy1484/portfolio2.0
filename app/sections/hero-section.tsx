@@ -272,9 +272,13 @@ export default function HeroSection() {
                     </div>
                 </div>
                 <motion.div
+<<<<<<< Updated upstream
                     onHoverStart={() => play("open")}
                     onHoverEnd={() => play("close")}
                     className="relative flex flex-col justify-center items-start  gap-1 text-sm cursor-copy">
+=======
+                    className="relative flex flex-col justify-center items-start  gap-1 text-sm">
+>>>>>>> Stashed changes
 
 
                     {isEmailHovered && (
@@ -343,7 +347,10 @@ export default function HeroSection() {
                         onClick={() => handleEmailCopy()}
                         className="flex justify-start items-center gap-2">
                         <Mail size={12} strokeWidth={2} />
-                        <a className="font-semibold border-b border-primary/0 hover:border-primary">alokpandey0697@gmail.com</a>
+                        <motion.a
+                            onHoverStart={() => play("open")}
+                            onHoverEnd={() => play("close")}
+                            className="font-semibold border-b border-primary/0 hover:border-primar cursor-copy">alokpandey0697@gmail.com</motion.a>
                     </div>
 
                 </motion.div>
@@ -377,16 +384,21 @@ export default function HeroSection() {
 
             <div className="textStack-container relative flex justify-between md:justify-start items-center gap-2 w-full md:mb-0 mb-8">
                 {/* <a className="text-">This is my tech stack for development </a> */}
-                <div
+                <motion.div
                     onMouseLeave={() => setIsHovered(null)}
+<<<<<<< Updated upstream
+=======
+                    // onHoverEnd={() => play("close")}
+>>>>>>> Stashed changes
 
                     className="relative flex justify-between md:justify-start items-center gap-4  w-full">
 
                     {techstack.map((item, index) => (
 
-                        <div
+                        <motion.div
                             onMouseEnter={() => handleHovered(index)}
-                            onMouseLeave={handleHoverLeave}
+
+                            onHoverStart={() => play("open")}
 
 
 
@@ -427,7 +439,7 @@ export default function HeroSection() {
                                         <span className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-1/3 size-2 bg-secondary rounded-xs rotate-45 "></span>
                                     </div>
                                 </motion.span>}
-                        </div>
+                        </motion.div>
 
                     ))}
 
@@ -539,7 +551,7 @@ export default function HeroSection() {
 
 
 
-                </div>
+                </motion.div>
             </div>
         </motion.div >
     )

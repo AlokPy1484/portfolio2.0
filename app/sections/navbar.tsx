@@ -187,7 +187,7 @@ export default function Navbar() {
 
                         {/* <AnimatePresence mode="popLayout"> */}
                         <motion.button
-                            data-cuelume-open
+                            data-cuelume-navigate
                             layoutId="contact"
                             // onMouseEnter={() => setIsExpanded(true)}
                             // onClick={() => setIsExpanded(true)}
