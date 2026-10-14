@@ -4,6 +4,7 @@ import Image from "next/image";
 import placeholer from "../../public/projectsAssets/placeholder.png"
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react"
+import { play } from "cuelume";
 
 
 
@@ -45,7 +46,9 @@ export default function ProjectSection() {
         <div className="hero-container flex flex-col justify-start items-start gap-8  w-screen max-w-2xl px-8 md:px-0 mt-20 md:mt-12 ">
             <div className="title-container flex justify-between items-end w-full">
                 <h1 className="text-sm font-">PROJECTS</h1>
-                <a href="/projects" className="text-xs border-b border-primary/0 hover:border-primary">VIEW ALL</a>
+                <a
+                    onClick={() => play("navigate")}
+                    href="/projects" className="text-xs border-b border-primary/0 hover:border-primary">VIEW ALL</a>
             </div>
             <div className="card-container flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4 w-full">
 

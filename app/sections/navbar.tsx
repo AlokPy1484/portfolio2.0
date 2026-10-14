@@ -8,6 +8,7 @@ import { useEffect, useState } from "react"
 import MagneticButton from "../providers/MagneticButton"
 import { toast } from "@/components/ui/toast"
 import { useRouter } from "next/navigation"
+import { play } from "cuelume"
 
 
 const navitems = [
@@ -133,7 +134,9 @@ export default function Navbar() {
             <div className="flex justify-between items-center w-full max-w-2xl">
                 <div className="flex justify-start items-center gap-4">
                     {navitems.map((item, idx) => (
-                        <a key={idx} href={item.href} className="text-sm text-primary-foreground hover:text-hover">{item.lable}</a>
+                        <a
+                            onClick={() => play("navigate", { volume: 0.8 })}
+                            key={idx} href={item.href} className="text-sm text-primary-foreground hover:text-hover">{item.lable}</a>
                     ))}
                 </div>
                 <div className="flex justify-end items-center gap-2">
@@ -184,7 +187,7 @@ export default function Navbar() {
 
                         {/* <AnimatePresence mode="popLayout"> */}
                         <motion.button
-                            data-cuelume-open
+                            data-cuelume-navigate
                             layoutId="contact"
                             // onMouseEnter={() => setIsExpanded(true)}
                             // onClick={() => setIsExpanded(true)}
