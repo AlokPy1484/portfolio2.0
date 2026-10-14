@@ -272,13 +272,7 @@ export default function HeroSection() {
                     </div>
                 </div>
                 <motion.div
-<<<<<<< Updated upstream
-                    onHoverStart={() => play("open")}
-                    onHoverEnd={() => play("close")}
-                    className="relative flex flex-col justify-center items-start  gap-1 text-sm cursor-copy">
-=======
                     className="relative flex flex-col justify-center items-start  gap-1 text-sm">
->>>>>>> Stashed changes
 
 
                     {isEmailHovered && (
