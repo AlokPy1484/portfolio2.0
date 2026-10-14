@@ -340,8 +340,7 @@ export default function HeroSection() {
                         onMouseLeave={() => { setEmailHovered(false) }}
                         onClick={() => handleEmailCopy()}
                         className="flex justify-start items-center gap-2">
-                        <Mail size={12} strokeWidth={2} />
-                        <motion.a
+                        <Mail size={12} strokeWidth={2} /> <motion.a
                             onHoverStart={() => play("open")}
                             onHoverEnd={() => play("close")}
                             className="font-semibold border-b border-primary/0 hover:border-primar cursor-copy">alokpandey0697@gmail.com</motion.a>
@@ -380,10 +379,7 @@ export default function HeroSection() {
                 {/* <a className="text-">This is my tech stack for development </a> */}
                 <motion.div
                     onMouseLeave={() => setIsHovered(null)}
-<<<<<<< Updated upstream
-=======
                     // onHoverEnd={() => play("close")}
->>>>>>> Stashed changes
 
                     className="relative flex justify-between md:justify-start items-center gap-4  w-full">
 
